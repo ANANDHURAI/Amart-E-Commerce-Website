@@ -1,0 +1,157 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    {% include 'home/includes/navigation.html' %}
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Dashboard</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="{% url "home" %}">Home</a></li>
+                            <li><a href="">Profile</a></li>
+                            <li class="active"><a href="">Dashboard</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section class="user-dashboard page-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-inline dashboard-menu text-center">
+                        <li><a class="active" href="{% url "customer_dashboard" %}">Dashboard</a></li>
+                        <li><a href="{% url "customer_orders" %}">Orders</a></li>
+                        <li><a href="{% url "customer_address" %}">Address</a></li>
+                        <li><a href="{% url "customer_profile" %}">Profile Details</a></li> 
+                        <li><a href="{% url "customer_wallet" %}">Wallet</a></li>   
+                    </ul>
+                    <div class="dashboard-wrapper user-dashboard dashboard-user-profile">
+                        <div class="media">
+                            <div class="pull-left">
+                                {% if customer.profile_image %}
+                                    <img class="media-object user-img" src="{{ customer.profile_image.url }}" alt="Image">
+                                {% else %}
+                                    <img class="media-object user-img" src="{% static "images\default_profile_picture.png" %}" alt="Image">
+                                {% endif %}
+                            </div>
+                            <div class="media-body">
+                                <ul class="user-profile-list">
+                                    <li><span>Full Name:</span>{{ customer.first_name }} {{ customer.last_name }}</li>
+                                    <li><span>Country:</span>India</li>
+                                    <li><span>Email:</span>{{ customer.email }}</li>
+                                    {% if customer.mobile %}
+                                        <li><span>Mobile:</span>+91 {{ customer.mobile }}</li>
+                                    {% endif %}
+                                    <li><span>Date of Join:</span>{{ customer.date_joined|date:"d-m-Y" }}</li>
+                                    <br>
+                                    <a href="{% url "customer_profile" %}" class="btn btn-main btn-small">View Profile</a >
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="total-order mt-20">
+                            <h4> <strong> Default Address</strong></h4>
+                            {% if customer.address %}
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th><center>Pin Code</center></th>
+                                        <th><center>Phone</center></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ customer.address.name }}</td>
+                                            <td>{{ customer.address.address_text|linebreaksbr }}</td>
+                                            <td><center>{{ customer.address.pincode }}</center></td>
+                                            <td><center>+91{{ customer.mobile }}</center></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="{% url "customer_address" %}" class="btn btn-main btn-small">View All Addresses</a >
+                            {% else %}
+                            <p>No Addresses Added Yet. Add One Now for Seamless Shopping!</p>
+                            <hr>
+                            <a href="{% url "new_address" %}" class="btn btn-main btn-small">Add New Address</a >
+                            {% endif %}
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div >
+                            <h4> <strong> Recent Orders</strong></h4>
+                            {% if orders %}
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Date</th>
+                                            <th>Items</th>
+                                            <th>Total Price</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for order in orders %}
+                                            <tr>
+                                                <td>#{{ order.id }}</td>
+                                                <td>{{ order.created_at|date:"d-m-Y" }}</td>
+                                                <td>
+                                                    {% for order_item in order.order_items %}
+                                                    <p>{{ order_item }}</p>
+                                                    {% endfor %}
+                                                </td>
+                                                <td>{{ order.total_amount }}</td>
+                                                <td>
+                                                    {% if order.status == "pending" %}
+                                                        <span class="label label-warning">Pending</span>
+                                                    {% elif order.status == "cancelled" %}
+                                                        <span class="label label-danger">Cancelled</span>
+                                                    {% elif order_item.status == "confirmed" %}
+                                                    <span class="label label-info">Confirmed</span>
+                                                    {% elif order.status == "shipped" %}
+                                                        <span class="label label-primary">Shipped</span>
+                                                    {% elif order.status == "delivered" %}
+                                                        <span class="label label-success">Delivered</span>
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="{% url "customer_orders" %}" class="btn btn-main btn-small">View All Orders</a >
+                            {% else %}
+                            <p>No Orders Yet. Shop Now!</p>
+                            <hr>
+                            <a href="{% url "shop" %}" class="btn btn-main btn-small">Shop Now</a >
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+
+{% endblock extra_styles %}

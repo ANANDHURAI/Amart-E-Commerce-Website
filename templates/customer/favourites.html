@@ -1,0 +1,174 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'home/includes/navigation.html' %}
+
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Favourites</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url "home" %}">Home</a></li>
+                        <li><a href="{% url "customer_dashboard" %}">{{ customer.first_name }} {{ customer.last_name }}</a></li>
+                        <li class="active"><a href="">Favourites</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+<section class="products section">
+	<div class="container">
+		<div class="row display-flex">
+            {% if favourite_items %}
+                {% for favourite_item in favourite_items %}
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 border">
+                        
+                        <div class="product-item">
+                            <div id="product-thumb" class="product-thumb">
+                                {% comment %} <span class="bage">Sale</span> {% endcomment %}
+                                <img id="product-image-id" class="img-responsive" src="{{ favourite_item.product.primary_image.image.url }}" alt="product-img" />
+                                <div class="preview-meta">
+                                    <ul>
+                                        <li>
+                                            <span data-toggle="modal" data-target="#product-modal-{{ favourite_item.product.id }}">
+                                                <i class="tf-ion-ios-search-strong"></i>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="modal" data-target="#add-to-cart-modal-{{ favourite_item.product.id }}"><i class="tf-ion-android-cart"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">    
+                                <a href="{% url "product_page" favourite_item.product.slug %}">
+                                    
+                                    <p class="truncate">{{ favourite_item.product.name }}</p>
+                                    <p class="price"><strong class="h4">&#8377; {{ favourite_item.product.price }} </strong><del class="h6"> MRP: {{ favourite_item.product.mrp }}</del></p>
+                                </a>
+                                <a href="{% url "remove_favourite_item" favourite_item.id %}" class="btn btn-small btn-primary">Remove</a>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <!-- Modal -->
+                        <div class="modal product-modal fade" id="product-modal-{{ favourite_item.product.id }}">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tf-ion-close"></i>
+                            </button>
+                            <div class="modal-dialog " role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                                <div class="modal-image">
+                                                    <img class="img-responsive" src="{{ favourite_item.product.primary_image.image.url }}" alt="product-img" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="product-short-details">
+                                                    <br>
+                                                    <h2 class="product-title"><strong>{{ favourite_item.product.brand_name }}</strong></h2>
+                                                    <h2 class="product-title">{{ favourite_item.product.name }}</h2>
+                                                    <p class="product-price">₹ {{ favourite_item.product.price }}</p>
+                                                    <a href="{% url "product_page" favourite_item.product.slug %}" class="btn btn-transparent">View Product Details</a>
+                                                    <br>
+                                                    <br>
+                                                    <h4>Product Description:</h4>
+                                                    <p class="product-short-description">{{ favourite_item.product.description|linebreaksbr }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.modal -->
+                        
+                        
+                        <!--Add to cart Modal -->
+                        <div class="modal product-modal fade" id="add-to-cart-modal-{{ favourite_item.product.id }}">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tf-ion-close"></i>
+                            </button>
+                            <div class="modal-dialog " role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                                <div class="product-short-details">
+                                                    <br>
+                                                    <h2 class="product-title"><strong>{{ favourite_item.product.brand_name }}</strong></h2>
+                                                    <h2 class="product-title">{{ favourite_item.product.name }}</h2>
+                                                    <hr>
+                                                    <p>Select size and quantity</p>
+                                                    <hr>
+                                                    <form method="post" action="{% url 'add_to_cart' favourite_item.product.id %}">
+                                                        {% csrf_token %}
+                                                        <div class="product-size">
+                                                            <span>Size:</span>
+                                                            <select class="form-control" name="product-size">
+                                                                <option value="S">Small</option>
+                                                                <option value="M">Medium</option>
+                                                                <option value="L">Large</option>
+                                                                <option value="XL">Extra Large</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="product-quantity">
+                                                            <span>Quantity:</span>
+                                                            <div class="product-quantity-slider">
+                                                                <input type="number" min="1" max="10" value="1" name="product-quantity">
+                                                            </div>
+                                                            <p class="h6">Maximum 10 quantity per customer	</p>
+                                                        </div>
+                                                        <br>
+                                                        <button type="submit" class="btn btn-main">Add To Cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                                <div class="modal-image">
+                                                    <img class="img-responsive" src="{{ favourite_item.product.primary_image.image.url }}" alt="product-img" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--  Add to cart modal -->
+                        
+
+
+                    </div>
+                {% endfor %}
+            
+            {% else %}
+                <h3>Your Wishlist is empty!</h3>
+                <br>
+                <a href="{% url "shop" %}" class="btn btn-main">Shop Now</a>
+            {% endif %}
+		</div>
+	</div>
+</section>
+
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+<style>
+    .truncate {
+        white-space: nowrap;
+		overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+{% endblock extra_styles %}

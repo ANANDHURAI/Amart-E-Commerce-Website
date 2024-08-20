@@ -1,0 +1,88 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+{% include 'home/includes/navigation.html' %}
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Orders</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url "home" %}">Home</a></li>
+                        <li><a href="">Profile</a></li>
+                        <li><a href="">Wallet</a></li> 
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+    <section class="user-dashboard page-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-inline dashboard-menu text-center">
+                        <li><a href="{% url "customer_dashboard" %}">Dashboard</a></li>
+                        <li><a href="{% url "customer_orders" %}">Orders</a></li>
+                        <li><a href="{% url "customer_address" %}">Address</a></li>
+                        <li><a href="{% url "customer_profile" %}">Profile Details</a></li>     
+                        <li><a class="active"  href="{% url "customer_wallet" %}">Wallet</a></li>     
+                    </ul>
+                    <div class="dashboard-wrapper dashboard-user-profile">
+                        <div class="media">
+                          <div class="media-body">
+                            <ul class="user-profile-list">
+                              <li><span>Name:</span>{{ customer.first_name }} {{ customer.last_name }}</li>
+                              <li><span>Wallet ID:</span>{{ wallet.id }}</li>
+                              <li class="pull-right"><span><strong>Wallet Balnce:</strong></span><strong class="h1">{{ wallet.balance }}</strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-wrapper user-dashboard">
+                        {% if order_items %}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Order Item ID</th>
+                                        <th>Product</th>
+                                        <th class="text-center">Unit Price</th>
+                                        <th class="text-center">quantity</th>
+                                        <th class="text-center">Refund amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order_item in order_items %}
+                                        <tr>
+                                            <td>#{{ order_item.id }}</td>
+                                            <td> {{ order_item.product.name }}</td>
+                                            <td class="text-center"> ₹ {{ order_item.inventory.price }}</td>
+                                            <td class="text-center"> {{ order_item.quantity }}</td>
+                                            <td class="text-center">₹ {% widthratio order_item.quantity 1 order_item.inventory.price %}</td>
+                                        </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% else %}
+                        <p>No Cancelled Orders Yet. Shop Now!</p>
+                        <hr>
+                        <a href="{% url "shop" %}" class="btn btn-main">Shop NOw</a >
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}

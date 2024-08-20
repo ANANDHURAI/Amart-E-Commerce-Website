@@ -1,0 +1,26 @@
+{% load static %}
+
+<section class="product-category section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="title text-center">
+					<h2>Product Category</h2>
+				</div>
+			</div>
+			{% for category in categories %}
+				<div class="col-md-6">
+					<div class="category-box">
+						<a href="#!">
+							<img src="{{ category.image.url }}" alt="Category-image" />
+							<div class="content">
+								<h3>{{ category.name }}</h3>
+								<p class="h6">{{ category.description }}</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

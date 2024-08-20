@@ -1,0 +1,41 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    {% include 'home/includes/navigation.html' %}
+    {% include 'home/includes/hero-slider.html' %}
+    {% include 'home/includes/category.html' %}
+
+    <section class="products section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="title text-center">
+                    <h2>Featured Products</h2>
+                </div>
+            </div>
+            <div class="row display-flex">
+                {% for product in products %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                        {% include "home/includes/product.html" %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% comment %} {% include 'home/includes/call-to-action.html' %} {% endcomment %}
+    {% comment %} {% include 'home/includes/instagram-feed.html' %} {% endcomment %}
+    {% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+<style>
+    .row.display-flex {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.row.display-flex > [class*='col-'] {
+		display: flex;
+		flex-direction: column;
+	}
+</style>
+{% endblock extra_styles %}

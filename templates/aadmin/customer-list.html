@@ -1,0 +1,84 @@
+{% extends "aadmin/admin-base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-7">Customers</h1>
+        <form class="form-inline" method="post">
+            {% csrf_token %}
+            <div class="form-group mr-2">
+                <label for="filter_option" class="mr-2">Filter by:</label>
+                <select class="form-control input-sm" name="filter_option" id="filter_option">
+                    <option {% if request.session.selection == "all" %}selected{% endif %} value="all">All Customers</option>
+                    <option {% if request.session.selection == "ban" %}selected{% endif %} value="banned">Banned Customers</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary">Apply Filter</button>
+        </form>
+    </div>
+</div>
+
+<div class="hoverable-data-table">
+    <table id="hoverable-data-table" class="table table-hover nowrap" style="width:100%">
+        <thead class="thead-dark">
+        <tr>
+        <th>Email</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Last login</th>
+        <th class="text-center">Active status</th>
+        <th class="text-center">Ban</th>
+        </tr>
+        </thead>
+    
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td><a href="">{{ customer.email }}</a></td>
+                <td>{{ customer.first_name }}</td>
+                <td>{{ customer.last_name }}</td>
+                <td>{{ customer.last_login }}</td>
+                <td class="text-center">
+                    {% if customer.is_active %}
+                        <span class="mdi mdi-check-circle text-success"></span>
+                    {% else %}
+                        <span class="mdi mdi-close-circle text-danger"></span>
+                    {% endif %}
+                </td>
+                <td class="text-center">
+                    {% if customer.approved %}
+                    <a href="{% url "customer_approval" customer.id %}" class="btn-block btn-outline-danger">Ban</a>
+                    {% else %}
+                    <a href="{% url "customer_approval" customer.id %}" class="btn-block btn-outline-primary">Remove Ban
+                        
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+   </table>
+</div>
+
+
+{% endblock content %}
+
+
+{% block extra_scripts %}
+
+<script src='{% static "aadmin/plugins/data-tables/jquery.datatables.min.js" %}'></script>
+<script src='{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.js" %}'></script> 
+
+{% endblock extra_scripts %}
+
+{% block extra_styles %}
+
+
+<link href="{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.css" %}" rel="stylesheet">
+<link href="https://unpkg.com/sleek-dashboard/dist/assets/css/sleek.min.css">
+
+{% endblock extra_styles %}

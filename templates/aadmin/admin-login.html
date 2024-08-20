@@ -1,0 +1,55 @@
+{% extends "aadmin/admin-base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row justify-content-center col-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="app-brand">
+            <a href="#">
+              <img style="width: 50px" src="{% static "images\mulberry-favicon-white.png" %}" alt="logo">
+              <span class="brand-name">mulberry Admin</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-body p-4">
+          <h4 class="text-dark mb-5">Log In</h4>
+          
+          <form method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="form-group col-md-12 mb-4">
+                {% for message in messages %}
+                    {% if message.tags == "error" %}
+                      <div class="alert alert-danger" role="alert">{{message}}</div>
+                    {% endif %}
+                {% endfor %}
+                {% for message in messages %}
+                    {% if message.tags == "success" %}
+                      <div class="alert alert-success" role="alert">{{message}}</div>
+                    {% endif %}
+                {% endfor %}
+                <input required name="email" type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <div class="form-group col-md-12 ">
+                <input required name="password" type="password" class="form-control input-lg" id="password" placeholder="Password">
+              </div>
+              <div class="col-md-12">
+                <div class="d-flex my-2 justify-content-between">
+                  <p><a class="text-blue" href="#">Forgot Your Password?</a></p>
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Log In</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

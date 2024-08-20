@@ -1,0 +1,203 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'home/includes/navigation.html' %}
+
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Cart</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url "home" %}">Home</a></li>
+                        <li><a href="{% url "customer_dashboard" %}">{{ customer.first_name }} {{ customer.last_name }}</a></li>
+                        <li class="active"><a href="">Cart</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+<div class="page-wrapper">
+  <div class="cart shopping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <div class="product-list">
+              {% if cart_items %}
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class=""></th>
+                      <th class="">Item Name</th>
+                      <th class=""><center>Item Price</center></th>
+                      <th class=""><center>Size</center></th>
+                      <th class=""><center>Quantity</center></th>
+                      <th class=""><center>Actions</center></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for cart_item in cart_items %}
+                      <tr class="">
+                        <td class=""><center>
+                          <div class="product-info">
+                            <img width="80" src="{{ cart_item.product.primary_image.image.url }}" alt="" />
+                          </div></center>
+                        </td>
+                        <td class="">
+                          <div class="">
+                            <a href="{% url "product_page" cart_item.product.slug %}"><strong>{{ cart_item.product.brand_name }}</strong> {{ cart_item.product.name }}</a>
+                          </div>
+                        </td>
+                        <td class=""><center>₹ {{ cart_item.inventory.price }}</td></center>
+                        <td class=""><center>{{ cart_item.inventory.size }}</center></td>
+                        <td class=""><center>{{ cart_item.quantity }}</center></td>
+                        <td class="">
+                          <center>
+                            <a href="" data-toggle="modal" data-target="#add-to-cart-modal-{{ cart_item.product.id }}" type="button" class="btn-outline-primary text-primary">Update</a>
+                            <a data-toggle="modal" data-target="#remove-modal-{{ cart_item.product.id }}" type="button" class="btn btn-outline-danger product-remove" >Remove</a>
+                          </center>
+                        </td>
+                      </tr>
+
+
+                      <!--Update cart item Modal -->
+                      <div class="modal product-modal fade" id="add-to-cart-modal-{{ cart_item.product.id }}">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <i class="tf-ion-close"></i>
+                        </button>
+                        <div class="modal-dialog " role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-8 col-sm-6 col-xs-12">
+                                  <div class="product-short-details">
+                                    <br>
+                                    <h2 class="product-title"><strong>{{ cart_item.product.brand_name }}</strong></h2>
+                                    <h2 class="product-title">{{ cart_item.product.name }}</h2>
+                                    <hr>
+                                    <p>Select size and quantity</p>
+                                    <hr>
+                                    <form method="post" action="{% url 'update_cart_item' cart_item.id %}" name="update-cart-item">
+                                      {% csrf_token %}
+                                      <div class="product-size">
+                                        <span>Size:</span>
+                                        <select class="form-control" name="product-size">
+                                          <option {% if cart_item.inventory.size == "S" %} selected {% endif %} value="S">Small</option>
+                                          <option {% if cart_item.inventory.size == "M" %} selected {% endif %} value="M">Medium</option>
+                                          <option {% if cart_item.inventory.size == "L" %} selected {% endif %} value="L">Large</option>
+                                          <option {% if cart_item.inventory.size == "XL" %} selected {% endif %} value="XL">Extra Large</option>
+                                        </select>
+                                      </div>
+                                      <div class="">
+                                        <span>Quantity:</span>
+                                          <select class="form-control" name="product-quantity">
+                                            <option {% if cart_item.quantity == 1 %} selected {% endif %} value=1>1</option>
+                                            <option {% if cart_item.quantity == 2 %} selected {% endif %} value=2>2</option>
+                                            <option {% if cart_item.quantity == 3 %} selected {% endif %} value=3>3</option>
+                                            <option {% if cart_item.quantity == 4 %} selected {% endif %} value=4>4</option>
+                                            <option {% if cart_item.quantity == 5 %} selected {% endif %} value=5>5</option>
+                                            <option {% if cart_item.quantity == 6 %} selected {% endif %} value=6>6</option>
+                                            <option {% if cart_item.quantity == 7 %} selected {% endif %} value=7>7</option>
+                                            <option {% if cart_item.quantity == 8 %} selected {% endif %} value=8>8</option>
+                                            <option {% if cart_item.quantity == 9 %} selected {% endif %} value=9>9</option>
+                                            <option {% if cart_item.quantity == 10 %} selected {% endif %} value=10>10</option>
+                                          </select>
+                                        <p class="h6">Maximum 10 quantity per customer	</p>
+                                      </div>
+                                      <br>
+                                      <button type="submit" class="btn btn-main" name="update">Update</button>
+                                    </form>
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="modal-image">
+                                    <img class="img-responsive" src="{{ cart_item.product.primary_image.image.url }}" alt="product-img" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!--  Update cart item modal -->
+
+
+                      <!--Remove cart item Modal -->
+                      <div class="modal product-modal fade" id="remove-modal-{{ cart_item.product.id }}">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <i class="tf-ion-close"></i>
+                        </button>
+                        <div class="modal-dialog " role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-8 col-sm-6 col-xs-12">
+                                  <div class="product-short-details">
+                                    <br>
+                                    <h2 class="product-title"><strong>{{ cart_item.product.brand_name }}</strong></h2>
+                                    <h2 class="product-title">{{ cart_item.product.name }}</h2>
+                                    <hr>
+                                    <span>Size     : {{ cart_item.inventory.size }}</span>
+                                    <br>
+                                    <span>Quantity : {{ cart_item.quantity }}</span>
+                                  </div>
+                                  <hr>
+                                  <p class="text-danger">Are you sure you want to remove this product from your cart?</p>
+                                  <br>
+                                  <a href="{% url "remove_cart_item" cart_item.id %}" class="btn btn-main">Remove</a>
+                                </div>
+                                
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="modal-image">
+                                    <img class="img-responsive" src="{{ cart_item.product.primary_image.image.url }}" alt="product-img" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!--  Remove cart item modal -->
+
+
+                      
+
+
+                    {% endfor %}
+                    <tr class="">
+                      <td class=""></td>
+                      <td class=""align="right"><br><strong>Total Amount:</strong></td>
+                      <td class=""><br><strong><center>₹ {{ cart.total_amount }}</center></strong></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="{% url "checkout" %}" class="btn btn-main pull-right">Checkout</a>
+                <a href="{% url "shop" %}" class="btn btn-main pull-left">Shop more</a>
+              {% else %}
+                <h3>Your cart is empty!</h3>
+                <br>
+                <a href="{% url "shop" %}" class="btn btn-main">Shop Now</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+
+{% endblock extra_styles %}

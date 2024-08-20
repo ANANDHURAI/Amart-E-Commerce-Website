@@ -1,0 +1,73 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include "home/includes/navigation.html" %}
+
+<section class="pricing-table">
+    <div class="container">
+        <div class="row  centered-content">
+            <div class="col-md-6 col-sm-6 col-xs-12" >
+                <div class="pricing-item">
+                    <div class="price-title text-center">
+                        <h3>Order ID: Order #{{ razorpay_order_id }}</h3>
+                        <br>
+                        <p class="h3">Payment Method: <strong class="h2">Online Payment</strong></p>
+                        <br>
+                        <p class="h3">Payment Gateway: <strong class="h2">RazorPay</strong></p>
+                        
+                        <br>
+                        <p class="h3">Amount: <strong class="h2">₹ {{ actual_amount }}</strong></p>
+                        {% if request.session.discount %}
+                            <p class="h3">Discount applied: <strong class="h2">₹ {{ request.session.discount }}</strong></p>
+                        {% else %}
+                            <p>No discount applied</p>
+                        {% endif %}
+                        <a class="btn btn-main" id="rzp-button1" href="">Pay with Razorpay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+<style>
+    .centered-content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+</style>
+{% endblock extra_styles %}
+
+{% block extra_scripts %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ razorpay_merchant_key }}", // Enter the Key ID generated from the Dashboard
+        "amount": "{{ razorpay_amount }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "{{ currency }}",
+        "name": "mulberry Fashions",
+        "image": "{% static "images\mulberry-favicon-black.png" %}",
+        "order_id": "{{ razorpay_order_id }}",
+        "callback_url": "{{ callback_url }}",
+        "prefill": {
+            "name": "{{ user.first_name }} {{ user.last_name }}",
+            "email": "{{ user.email }}",
+            "contact": ""
+        },
+        "theme": {
+            "color": "#000000",
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button1').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    }
+</script>
+{% endblock extra_scripts %}

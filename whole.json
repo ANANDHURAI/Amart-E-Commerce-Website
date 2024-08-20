@@ -1,0 +1,5637 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-02-17T02:48:53.053Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "melvinthankachan101@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is vendor\", \"Is customer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-02-17T03:40:06.362Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Shirts",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-02-17T03:40:21.456Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Pants",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-02-17T03:40:52.576Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Jeans",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-02-17T03:41:11.479Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "T-Shirts",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-02-21T22:22:13.275Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Melvin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-02-21T22:25:33.508Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Melvin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-02-21T22:40:14.404Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "Image of Melvin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-02-21T22:43:10.405Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Melvin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-02-21T23:02:24.314Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Melvin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-02-21T23:12:13.921Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Melvin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-02-23T01:28:11.385Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "Test Product - S",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.117Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.124Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.128Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.133Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Factory Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.138Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "8",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.143Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-02-23T01:29:52.147Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-02-23T16:43:48.823Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-02-24T16:22:15.150Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "34",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-02-24T16:22:28.818Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "35",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-02-24T16:22:38.393Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "33",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - S",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2024-02-24T16:22:47.476Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "34",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2024-02-24T16:22:57.968Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "35",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2024-02-24T16:23:06.872Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "36",
+      "object_repr": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2024-02-24T16:23:19.674Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "38",
+      "object_repr": "Blue India Slim Striped Oversized Casual Shirt - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2024-02-24T16:23:30.831Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "39",
+      "object_repr": "Blue India Slim Striped Oversized Casual Shirt - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2024-02-24T16:23:45.412Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "40",
+      "object_repr": "Blue India Slim Striped Oversized Casual Shirt - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2024-02-24T16:23:57.138Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "42",
+      "object_repr": "Graphic Printed Oversized Drop Shoulder Sleeves Pure Cotton T-Shirt - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2024-02-24T16:24:05.759Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "43",
+      "object_repr": "Graphic Printed Oversized Drop Shoulder Sleeves Pure Cotton T-Shirt - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2024-02-24T16:24:23.086Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "44",
+      "object_repr": "Graphic Printed Oversized Drop Shoulder Sleeves Pure Cotton T-Shirt - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2024-02-24T16:24:52.121Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "46",
+      "object_repr": "Tailored Fit Striped Polo Collar Pure Cotton T-Shirt - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2024-02-24T16:25:44.965Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "47",
+      "object_repr": "Tailored Fit Striped Polo Collar Pure Cotton T-Shirt - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2024-02-24T16:26:06.721Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "48",
+      "object_repr": "Tailored Fit Striped Polo Collar Pure Cotton T-Shirt - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2024-02-24T16:26:57.682Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "50",
+      "object_repr": "Men Light Fade Clean Look Stretchable Jeans - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2024-02-24T16:27:05.215Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "51",
+      "object_repr": "Men Light Fade Clean Look Stretchable Jeans - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2024-02-24T16:27:19.328Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "52",
+      "object_repr": "Men Light Fade Clean Look Stretchable Jeans - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2024-02-24T16:27:30.309Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "54",
+      "object_repr": "Men Cargo Jogger Stretchable Jeans - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2024-02-24T16:27:49.675Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "55",
+      "object_repr": "Men Cargo Jogger Stretchable Jeans - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2024-02-24T16:28:00.872Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "56",
+      "object_repr": "Men Cargo Jogger Stretchable Jeans - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2024-02-24T16:28:12.560Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "58",
+      "object_repr": "Men Black Slim Fit Solid Chinos - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2024-02-24T16:28:23.339Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "59",
+      "object_repr": "Men Black Slim Fit Solid Chinos - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2024-02-24T16:28:34.852Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "60",
+      "object_repr": "Men Black Slim Fit Solid Chinos - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2024-02-24T16:28:42.812Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "62",
+      "object_repr": "Men Slim Fit Formal Trousers - M",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2024-02-24T16:28:51.203Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "63",
+      "object_repr": "Men Slim Fit Formal Trousers - L",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2024-02-24T16:28:59.115Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "64",
+      "object_repr": "Men Slim Fit Formal Trousers - XL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2024-02-24T16:34:29.242Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Mast & Harbour Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2024-02-24T16:34:49.170Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Powerlook Blue India Slim Striped Oversized Casual Shirt",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2024-02-24T16:35:01.594Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Stormborn Graphic Printed Oversized Drop Shoulder Sleeves Pure Cotton T-Shirt",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2024-02-24T16:35:15.880Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Mr Bowerbird Tailored Fit Striped Polo Collar Pure Cotton T-Shirt",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2024-02-24T16:35:53.716Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "Max Men Light Fade Clean Look Stretchable Jeans",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2024-02-24T16:36:09.751Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Roadster Men Cargo Jogger Stretchable Jeans",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2024-02-24T16:36:22.056Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "8",
+      "object_repr": "Wrogn Men Black Slim Fit Solid Chinos",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2024-02-24T16:36:38.898Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Louis Philippe Men Slim Fit Formal Trousers",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2024-02-26T16:41:53.129Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Shorts",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2024-02-26T16:47:51.756Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "T-Shirts",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2024-02-26T16:48:25.532Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Shirts",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2024-02-26T16:48:51.928Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Jeans",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2024-02-26T16:49:28.553Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Pants",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2024-02-27T04:38:18.524Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "8",
+      "object_repr": "Plaavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2024-02-27T04:38:18.530Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Maavila2",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2024-02-27T12:07:28.651Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "2",
+      "object_repr": "melvinthankachan123@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Last name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2024-02-28T21:07:17.045Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "binu@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Approved\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2024-02-28T21:07:23.381Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "binu@gmail.com",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2024-02-28T21:07:27.417Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "polvin@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Approved\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2024-03-01T09:17:12.863Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2024-03-01T09:17:32.803Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2024-03-01T09:17:53.484Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Mrp\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2024-03-01T09:30:10.631Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "9",
+      "object_repr": "Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2024-03-04T16:50:33.850Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "106",
+      "object_repr": "Image of Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2024-03-04T16:55:06.653Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "107",
+      "object_repr": "Image of Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2024-03-04T17:05:05.732Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "108",
+      "object_repr": "Image of Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2024-03-04T17:19:55.020Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Melvin Me",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2024-04-02T15:31:40.027Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "Test Brand Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2024-04-04T05:17:35.357Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "3",
+      "object_repr": "2 of Tailored Fit Striped Polo Collar Pure Cotton T-Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2024-04-04T05:17:35.363Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "2",
+      "object_repr": "15 of Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2024-04-04T05:17:35.367Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "1 of Blue India Slim Striped Oversized Casual Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2024-04-06T20:31:12.858Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Binu's Cart",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2024-04-08T08:05:11.619Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "Order 4",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2024-04-10T14:10:49.346Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "3",
+      "object_repr": "Order 3",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2024-04-11T07:22:49.098Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "9",
+      "object_repr": "Melvin Thankachan, gdfgs, Sreemoolanagaram, Ernakulam, Andaman and Nicobar Islands",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2024-04-11T07:22:52.168Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "Polvin, New york, Kaipra, Eranakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2024-04-11T07:22:54.529Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "Review, Apartment, Kochi, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2024-04-11T07:22:57.407Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "Thankachan, Moonjely, Kaipra, Thrissoor, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2024-04-11T07:22:59.695Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "Thankachan, Moonjely, Kaipra, Thrissoor, Kerala",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2024-04-11T07:23:02.464Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Binu Thankachan, Cheerankan House, Alangad, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2024-04-11T07:23:04.967Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Melvin M T, Moonjely, Sreemoolanagaram, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Building\", \"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2024-04-11T07:28:11.675Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "9",
+      "object_repr": "Melvin Thankachan, gdfgs, Sreemoolanagaram, Ernakulam, Andaman and Nicobar Islands",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2024-04-11T07:28:14.639Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "Polvin, New york, Kaipra, Eranakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2024-04-11T07:28:17.833Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "Review, Apartment, Kochi, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2024-04-11T07:28:20.623Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "Review, Apartment, Kochi, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2024-04-11T07:28:22.903Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "Thankachan, Moonjely, Kaipra, Thrissoor, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2024-04-11T07:28:25.240Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Binu Thankachan, Cheerankan House, Alangad, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2024-04-11T07:28:26.977Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Melvin M T, Moonjely, Sreemoolanagaram, Ernakulam, Kerala",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is default\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.739Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "9",
+      "object_repr": "Melvin Thankachan, gdfgs, Sreemoolanagaram, Ernakulam, Andaman and Nicobar Islands",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.747Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "Polvin, New york, Kaipra, Eranakulam, Kerala",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.751Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "Review, Apartment, Kochi, Ernakulam, Kerala",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.756Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "Thankachan, Moonjely, Kaipra, Thrissoor, Kerala",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.760Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Binu Thankachan, Cheerankan House, Alangad, Ernakulam, Kerala",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2024-04-11T07:55:51.765Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Melvin M T, Moonjely, Sreemoolanagaram, Ernakulam, Kerala",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2024-04-14T23:40:02.806Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "Order 4",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2024-04-14T23:40:02.813Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "3",
+      "object_repr": "Order 3",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2024-04-14T23:40:02.818Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "2",
+      "object_repr": "Order 2",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2024-04-14T23:40:02.826Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "Order 1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2024-04-15T03:44:44.083Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "9",
+      "object_repr": "Order 9",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2024-04-15T03:44:44.088Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "8",
+      "object_repr": "Order 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2024-04-15T03:44:44.095Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "7",
+      "object_repr": "Order 7",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2024-04-15T03:44:44.100Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "6",
+      "object_repr": "Order 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2024-04-15T03:44:44.104Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "5",
+      "object_repr": "Order 5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2024-04-15T03:44:52.380Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Binu's Cart",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2024-04-15T04:26:04.615Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2024-04-15T04:26:19.218Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+      "action_time": "2024-04-25T07:42:40.099Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "Binu's favourite Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+      "action_time": "2024-04-25T07:42:40.114Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "Binu's favourite Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+      "action_time": "2024-05-05T08:50:55.878Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+      "action_time": "2024-05-05T08:51:41.830Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+      "action_time": "2024-05-05T08:52:14.062Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+      "action_time": "2024-05-05T08:52:20.138Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is deleted\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+      "action_time": "2024-05-05T08:52:25.693Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Maavu Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+      "action_time": "2024-05-05T08:53:32.399Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Maavila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+      "action_time": "2024-05-08T02:57:47.182Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "10",
+      "object_repr": "Order 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+      "action_time": "2024-05-08T02:57:52.936Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "11",
+      "object_repr": "Order 11",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+      "action_time": "2024-05-08T02:57:57.936Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "12",
+      "object_repr": "Order 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+      "action_time": "2024-05-08T02:58:00.806Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "14",
+      "object_repr": "Order 14",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+      "action_time": "2024-05-08T02:58:15.272Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "15",
+      "object_repr": "Order 15",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+      "action_time": "2024-05-08T02:58:27.680Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "16",
+      "object_repr": "Order 16",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Payment method\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+      "action_time": "2024-05-08T02:58:32.376Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "17",
+      "object_repr": "Order 17",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+      "action_time": "2024-05-08T02:58:37.405Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "18",
+      "object_repr": "Order 18",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Payment method\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+      "action_time": "2024-05-08T02:58:49.711Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "19",
+      "object_repr": "Order 19",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\", \"Payment method\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+      "action_time": "2024-05-08T02:59:08.046Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "13",
+      "object_repr": "Order 13",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Address\", \"Is paid\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+      "action_time": "2024-05-15T03:21:01.403Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Test Brand Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+      "action_time": "2024-05-15T03:22:12.915Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Test Brand Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+      "action_time": "2024-05-15T03:31:26.688Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "14",
+      "object_repr": "Test Brand Test Product",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.216Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "51",
+      "object_repr": "Order 51",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.224Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "50",
+      "object_repr": "Order 50",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.228Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "49",
+      "object_repr": "Order 49",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.234Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "48",
+      "object_repr": "Order 48",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.239Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "47",
+      "object_repr": "Order 47",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.243Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "46",
+      "object_repr": "Order 46",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.248Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "45",
+      "object_repr": "Order 45",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.253Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "44",
+      "object_repr": "Order 44",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.257Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "43",
+      "object_repr": "Order 43",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.264Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "42",
+      "object_repr": "Order 42",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.269Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "41",
+      "object_repr": "Order 41",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 146,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.274Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "40",
+      "object_repr": "Order 40",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 147,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.279Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "39",
+      "object_repr": "Order 39",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 148,
+    "fields": {
+      "action_time": "2024-05-22T02:24:22.284Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "38",
+      "object_repr": "Order 38",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add category",
+      "content_type": 6,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change category",
+      "content_type": 6,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete category",
+      "content_type": 6,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view category",
+      "content_type": 6,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add product",
+      "content_type": 7,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change product",
+      "content_type": 7,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete product",
+      "content_type": 7,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view product",
+      "content_type": 7,
+      "codename": "view_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add inventory",
+      "content_type": 8,
+      "codename": "add_inventory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change inventory",
+      "content_type": 8,
+      "codename": "change_inventory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete inventory",
+      "content_type": 8,
+      "codename": "delete_inventory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view inventory",
+      "content_type": 8,
+      "codename": "view_inventory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add product image",
+      "content_type": 9,
+      "codename": "add_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change product image",
+      "content_type": 9,
+      "codename": "change_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete product image",
+      "content_type": 9,
+      "codename": "delete_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view product image",
+      "content_type": 9,
+      "codename": "view_productimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add account",
+      "content_type": 10,
+      "codename": "add_account"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change account",
+      "content_type": 10,
+      "codename": "change_account"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete account",
+      "content_type": 10,
+      "codename": "delete_account"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view account",
+      "content_type": 10,
+      "codename": "view_account"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add customer",
+      "content_type": 11,
+      "codename": "add_customer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change customer",
+      "content_type": 11,
+      "codename": "change_customer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete customer",
+      "content_type": 11,
+      "codename": "delete_customer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view customer",
+      "content_type": 11,
+      "codename": "view_customer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add vendor",
+      "content_type": 12,
+      "codename": "add_vendor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change vendor",
+      "content_type": 12,
+      "codename": "change_vendor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete vendor",
+      "content_type": 12,
+      "codename": "delete_vendor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view vendor",
+      "content_type": 12,
+      "codename": "view_vendor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add cart item",
+      "content_type": 13,
+      "codename": "add_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change cart item",
+      "content_type": 13,
+      "codename": "change_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete cart item",
+      "content_type": 13,
+      "codename": "delete_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view cart item",
+      "content_type": 13,
+      "codename": "view_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add cart",
+      "content_type": 14,
+      "codename": "add_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change cart",
+      "content_type": 14,
+      "codename": "change_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete cart",
+      "content_type": 14,
+      "codename": "delete_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view cart",
+      "content_type": 14,
+      "codename": "view_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add address",
+      "content_type": 15,
+      "codename": "add_address"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change address",
+      "content_type": 15,
+      "codename": "change_address"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete address",
+      "content_type": 15,
+      "codename": "delete_address"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view address",
+      "content_type": 15,
+      "codename": "view_address"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add order item",
+      "content_type": 16,
+      "codename": "add_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change order item",
+      "content_type": 16,
+      "codename": "change_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete order item",
+      "content_type": 16,
+      "codename": "delete_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view order item",
+      "content_type": 16,
+      "codename": "view_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add order",
+      "content_type": 17,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change order",
+      "content_type": 17,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete order",
+      "content_type": 17,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view order",
+      "content_type": 17,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add favourite item",
+      "content_type": 18,
+      "codename": "add_favouriteitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change favourite item",
+      "content_type": 18,
+      "codename": "change_favouriteitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete favourite item",
+      "content_type": 18,
+      "codename": "delete_favouriteitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view favourite item",
+      "content_type": 18,
+      "codename": "view_favouriteitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add coupon",
+      "content_type": 19,
+      "codename": "add_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change coupon",
+      "content_type": 19,
+      "codename": "change_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete coupon",
+      "content_type": 19,
+      "codename": "delete_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view coupon",
+      "content_type": 19,
+      "codename": "view_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add wallet",
+      "content_type": 20,
+      "codename": "add_wallet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change wallet",
+      "content_type": 20,
+      "codename": "change_wallet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete wallet",
+      "content_type": 20,
+      "codename": "delete_wallet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view wallet",
+      "content_type": 20,
+      "codename": "view_wallet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add category offer",
+      "content_type": 21,
+      "codename": "add_categoryoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change category offer",
+      "content_type": 21,
+      "codename": "change_categoryoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete category offer",
+      "content_type": 21,
+      "codename": "delete_categoryoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view category offer",
+      "content_type": 21,
+      "codename": "view_categoryoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add customer coupon",
+      "content_type": 22,
+      "codename": "add_customercoupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change customer coupon",
+      "content_type": 22,
+      "codename": "change_customercoupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete customer coupon",
+      "content_type": 22,
+      "codename": "delete_customercoupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view customer coupon",
+      "content_type": 22,
+      "codename": "view_customercoupon"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "product", "model": "category" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "product", "model": "product" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "product", "model": "inventory" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": { "app_label": "product", "model": "productimage" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": { "app_label": "accounts", "model": "account" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": { "app_label": "accounts", "model": "customer" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": { "app_label": "accounts", "model": "vendor" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": { "app_label": "customer", "model": "cartitem" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": { "app_label": "customer", "model": "cart" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": { "app_label": "customer", "model": "address" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": { "app_label": "customer", "model": "orderitem" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": { "app_label": "customer", "model": "order" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": { "app_label": "customer", "model": "favouriteitem" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": { "app_label": "muladmin", "model": "coupon" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": { "app_label": "customer", "model": "wallet" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": { "app_label": "muladmin", "model": "categoryoffer" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": { "app_label": "muladmin", "model": "customercoupon" }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "2zuxwbjlh29tbhpaedavbmeu12vlef19",
+    "fields": {
+      "session_data": ".eJxVjEEKwyAQAP_iuYi6utEee88bZHWlpi0GYnIq_XsRcmivM8O8RaRjr_HoZYsLi6vQ4vLLEuVnaUPwg9p9lXlt-7YkORJ52i7nlcvrdrZ_g0q9jq0vQYMDcAwA6Bk8JmUpq2SsUpbRJrLZ2AknU4zRUFROFAIjOiYtPl-rojbH:1rdKLF:NnL3cSmOaTk7xvn93pU0RMRIrjnAH8JBbDPZXsOboAI",
+      "expire_date": "2024-03-08T01:27:09.576Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "3kilmeznwlcwhhbuij7fy0rfsvgfd6oa",
+    "fields": {
+      "session_data": "eyJuZXh0X3VybCI6bnVsbH0:1ruWai:8Q8K0q0meoqouZ7FjqoxwKQlKqw-69NaKn5XJbXpnxI",
+      "expire_date": "2024-04-24T11:58:12.194Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "4ytr4ct8nrqpfvk914dvi4jzm1gvrwi6",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyDAzsVUCprQr492VpAvd_vfy8l8q4L7NYa-yhoXVWXXq9LtFpIfkBviO-VY0lbytS9RN0Qet-lpY0uVw_wIz1rllR5k66AF6BgA_Mow-GodkonXGOPYuoiPrBj9YsbYDMRRxmtj7nrG9qpKEtqXkbw5TClT2Z8lVvT-ywkAa:1sA4nU:enpWPT5TaHnIn3uPTwjV0UINrGV-LytLppK4AVDoTV4",
+      "expire_date": "2024-06-06T09:31:40.605Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "5n6h5z45j5pgc0pharf6mevui1bc3v4k",
+    "fields": {
+      "session_data": "eyJ0YXJnZXRfdXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2N1c3RvbWVyL2NhcnQifQ:1ruWfO:FnqaovObnfftLXmQAIyiqClVAi5Ef5WM9UDtp-pQH3o",
+      "expire_date": "2024-04-24T12:03:02.661Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "86zicude72fn4no3qonpkv5pchugzonv",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYoap45dluw5QxUnLi2gROpnhbg7VOoCtm9m3sv0cVvHflt07qdszsab0-8mMT207CDfY7lVm2pZ50nsrtiDLvZasz4vh_t3MMZl_NbRhw5bP-DQKrnABJBQMrgOgDg6YULBxmPXgoSgTMqNaEOqjCGzeX8AtmY20g:1rwFO4:isKJs_cb-XlzuzrqEdsVEJxlwTNlfa2IgRANmRVbWKs",
+      "expire_date": "2024-04-29T06:00:16.126Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "94gj8tvwyeu4ban84rbzgmg5g06jg974",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1s4Zsq:ZPwCuPcrV3uUuiLCV2fYGnRkzoPzS0FP6jU4gd4jcs0",
+      "expire_date": "2024-05-22T05:30:28.787Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "adjzlkl9uqif04ytytuyrp0cugl53nwf",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyDAzsdUKSaEr492VpAvd_vfy8l8q4F7nsBfZwsLqrDp1-t0i0kNSA3zHdMuacqrbEnVT9EGLvmaW9XK4f4EZy9yyo0wd9AA9A4AfGUYfjUMy0TpjHHsX0ZF1gx-sWNuBGIo4Tex9z9heFVmF6pLTN0d7qfmp3h92Uj4W:1s4ZuC:KaAL-oJXplYwMYOCEYU2oqIEroHAeYPUDSoPj0AU8kI",
+      "expire_date": "2024-05-22T05:31:52.481Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "e9bfj7iglw4etzro01yvptlwsx7ztd8m",
+    "fields": {
+      "session_data": ".eJxVjEEKwyAQAP_iuYi6utEee88bZHWlpi0GYnIq_XsRcmivM8O8RaRjr_HoZYsLi6vQ4vLLEuVnaUPwg9p9lXlt-7YkORJ52i7nlcvrdrZ_g0q9jq0vQYMDcAwA6Bk8JmUpq2SsUpbRJrLZ2AknU4zRUFROFAIjOiYtPl-rojbH:1rztig:K7Lv0TyyhumoQxeqDvSq4gKk4cBVwHwtvULIlfrdD8o",
+      "expire_date": "2024-05-09T07:40:38.283Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "egjydu3zuc43gudb0x0hlaixt40f8jqq",
+    "fields": {
+      "session_data": ".eJxVjDEOAiEURO9CbQh8IIClvWcgHz7IqoFk2a2Md1eSLbSZYt6bebGA-1bDPvIaFmJnptjpt4uYHrlNQHdst85Tb9u6RD4VftDBr53y83K4fwcVR51rX0o0mTQoIaUt1nlXgAT4hJq-qaLLiUAbLxO4SEIqZ7zQIEWxqNn7A-lHN3U:1rxACV:Zfzb2Gs60ITu6SFm1arXzmXLvQtUZmTtVEU8yJznueM",
+      "expire_date": "2024-05-01T18:40:07.980Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "fhc1g7jp5k98vj0852jfn6fjpu5mk1ur",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUEpduu8ZmoGZWJRAUujKeHcl6UK3_728_JdY8WjbelTe10jiKgZx-d08hifnDuiB-V5kKLnt0cuuyJNWuRTidDvdv8CGdetZx_MAI8BIAGAdgbNeGQzKa6OUIWs8mqDNZCfNWg_AKnicZ7J2JOyvKicOLZb8zWFK4v0BvEQ8tA:1rwFOY:FBcwU0vIzuWMERTM3z7y2H6Fwenf0alHoR54Ua6Saz4",
+      "expire_date": "2024-04-29T06:00:46.688Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "g0332hqmq2j8dtrbhncuw31e7i8l5poy",
+    "fields": {
+      "session_data": ".eJxVjEEKwyAQAP_iuYi6utEee88bZHWlpi0GYnIq_XsRcmivM8O8RaRjr_HoZYsLi6vQ4vLLEuVnaUPwg9p9lXlt-7YkORJ52i7nlcvrdrZ_g0q9jq0vQYMDcAwA6Bk8JmUpq2SsUpbRJrLZ2AknU4zRUFROFAIjOiYtPl-rojbH:1s9bLY:SCV9M1mnKiKABJfbbSZZV-B03ynp2TkA6J7bkoaEUJM",
+      "expire_date": "2024-06-05T02:04:52.151Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "gs6cuilz2c7gagz4ojhn7s77lohuz6cu",
+    "fields": {
+      "session_data": "e30:1ruWdL:00lNkG2foigg9-Y_UyechFRYMjttnbTb9WZRPEch_AY",
+      "expire_date": "2024-04-24T12:00:55.300Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "i5s61nanp5vizizfsc0rm09umzjqstmf",
+    "fields": {
+      "session_data": ".eJxVzMEOgjAMgOF32dksQxCYJ-PdZ1i6tgI6NsJGjDG-uyPhIMf2-9uP4BEGJ84CA9KLxzddHMTEcnTiIBLMHSczQcdrssQURp6NC93gMwNiWHwy6T39exYDS-rNEnM8UKai2i8t4JP9KvQA3wWJwad5sHJN5KZR3gKxu27t7kEPsc_XVqNFqwhPR1uQUrUGYKyY6zKP1d2qpqECkOo7tI1WWtdlq9o8w6ksm0J8fzZhV2Y:1sCQpl:pGeRSSmX_AMIYbHQTDdhRgtSQH8JYh7swfJQvNlfKG4",
+      "expire_date": "2024-06-12T21:27:45.941Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "kw3h5ssbv6lki3b016zs6zeryh8gyihe",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1rhRLG:XtoVL_nkL8u6MD2TdXIIDeTyWHrDKG0Ps7kpsF7V41M",
+      "expire_date": "2024-03-19T09:44:10.661Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "laket2w7kcphpr9g825g29rasm7dgqo7",
+    "fields": {
+      "session_data": "eyJuZXh0X3VybCI6bnVsbH0:1ruWbx:JRihulSO8RWxFJh0oUnLr8y_riDG1zuCrdQ8hTJukzw",
+      "expire_date": "2024-04-24T11:59:29.309Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "n7kdmy4hkk3buqu62da84wc19fyo623n",
+    "fields": {
+      "session_data": ".eJxVjDEOAiEURO9CbQh8IIClvWcgHz7IqoFk2a2Md1eSLbSZYt6bebGA-1bDPvIaFmJnptjpt4uYHrlNQHdst85Tb9u6RD4VftDBr53y83K4fwcVR51rX0o0mTQoIaUt1nlXgAT4hJq-qaLLiUAbLxO4SEIqZ7zQIEWxqNn7A-lHN3U:1rxmhe:Zezcy6BfcJcrZWm0j58uSa72mRwT-GLZFaArQUZh26Y",
+      "expire_date": "2024-05-03T11:46:50.824Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "qnfx5y6wnpgw6crvyk3i3u7pba5nxxsy",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyDAzsVUCprQr492VpAvd_vfy8l8q4L7NYa-yhoXVWXXq9LtFpIfkBviO-VY0lbytS9RN0Qet-lpY0uVw_wIz1rllR5k66AF6BgA_Mow-GodkonXGOPYuoiPrBj9YsbYDMRRxmtj7nrG9qpKEtqXkbw5TClT2Z8lVvT-ywkAa:1sA6vl:9bC-053S1iIBiwXKTLctifwQKOMcPrU3PSLZZm4m2Rc",
+      "expire_date": "2024-06-06T11:48:21.573Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "twis6y7z96mql95qm57kzxrkp0djnbtz",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyMBMBG0gKXRhjHdXki50-9_Ly38Jh3uLbq-8uUTiLAZx-t08hgfnDuiO-VZkKLltycuuyINWeS3E6-Vw_wIRa-zZmZcBRoCRAMDOBLP1ymBQXhulDFnj0QRtJjtp1noAVsHjspC1I2F_VXnl0FLJ31wrhE_x_gA32z2c:1rzxej:xkABmQU2P-__JUY40hXi6cVI1OsM6cYqIfHnWLWHLp8",
+      "expire_date": "2024-05-09T11:52:49.732Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "uavocolko1b9yw3fx9ntre6oouflt6oq",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1s75Mq:YCPkVK2t4f1y9n3ImvWJOdseLN2kjC0YCOZgm6bV1JQ",
+      "expire_date": "2024-05-29T03:31:48.437Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "uzzv87l50i5x33ch1m58r1hki4f075du",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1sA3FE:Yd7fXw1MuTGnyCdxQz6fZ5GIjdCs3XCW3OsJpczpy-o",
+      "expire_date": "2024-06-06T07:52:12.997Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "v9xvck5ij2ubidypwhpozos0k6bhxcio",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1rzxZt:SGE3TFgFkcC-eME-SS_shXoWm6Lo3dgEBPSc4Cp0SYw",
+      "expire_date": "2024-05-09T11:47:49.105Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "vcziaeyrxoxbzkyfhid478fvlk8a5t22",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyDAzsVUCprQr492VpAvd_vfy8l8q4L7NYa-yhoXVWXXq9LtFpIfkBviO-VY0lbytS9RN0Qet-lpY0uVw_wIz1rllR5k66AF6BgA_Mow-GodkonXGOPYuoiPrBj9YsbYDMRRxmtj7nrG9qpKEtqXkbw5TClT2Z8lVvT-ywkAa:1s6ptW:6_ILS_V1mjwkyPpz5f5gEVwDqLvesPHcPleRLo6XYmw",
+      "expire_date": "2024-05-28T11:00:30.557Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "vu3e6geeib4y6hizft5isbm083l80e90",
+    "fields": {
+      "session_data": ".eJxVjkEOwiAQRe_C2hDKUNq6dO8ZyDAzsVUCprQr492VpAvd_vfy8l8q4L7NYa-yhoXVWXXq9LtFpIfkBviO-VY0lbytS9RN0Qet-lpY0uVw_wIz1rllR5k66AF6BgA_Mow-GodkonXGOPYuoiPrBj9YsbYDMRRxmtj7nrG9qpKEtqXkbw5TClT2Z8lVvT-ywkAa:1s79Bx:TIHFNMeK5pXLiB-H_Wb-CK9AoduNv16dnaKRuj2CnJM",
+      "expire_date": "2024-05-29T07:36:49.549Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "x3lsnl6ygu43emiqyulqfssgiufxlnxn",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSEFZni4dO83EB6DVA0kpV0Z_12bdKHbe865L-bDtla_DVr8nNmZSXb63WJID2o7yPfQbp2n3tZljnxX-EEHv_ZMz8vh_h3UMOq3RpOyVaQLSCmiMjQFoCIVksgxUcyA5FAU1CAsEkQXNFhjbQKcnDXs_QHqWjeN:1sA3Dc:GACdDIkLZGSlCHDJn_E8s5HIN4HYZ04j9SZ6LOzARIc",
+      "expire_date": "2024-06-06T07:50:32.686Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "y87kpxi6wnyvqdi31i2raeaojxfevc6a",
+    "fields": {
+      "session_data": "eyJuZXh0X3VybCI6bnVsbH0:1ruWYL:17vcyDYC8pCwvmbFn12bPcJSB_BY_ZBxwKXaZdS4cWU",
+      "expire_date": "2024-04-24T11:55:45.738Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "zpxf7ofj6u0m7pk99ytr83tuyxch8k67",
+    "fields": {
+      "session_data": "eyJuZXh0X3VybCI6bnVsbH0:1ruWPs:Yjsul98Ogaw-k28U7MUD1UV6z1Le5jMySRbBSlbx03k",
+      "expire_date": "2024-04-24T11:47:00.634Z"
+    }
+  },
+  {
+    "model": "customer.cart",
+    "pk": 3,
+    "fields": {
+      "customer": 3,
+      "created_at": "2024-04-15T03:45:36.425Z",
+      "updated_at": "2024-04-15T03:45:36.425Z"
+    }
+  },
+  {
+    "model": "customer.cart",
+    "pk": 4,
+    "fields": {
+      "customer": 12,
+      "created_at": "2024-05-16T09:27:23.188Z",
+      "updated_at": "2024-05-16T09:27:23.188Z"
+    }
+  },
+  {
+    "model": "customer.cartitem",
+    "pk": 74,
+    "fields": { "cart": 4, "product": 4, "inventory": 41, "quantity": 1 }
+  },
+  {
+    "model": "customer.cartitem",
+    "pk": 82,
+    "fields": { "cart": 3, "product": 2, "inventory": 34, "quantity": 1 }
+  },
+  {
+    "model": "customer.address",
+    "pk": 14,
+    "fields": {
+      "customer": 3,
+      "name": "Melvin M T",
+      "mobile": 1234686344,
+      "pincode": 683580,
+      "state": "Kerala",
+      "building": " Moonjely House",
+      "street": "Sreemoolanagaram",
+      "city": "Ernakulam",
+      "district": "Ernakulam",
+      "address_text": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 1234686344",
+      "is_default": false
+    }
+  },
+  {
+    "model": "customer.address",
+    "pk": 15,
+    "fields": {
+      "customer": 3,
+      "name": "Binu Thankachan",
+      "mobile": 1234567890,
+      "pincode": 683580,
+      "state": "Kerala",
+      "building": "Cheerankan House",
+      "street": "Alangad",
+      "city": "Aluva",
+      "district": "Eranakulam",
+      "address_text": "Binu Thankachan\nCheerankan House\nAlangad\nAluva\nEranakulam, Kerala\nPincode - 683580\nMobile: 1234567890",
+      "is_default": false
+    }
+  },
+  {
+    "model": "customer.address",
+    "pk": 16,
+    "fields": {
+      "customer": 3,
+      "name": "Polvin",
+      "mobile": 1234567890,
+      "pincode": 123456,
+      "state": "Andaman And Nicobar Islands",
+      "building": "Building",
+      "street": "Niagra",
+      "city": "Oman",
+      "district": "Ontario",
+      "address_text": "Polvin\nBuilding\nNiagra\nOman\nOntario, Andaman And Nicobar Islands\nPincode - 123456\nMobile: 1234567890",
+      "is_default": false
+    }
+  },
+  {
+    "model": "customer.address",
+    "pk": 18,
+    "fields": {
+      "customer": 3,
+      "name": "Test Name",
+      "mobile": 1234567890,
+      "pincode": 123456,
+      "state": "Andaman And Nicobar Islands",
+      "building": "Test Building",
+      "street": "Test Street",
+      "city": "Test City",
+      "district": "Test District",
+      "address_text": "Test Name\nTest Building\nTest Street\nTest City\nTest District, Andaman And Nicobar Islands\n123456\nMobile: 1234567890",
+      "is_default": true
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 10,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\r\nTest Building\r\nTest Street\r\nTest City\r\nTest District, Kerala\r\n123456\r\nMobile: 1234567890",
+      "total_amount": 5192,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-15T03:45:41.751Z",
+      "updated_at": "2024-05-08T02:57:47.178Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 11,
+    "fields": {
+      "customer": 3,
+      "address": "Binu Thankachan\r\nCheerankan House\r\nAlangad\r\nAluva\r\nEranakulam, Kerala\r\nPincode - 683580\r\nMobile: 1234567890",
+      "total_amount": 6995,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-15T04:55:51.353Z",
+      "updated_at": "2024-05-08T02:57:52.932Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 12,
+    "fields": {
+      "customer": 3,
+      "address": "Binu Thankachan\r\nCheerankan House\r\nAlangad\r\nAluva\r\nEranakulam, Kerala\r\nPincode - 683580\r\nMobile: 1234567890",
+      "total_amount": 7000,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-15T05:47:22.752Z",
+      "updated_at": "2024-05-08T02:57:57.932Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 13,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\r\nMoonjely House\r\nSreemoolanagaram\r\nErnakulam, Kerala\r\nPincode - 683580\r\nMobile: 8289991281",
+      "total_amount": 2000,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-15T05:48:43.443Z",
+      "updated_at": "2024-05-08T02:59:08.042Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 14,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\r\nTest Building\r\nTest Street\r\nTest City\r\nTest District, Kerala\r\n123456\r\nMobile: 1234567890",
+      "total_amount": 11645,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "cancelled",
+      "created_at": "2024-04-25T00:18:15.414Z",
+      "updated_at": "2024-05-08T04:52:08.600Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 15,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\r\nTest Building\r\nTest Street\r\nTest City\r\nTest District, Kerala\r\n123456\r\nMobile: 1234567890",
+      "total_amount": 12989,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-25T00:20:41.188Z",
+      "updated_at": "2024-05-08T02:58:15.268Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 16,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\r\nTest Building\r\nTest Street\r\nTest City\r\nTest District, Kerala\r\n123456\r\nMobile: 1234567890",
+      "total_amount": 3697,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-04-25T11:47:02.644Z",
+      "updated_at": "2024-05-08T02:58:27.676Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 17,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\r\nTest Building\r\nTest Street\r\nTest City\r\nTest District, Kerala\r\n123456\r\nMobile: 1234567890",
+      "total_amount": 4196,
+      "discount": 0,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-04-25T11:51:18.900Z",
+      "updated_at": "2024-05-08T02:58:32.372Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 18,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\r\n Moonjely House\r\nSreemoolanagaram\r\nErnakulam\r\nErnakulam, Kerala\r\nPincode - 683580\r\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-05-07T23:03:31.881Z",
+      "updated_at": "2024-05-08T02:58:37.404Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 19,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\r\n Moonjely House\r\nSreemoolanagaram\r\nErnakulam\r\nErnakulam, Kerala\r\nPincode - 683580\r\nMobile: 8289991281",
+      "total_amount": 549,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "cod",
+      "status": "cancelled",
+      "created_at": "2024-05-08T00:29:08.144Z",
+      "updated_at": "2024-05-08T05:01:18.592Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 20,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 999,
+      "discount": 100,
+      "offer": null,
+      "coupon": 3,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-08T03:18:59.363Z",
+      "updated_at": "2024-05-08T03:27:15.721Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 21,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 999,
+      "discount": 100,
+      "offer": null,
+      "coupon": 3,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-05-08T03:30:52.575Z",
+      "updated_at": "2024-05-08T03:30:52.603Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 22,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-05-08T03:32:52.560Z",
+      "updated_at": "2024-05-08T03:32:52.587Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 23,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 999,
+      "discount": 100,
+      "offer": null,
+      "coupon": 3,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-05-08T03:33:21.415Z",
+      "updated_at": "2024-05-08T03:33:21.438Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 24,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 899,
+      "discount": 100,
+      "offer": null,
+      "coupon": 3,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-08T03:36:51.829Z",
+      "updated_at": "2024-05-08T04:11:21.251Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 25,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "",
+      "status": "pending",
+      "created_at": "2024-05-08T05:13:24.796Z",
+      "updated_at": "2024-05-08T05:13:24.796Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 26,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "",
+      "status": "pending",
+      "created_at": "2024-05-08T05:13:32.764Z",
+      "updated_at": "2024-05-08T05:13:32.764Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 27,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "",
+      "status": "pending",
+      "created_at": "2024-05-08T05:16:10.542Z",
+      "updated_at": "2024-05-08T05:16:10.542Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 28,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 500,
+      "discount": 500,
+      "offer": null,
+      "coupon": null,
+      "is_paid": false,
+      "payment_method": "cod",
+      "status": "pending",
+      "created_at": "2024-05-08T05:16:58.477Z",
+      "updated_at": "2024-05-08T05:16:58.536Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 29,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1000,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-08T05:18:45.288Z",
+      "updated_at": "2024-05-08T05:18:45.349Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 30,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 998,
+      "discount": 100,
+      "offer": null,
+      "coupon": 3,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-14T11:01:20.471Z",
+      "updated_at": "2024-05-14T11:01:20.508Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 31,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 1100,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-14T11:03:07.547Z",
+      "updated_at": "2024-05-14T11:03:07.571Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 32,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 8289991281",
+      "total_amount": 549,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-14T11:05:18.267Z",
+      "updated_at": "2024-05-22T02:17:37.797Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 33,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\nTest Building\nTest Street\nTest City\nTest District, Andaman And Nicobar Islands\n123456\nMobile: 1234567890",
+      "total_amount": 3147,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-15T02:41:21.857Z",
+      "updated_at": "2024-05-15T02:41:21.899Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 34,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 1234686344",
+      "total_amount": 3497,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-15T05:07:26.083Z",
+      "updated_at": "2024-05-15T05:07:26.136Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 35,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\nTest Building\nTest Street\nTest City\nTest District, Andaman And Nicobar Islands\n123456\nMobile: 1234567890",
+      "total_amount": 1837,
+      "discount": 111,
+      "offer": null,
+      "coupon": 5,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-15T06:50:22.444Z",
+      "updated_at": "2024-05-15T06:50:22.495Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 36,
+    "fields": {
+      "customer": 3,
+      "address": "Josewin M T\nCheerankan House\nSreemoolanagaram\nEranakulam, Kerala\n683580\nMobile: 8289991281",
+      "total_amount": 6879,
+      "discount": 111,
+      "offer": null,
+      "coupon": 5,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-15T07:23:36.046Z",
+      "updated_at": "2024-05-15T07:23:36.095Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 37,
+    "fields": {
+      "customer": 3,
+      "address": "Test Name\nTest Building\nTest Street\nTest City\nTest District, Andaman And Nicobar Islands\n123456\nMobile: 1234567890",
+      "total_amount": 549,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-16T09:28:40.084Z",
+      "updated_at": "2024-05-16T09:28:40.114Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 52,
+    "fields": {
+      "customer": 3,
+      "address": "Polvin\nBuilding\nNiagra\nOman\nOntario, Andaman And Nicobar Islands\nPincode - 123456\nMobile: 1234567890",
+      "total_amount": 2547,
+      "discount": null,
+      "offer": null,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-22T02:29:39.490Z",
+      "updated_at": "2024-05-22T02:29:39.549Z"
+    }
+  },
+  {
+    "model": "customer.order",
+    "pk": 53,
+    "fields": {
+      "customer": 3,
+      "address": "Melvin M T\n Moonjely House\nSreemoolanagaram\nErnakulam\nErnakulam, Kerala\nPincode - 683580\nMobile: 1234686344",
+      "total_amount": 5838,
+      "discount": null,
+      "offer": 805,
+      "coupon": null,
+      "is_paid": true,
+      "payment_method": "razorpay",
+      "status": "pending",
+      "created_at": "2024-05-23T08:54:21.891Z",
+      "updated_at": "2024-05-23T08:54:21.955Z"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 26,
+    "fields": {
+      "order": 10,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 8,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 27,
+    "fields": {
+      "order": 11,
+      "product": 8,
+      "inventory": 57,
+      "quantity": 5,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 28,
+    "fields": {
+      "order": 12,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 7,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 29,
+    "fields": {
+      "order": 13,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 4,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 30,
+    "fields": {
+      "order": 14,
+      "product": 2,
+      "inventory": 35,
+      "quantity": 4,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 31,
+    "fields": {
+      "order": 14,
+      "product": 3,
+      "inventory": 39,
+      "quantity": 5,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 32,
+    "fields": {
+      "order": 15,
+      "product": 6,
+      "inventory": 49,
+      "quantity": 4,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 33,
+    "fields": {
+      "order": 15,
+      "product": 7,
+      "inventory": 53,
+      "quantity": 7,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 34,
+    "fields": {
+      "order": 16,
+      "product": 5,
+      "inventory": 47,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 35,
+    "fields": {
+      "order": 16,
+      "product": 3,
+      "inventory": 40,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 36,
+    "fields": {
+      "order": 17,
+      "product": 12,
+      "inventory": 85,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 37,
+    "fields": {
+      "order": 17,
+      "product": 6,
+      "inventory": 49,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 38,
+    "fields": {
+      "order": 18,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 39,
+    "fields": {
+      "order": 19,
+      "product": 4,
+      "inventory": 41,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 40,
+    "fields": {
+      "order": 20,
+      "product": 7,
+      "inventory": 53,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 41,
+    "fields": {
+      "order": 21,
+      "product": 5,
+      "inventory": 45,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 42,
+    "fields": {
+      "order": 22,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 43,
+    "fields": {
+      "order": 23,
+      "product": 5,
+      "inventory": 45,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 44,
+    "fields": {
+      "order": 24,
+      "product": 5,
+      "inventory": 45,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 45,
+    "fields": {
+      "order": 28,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 1,
+      "status": "confirmed"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 46,
+    "fields": {
+      "order": 29,
+      "product": 2,
+      "inventory": 33,
+      "quantity": 1,
+      "status": "confirmed"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 47,
+    "fields": {
+      "order": 30,
+      "product": 4,
+      "inventory": 41,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 48,
+    "fields": {
+      "order": 31,
+      "product": 2,
+      "inventory": 35,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 49,
+    "fields": {
+      "order": 32,
+      "product": 4,
+      "inventory": 41,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 50,
+    "fields": {
+      "order": 33,
+      "product": 7,
+      "inventory": 54,
+      "quantity": 3,
+      "status": "delivered"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 51,
+    "fields": {
+      "order": 34,
+      "product": 7,
+      "inventory": 53,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 52,
+    "fields": {
+      "order": 34,
+      "product": 6,
+      "inventory": 49,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 53,
+    "fields": {
+      "order": 34,
+      "product": 5,
+      "inventory": 45,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 54,
+    "fields": {
+      "order": 35,
+      "product": 3,
+      "inventory": 37,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 55,
+    "fields": {
+      "order": 35,
+      "product": 12,
+      "inventory": 85,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 56,
+    "fields": {
+      "order": 36,
+      "product": 2,
+      "inventory": 34,
+      "quantity": 10,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 57,
+    "fields": {
+      "order": 37,
+      "product": 4,
+      "inventory": 41,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 58,
+    "fields": {
+      "order": 52,
+      "product": 7,
+      "inventory": 53,
+      "quantity": 1,
+      "status": "cancelled"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 59,
+    "fields": {
+      "order": 52,
+      "product": 4,
+      "inventory": 41,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 60,
+    "fields": {
+      "order": 52,
+      "product": 5,
+      "inventory": 45,
+      "quantity": 1,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 61,
+    "fields": {
+      "order": 53,
+      "product": 12,
+      "inventory": 87,
+      "quantity": 3,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 62,
+    "fields": {
+      "order": 53,
+      "product": 3,
+      "inventory": 37,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.orderitem",
+    "pk": 63,
+    "fields": {
+      "order": 53,
+      "product": 7,
+      "inventory": 53,
+      "quantity": 2,
+      "status": "pending"
+    }
+  },
+  {
+    "model": "customer.favouriteitem",
+    "pk": 13,
+    "fields": { "customer": 13, "product": 2 }
+  },
+  {
+    "model": "customer.wallet",
+    "pk": 1,
+    "fields": { "customer": 3, "balance": 11087 }
+  },
+  {
+    "model": "customer.wallet",
+    "pk": 2,
+    "fields": { "customer": 12, "balance": 0 }
+  },
+  {
+    "model": "product.category",
+    "pk": 1,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "Shirts",
+      "image": "images/categories/category_shirts.jpg",
+      "description": "Discover timeless style with our collection of shirts. From classic Oxford shirts to trendy flannels, we offer versatile options for every occasion. Elevate your wardrobe with our selection of high-quality fabrics and tailored fits, perfect for both casual and formal settings. Shop now and redefine your look with our latest shirt designs.",
+      "slug": "shirts"
+    }
+  },
+  {
+    "model": "product.category",
+    "pk": 2,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "Pants",
+      "image": "images/categories/category_pants.jpg",
+      "description": "Elevate your style with our chic selection of pants. From tailored trousers to trendy jeans, find the perfect fit for every occasion. Whether it's casual Fridays or formal affairs, our versatile collection ensures you stay effortlessly fashionable.",
+      "slug": "pants"
+    }
+  },
+  {
+    "model": "product.category",
+    "pk": 3,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "Jeans",
+      "image": "images/categories/category_jeans.jpg",
+      "description": "Discover timeless style with our collection of jeans. Crafted from premium denim, our jeans offer both comfort and durability. From classic cuts to modern designs, find the perfect pair to elevate your everyday look. Whether you're dressing up or keeping it casual, our jeans are a versatile essential for any wardrobe.",
+      "slug": "jeans"
+    }
+  },
+  {
+    "model": "product.category",
+    "pk": 4,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "T-Shirts",
+      "image": "images/categories/category_t-shirts.jpg",
+      "description": "Effortlessly stylish and endlessly versatile, our collection of T-shirts offers comfort and flair for any occasion. From classic crew necks to trendy graphics, find the perfect fit and express your unique style with our range of premium fabrics and eye-catching designs.",
+      "slug": "t-shirts"
+    }
+  },
+  {
+    "model": "product.category",
+    "pk": 6,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "Shorts",
+      "image": "images/categories/Shorts_Pg0m7VX.avif",
+      "description": "Stay cool and stylish with our trendy shorts collection! Perfect for sunny days or casual outings, our shorts offer comfort and versatility. From classic denim to sporty designs, find your perfect pair and elevate your summer wardrobe effortlessly.",
+      "slug": "shorts"
+    }
+  },
+  {
+    "model": "product.category",
+    "pk": 8,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "name": "Party Wear",
+      "image": "images/categories/png.png",
+      "description": "party",
+      "slug": "party-wear"
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 2,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Mast & Harbour",
+      "name": "Men Blue & White Slim Fit Striped Casual Sustainable Shirt",
+      "description": "Blue and white striped casual shirt, has a button-down collar, long sleeves, curved hem, one patch pocket\r\n\r\nSize & Fit:\r\nSlim fit\r\nThe model (height 6') is wearing a size 40\r\n\r\nMaterial & Care:\r\n100% cotton\r\nMachine-wash\r\n\r\nComplete The Look:\r\nYou'll love the design of this high-fashion Mast & Harbour shirt. You'll love putting this blue piece on with some trainers and chinos for the perfect outdoor activity with your friends.",
+      "vendor": 2,
+      "main_category": 1,
+      "mrp": 1000,
+      "is_available": true,
+      "slug": "mast-harbour-men-blue-white-slim-fit-striped-casual-sustainable-shirt",
+      "created_at": "2024-02-23T16:54:23.897Z",
+      "last_modified_at": "2024-05-23T07:53:38.410Z",
+      "approved": true,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 3,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Powerlook",
+      "name": "Blue India Slim Striped Oversized Casual Shirt",
+      "description": "Blue vertical stripes striped opaque casual shirt ,has a spread collar, button placket, 2 flap pocket, long regular sleeves, curved hem\r\n\r\nSize & Fit:\r\nBrand Fit: India Slim\r\nFit: Oversized\r\nThe model (height 6') is wearing a size 40\r\n\r\nMaterial & Care:\r\n80% Cotton & 20% Polyester\r\nMachine Wash",
+      "vendor": 2,
+      "main_category": 1,
+      "mrp": 2699,
+      "is_available": true,
+      "slug": "powerlook-blue-india-slim-striped-oversized-casual-shirt",
+      "created_at": "2024-02-23T17:08:37.351Z",
+      "last_modified_at": "2024-02-29T04:34:31.311Z",
+      "approved": true,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 4,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Stormborn",
+      "name": "Graphic Printed Oversized Drop Shoulder Sleeves Pure Cotton T-Shirt",
+      "description": "Black T-shirt for men\r\nGraphic printed\r\nRegular length\r\nRound neck\r\nShort, drop shoulder sleeves\r\nKnitted cotton fabric\r\n\r\nSize & Fit:\r\nOversized\r\nThe model (height 6') is wearing a size M\r\n\r\nMaterial & Care:\r\n100% Cotton\r\nMachine Wash",
+      "vendor": 2,
+      "main_category": 4,
+      "mrp": 1299,
+      "is_available": true,
+      "slug": "stormborn-graphic-printed-oversized-drop-shoulder-sleeves-pure-cotton-t-shirt",
+      "created_at": "2024-02-24T10:48:15.093Z",
+      "last_modified_at": "2024-03-23T07:35:53.082Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 5,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Mr Bowerbird",
+      "name": "Tailored Fit Striped Polo Collar Pure Cotton T-Shirt",
+      "description": "Green and grey mΘlange T-shirt for men\r\nStriped\r\nRegular length\r\nPolo collar\r\nShort, regular sleeves\r\nKnitted pure cotton fabric\r\nButton closure\r\nComes with a book\r\n\r\nSize & Fit:\r\nTailored Fit\r\nSize worn by the model: M\r\nChest: 40\"\r\nHeight: 6'2\"\r\n\r\nMaterial & Care:\r\nPure cotton\r\nMachine wash",
+      "vendor": 2,
+      "main_category": 4,
+      "mrp": 1999,
+      "is_available": true,
+      "slug": "mr-bowerbird-tailored-fit-striped-polo-collar-pure-cotton-t-shirt",
+      "created_at": "2024-02-24T10:55:15.334Z",
+      "last_modified_at": "2024-03-23T07:35:53.086Z",
+      "approved": true,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 6,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Max",
+      "name": "Men Light Fade Clean Look Stretchable Jeans",
+      "description": "Medium shade, light fade blue jeans\r\nRegular fit, mid-rise\r\nClean look\r\nStretchable\r\n5 pocket\r\nLength: regular\r\n\r\nSize & Fit:\r\nFit: Regular Fit\r\nStretchable\r\nThe model (height 6') is wearing a size 32\r\n\r\nMaterial & Care:\r\nCotton, Polyester & Elastane\r\nMachine Wash",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 2699,
+      "is_available": true,
+      "slug": "max-men-light-fade-clean-look-stretchable-jeans",
+      "created_at": "2024-02-24T11:00:04.570Z",
+      "last_modified_at": "2024-02-28T20:16:38.588Z",
+      "approved": true,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 7,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Roadster",
+      "name": "Men Cargo Jogger Stretchable Jeans",
+      "description": "Light shade, blue jeans\r\nJogger, mid-rise\r\nClean look\r\nStretchable\r\n6 pocket\r\nLength: regular\r\n\r\nSize & Fit:\r\nJogger Fit\r\nStretchable\r\nSize worn by the model: 32\r\nWaist: 32\"\r\nHips: 40\"\r\nHeight: 6'2\"\r\n\r\nMaterial & Care:\r\n74% Cotton , 25% Polyester , 1% Elastane\r\nMachine Wash",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 2099,
+      "is_available": true,
+      "slug": "roadster-men-cargo-jogger-stretchable-jeans",
+      "created_at": "2024-02-24T11:05:29.984Z",
+      "last_modified_at": "2024-02-28T20:16:26.120Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 8,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Wrogn",
+      "name": "Men Black Slim Fit Solid Chinos",
+      "description": "Black solid mid-rise trousers, button closure, and 4 pockets\r\n\r\nSize & Fit:\r\nSlim fit\r\nThe model (height 6') is wearing a size 32\r\n\r\nMaterial & Care:\r\n98% cotton and 2% elastane\r\nMachine-wash\r\n\r\nComplete The Look:\r\nRevamp your year-round style with these trendy WROGN chino trousers. When you need a semi-formal event outfit, style this black pair with a button-down shirt, a fashionable tie, and Oxfords.",
+      "vendor": 2,
+      "main_category": 2,
+      "mrp": 2499,
+      "is_available": true,
+      "slug": "wrogn-men-black-slim-fit-solid-chinos",
+      "created_at": "2024-02-24T11:14:22.166Z",
+      "last_modified_at": "2024-03-23T07:48:02.427Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 9,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Louis Philippe",
+      "name": "Men Slim Fit Formal Trousers",
+      "description": "Grey woven formal\r\nSlim fit\r\nMid-rise\r\nLength: regular\r\nPattern: solid\r\nFlat-front, with no pleats design\r\nFeature: plain\r\n5 pockets\r\n\r\nSize & Fit:\r\nSlim Fit\r\nSize worn by the model: 32\r\nWaist: 30\"\r\nHips: 37\"\r\nHeight: 6'1\"\r\n\r\nMaterial & Care:\r\n85% Polyester, 15% Viscose rayon\r\nMachine-wash",
+      "vendor": 2,
+      "main_category": 2,
+      "mrp": 2999,
+      "is_available": true,
+      "slug": "louis-philippe-men-slim-fit-formal-trousers",
+      "created_at": "2024-02-24T11:24:54.251Z",
+      "last_modified_at": "2024-03-23T07:48:02.435Z",
+      "approved": true,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 12,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Moda Rapido",
+      "name": "Men Typography Printed Slim Fit Mid-Rise Shorts",
+      "description": "Blue typography printed mid-rise regular shorts, has 5 pockets, button closure\r\n\r\nSize & Fit\r\nSlim Fit\r\nSize worn by the model:32\r\nWaist 33\"\r\nHips 40\"\r\nHeight 6'2\"\r\n\r\nMaterial & Care\r\n98% Cotton & 2% Spandex\r\nMachine Wash",
+      "vendor": 5,
+      "main_category": 6,
+      "mrp": 1296,
+      "is_available": true,
+      "slug": "moda-rapido-men-typography-printed-slim-fit-mid-rise-shorts",
+      "created_at": "2024-04-14T23:22:44.669Z",
+      "last_modified_at": "2024-04-14T23:22:44.669Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 15,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Test Brand",
+      "name": "Test Product",
+      "description": "tjalesj",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 1343,
+      "is_available": true,
+      "slug": "test-brand-test-product",
+      "created_at": "2024-05-15T04:05:53.476Z",
+      "last_modified_at": "2024-05-15T04:05:53.476Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 16,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Testing",
+      "name": "Testing Test",
+      "description": "tsesat",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 1343,
+      "is_available": true,
+      "slug": "testing-testing-test",
+      "created_at": "2024-05-15T04:12:34.707Z",
+      "last_modified_at": "2024-05-15T04:12:34.707Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 17,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Testing",
+      "name": "Testing Test",
+      "description": "tsesat",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 1343,
+      "is_available": true,
+      "slug": "testing-testing-test-2",
+      "created_at": "2024-05-15T04:15:18.746Z",
+      "last_modified_at": "2024-05-15T04:15:18.746Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 18,
+    "fields": {
+      "is_deleted": false,
+      "deleted_at": null,
+      "brand_name": "Mmmmm",
+      "name": "Fffff",
+      "description": "fffff",
+      "vendor": 2,
+      "main_category": 3,
+      "mrp": 134,
+      "is_available": true,
+      "slug": "mmmmm-fffff",
+      "created_at": "2024-05-15T04:17:22.947Z",
+      "last_modified_at": "2024-05-15T04:17:22.947Z",
+      "approved": false,
+      "subcategories": []
+    }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 33,
+    "fields": { "product": 2, "size": "S", "price": 649, "stock": 5 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 34,
+    "fields": { "product": 2, "size": "M", "price": 699, "stock": 33 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 35,
+    "fields": { "product": 2, "size": "L", "price": 749, "stock": 16 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 36,
+    "fields": { "product": 2, "size": "XL", "price": 799, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 37,
+    "fields": { "product": 3, "size": "S", "price": 1349, "stock": 7 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 38,
+    "fields": { "product": 3, "size": "M", "price": 1399, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 39,
+    "fields": { "product": 3, "size": "L", "price": 1449, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 40,
+    "fields": { "product": 3, "size": "XL", "price": 1499, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 41,
+    "fields": { "product": 4, "size": "S", "price": 549, "stock": 5 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 42,
+    "fields": { "product": 4, "size": "M", "price": 599, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 43,
+    "fields": { "product": 4, "size": "L", "price": 649, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 44,
+    "fields": { "product": 4, "size": "XL", "price": 699, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 45,
+    "fields": { "product": 5, "size": "S", "price": 999, "stock": 6 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 46,
+    "fields": { "product": 5, "size": "M", "price": 1049, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 47,
+    "fields": { "product": 5, "size": "L", "price": 1099, "stock": 8 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 48,
+    "fields": { "product": 5, "size": "XL", "price": 1149, "stock": 9 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 49,
+    "fields": { "product": 6, "size": "S", "price": 1499, "stock": 3 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 50,
+    "fields": { "product": 6, "size": "M", "price": 1549, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 51,
+    "fields": { "product": 6, "size": "L", "price": 1599, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 52,
+    "fields": { "product": 6, "size": "XL", "price": 1649, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 53,
+    "fields": { "product": 7, "size": "S", "price": 999, "stock": 2 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 54,
+    "fields": { "product": 7, "size": "M", "price": 1049, "stock": 7 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 55,
+    "fields": { "product": 7, "size": "L", "price": 1099, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 56,
+    "fields": { "product": 7, "size": "XL", "price": 1149, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 57,
+    "fields": { "product": 8, "size": "S", "price": 1399, "stock": 5 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 58,
+    "fields": { "product": 8, "size": "M", "price": 1449, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 59,
+    "fields": { "product": 8, "size": "L", "price": 1499, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 60,
+    "fields": { "product": 8, "size": "XL", "price": 1549, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 61,
+    "fields": { "product": 9, "size": "S", "price": 1599, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 62,
+    "fields": { "product": 9, "size": "M", "price": 1649, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 63,
+    "fields": { "product": 9, "size": "L", "price": 1699, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 64,
+    "fields": { "product": 9, "size": "XL", "price": 1749, "stock": 10 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 85,
+    "fields": { "product": 12, "size": "S", "price": 599, "stock": 30 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 86,
+    "fields": { "product": 12, "size": "M", "price": 699, "stock": 30 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 87,
+    "fields": { "product": 12, "size": "L", "price": 649, "stock": 29 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 88,
+    "fields": { "product": 12, "size": "XL", "price": 747, "stock": 25 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 97,
+    "fields": { "product": 15, "size": "S", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 98,
+    "fields": { "product": 15, "size": "M", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 99,
+    "fields": { "product": 15, "size": "L", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 100,
+    "fields": { "product": 15, "size": "XL", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 101,
+    "fields": { "product": 17, "size": "S", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 102,
+    "fields": { "product": 17, "size": "M", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 103,
+    "fields": { "product": 17, "size": "L", "price": 11, "stock": 1 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 104,
+    "fields": { "product": 17, "size": "XL", "price": 11, "stock": 1 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 105,
+    "fields": { "product": 18, "size": "S", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 106,
+    "fields": { "product": 18, "size": "M", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 107,
+    "fields": { "product": 18, "size": "L", "price": 11, "stock": 11 }
+  },
+  {
+    "model": "product.inventory",
+    "pk": 108,
+    "fields": { "product": 18, "size": "XL", "price": 11, "stock": 1 }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 51,
+    "fields": {
+      "product": 2,
+      "image": "images/product_images/Mast-Harbour-Men-Shirts-1.jpg",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 52,
+    "fields": {
+      "product": 2,
+      "image": "images/product_images/Mast-Harbour-Men-Shirts-2.jpg",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 53,
+    "fields": {
+      "product": 2,
+      "image": "images/product_images/Mast-Harbour-Men-Shirts-3_TTq4VjR.jpg",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 54,
+    "fields": {
+      "product": 2,
+      "image": "images/product_images/Mast-Harbour-Men-Shirts-4.jpg",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 55,
+    "fields": {
+      "product": 2,
+      "image": "images/product_images/Mast-Harbour-Men-5.webp",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 56,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 57,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 58,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 59,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 60,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 61,
+    "fields": {
+      "product": 3,
+      "image": "images/product_images/PowerlookMenBlueOpaqueStripedCasualShirt6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 62,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 63,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 64,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 65,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 66,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 67,
+    "fields": {
+      "product": 4,
+      "image": "images/product_images/StormbornMenBlackPrintedRawEdgeT-shirt6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 68,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 69,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 70,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 71,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 72,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 73,
+    "fields": {
+      "product": 5,
+      "image": "images/product_images/Mr-Bowerbird-Men-Tshirts-6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 74,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 75,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 76,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 77,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 78,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 79,
+    "fields": {
+      "product": 6,
+      "image": "images/product_images/maxMenJoggersTrousers6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 80,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 81,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 82,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 83,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 84,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 85,
+    "fields": {
+      "product": 7,
+      "image": "images/product_images/Roadster-Men-Jeans-6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 86,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 87,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 88,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 89,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 90,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 91,
+    "fields": {
+      "product": 8,
+      "image": "images/product_images/WROGN-Men-Trousers-6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 92,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 93,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 94,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 95,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 96,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 97,
+    "fields": {
+      "product": 9,
+      "image": "images/product_images/Louis-Philippe-Men-Trousers-6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 122,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-1.avif",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 123,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-2.avif",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 124,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-3.avif",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 125,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-4.avif",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 126,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-5.avif",
+      "priority": 5
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 127,
+    "fields": {
+      "product": 12,
+      "image": "images/product_images/Moda-Rapido-Men-Shorts-6.avif",
+      "priority": 6
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 135,
+    "fields": {
+      "product": 15,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.42.29_bde4da31_rFLEBsQ.jpg",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 136,
+    "fields": {
+      "product": 15,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.43.50_5f580191_aFvD5cV.jpg",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 137,
+    "fields": {
+      "product": 15,
+      "image": "images/product_images/Checklist_13-05_do_0aVdsww.jpg",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 138,
+    "fields": {
+      "product": 15,
+      "image": "images/product_images/Untitled_Project.jpg",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 139,
+    "fields": {
+      "product": 16,
+      "image": "images/product_images/Checklist_13-05_dd.jpg",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 140,
+    "fields": {
+      "product": 16,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.43.50_5f580191_FML6bIF.jpg",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 141,
+    "fields": {
+      "product": 16,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.42.29_bde4da31_60pvxUY.jpg",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 142,
+    "fields": {
+      "product": 17,
+      "image": "images/product_images/Checklist_13-05_dd_kklOpfX.jpg",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 143,
+    "fields": {
+      "product": 17,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.43.50_5f580191_oqWxME7.jpg",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 144,
+    "fields": {
+      "product": 17,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.42.29_bde4da31_a4OxD3M.jpg",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 145,
+    "fields": {
+      "product": 17,
+      "image": "images/product_images/Finish_What_You_Started.png",
+      "priority": 4
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 146,
+    "fields": {
+      "product": 18,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.42.29_bde4da31_vEAXqYr.jpg",
+      "priority": 1
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 147,
+    "fields": {
+      "product": 18,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.43.29_9eb906b2.jpg",
+      "priority": 2
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 148,
+    "fields": {
+      "product": 18,
+      "image": "images/product_images/WhatsApp_Image_2024-05-13_at_12.43.50_5f580191_hg1RKvJ.jpg",
+      "priority": 3
+    }
+  },
+  {
+    "model": "product.productimage",
+    "pk": 149,
+    "fields": {
+      "product": 18,
+      "image": "images/product_images/Checklist_13-05_do_WDjnGeU.jpg",
+      "priority": 4
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$6sWM4qw2Q36uQooEfEo6FT$0XXxQAXoCGFD8XPfdOA7Vpq+uPuqgFY4PItqFhAbHVk=",
+      "first_name": "Melvin",
+      "last_name": "M T",
+      "email": "melvinthankachan101@gmail.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-02-17T02:46:58.137Z",
+      "last_login": "2024-05-23T11:45:23.045Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": false,
+      "is_staff": true,
+      "is_admin": true,
+      "is_superadmin": true
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$y9GEwml9F0srgUxFFnVC3y$Pd4lX5bOnPmYWDX/sFDYqe8BIxNNLX77tbLSfRiRN0Q=",
+      "first_name": "Melvin",
+      "last_name": "M T",
+      "email": "melvinthankachan123@gmail.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-02-17T02:49:16.125Z",
+      "last_login": "2024-05-23T07:52:12.993Z",
+      "is_active": true,
+      "is_vendor": true,
+      "is_customer": false,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$WFPDA1B3NgYTUB1msepq0H$ThIF1UX3gjdSfMq4wbhGKyoZp68tP4GzpmuolGtBVFo=",
+      "first_name": "Binu",
+      "last_name": "M T",
+      "email": "binu@gmail.com",
+      "mobile": "9496123456",
+      "profile_image": "",
+      "date_joined": "2024-02-28T20:51:16.811Z",
+      "last_login": "2024-05-23T08:08:56.680Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$EQqv7xuAVN3dlrXliOhKwC$tei2DaS19f9ZCD0U/ayutzSdsXH022xn2BFK+WnXAb8=",
+      "first_name": "Polvin",
+      "last_name": "Polvin",
+      "email": "polvin@gmail.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-02-28T20:54:50.197Z",
+      "last_login": "2024-04-14T03:18:20.848Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$VGXdoZfp05dpyyWw3jf2oW$wU/g6sxzcGJXOO5H12ijztZ7AfrfYsZGIcK3QZq6GvU=",
+      "first_name": "Kichu",
+      "last_name": "Kichu",
+      "email": "kichu@gmail.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-02-28T20:55:12.458Z",
+      "last_login": "2024-04-25T11:51:58.678Z",
+      "is_active": true,
+      "is_vendor": true,
+      "is_customer": false,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$FPn3d8TAh6CljdTX8cSh6T$AJijPMaNFCidRovCbyiWdBuzI7WN39AmMh4XSWSBMjM=",
+      "first_name": "Tobi",
+      "last_name": "Tobi",
+      "email": "tobi@gmail.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-02-28T20:55:36.241Z",
+      "last_login": "2024-04-15T06:00:07.771Z",
+      "is_active": true,
+      "is_vendor": true,
+      "is_customer": false,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$F9T4Zv1FxNFOWk4j5mulX6$irJGsoxhQJwGrSB1i/2Uw4XZkDuxvuaEqI0Ub/Hfjck=",
+      "first_name": "Hdaksjfh",
+      "last_name": "Ahljkdsf",
+      "email": "akldhdfl@gmail.con",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-03-23T05:34:09.549Z",
+      "last_login": "2024-03-23T05:34:09.565Z",
+      "is_active": false,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$Qil2JBsQpzYFYGcDA4kEow$8ShYuUPXTA6fFm2ZeZWH6BpLyVSD0B82Aw0I8CVREVs=",
+      "first_name": "Melvin",
+      "last_name": "M T",
+      "email": "aflxacxqo@10mail.org",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-03-23T08:04:33.875Z",
+      "last_login": "2024-04-08T11:12:33.500Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$ZetEE3cfhdLY4t0wozWZ7W$47+kjMqrWR8ei43zoO3xH7zc4VCvVP7cyMsXXywQDBg=",
+      "first_name": "Arun",
+      "last_name": "Jose",
+      "email": "hvvkc5tr@spymail.one",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-15T07:11:02.981Z",
+      "last_login": "2024-05-15T07:11:03.016Z",
+      "is_active": false,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$e4336lI89AHxlaNrbEJd7F$NnamEpw0QU4CK6Rwge9HKxlEFWXECfNyXBzh8+CeLhs=",
+      "first_name": "Melvin",
+      "last_name": "M T",
+      "email": "qdnwqpanf@emlhub.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-16T06:18:22.351Z",
+      "last_login": "2024-05-16T06:18:22.376Z",
+      "is_active": false,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$brHTl9JUJNXFuI84HEnUgD$uophVoOHVpekGdNVd6uSHNA2K4BvdQ0IkyqqgpEbQ3Q=",
+      "first_name": "Test",
+      "last_name": "Test",
+      "email": "giwojos478@mfyax.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-16T06:29:35.723Z",
+      "last_login": "2024-05-16T06:35:18.540Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$B3Um6rHKarVJ2DkOWqn4wr$x9i+ksxodFxAtVl7+2ePiYJbLfY4wkUww6VM91LKm0k=",
+      "first_name": "Melvin",
+      "last_name": "Thankachan",
+      "email": "rwprrqanf@emlhub.com",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-16T06:37:30.638Z",
+      "last_login": "2024-05-16T06:38:12.933Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$P0dv41iXRscalmfuierv91$1eoV9aEE5kAVuhk6vGtWAP9f7WCDm0UFLDe4NVEHnwk=",
+      "first_name": "Test",
+      "last_name": "Test",
+      "email": "yxnncyuwd@laste.ml",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-20T01:32:51.612Z",
+      "last_login": "2024-05-20T01:45:34.593Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  {
+    "model": "accounts.account",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$TaLFzc3EEQWkI0fCxpWeYF$Kz1JKwYJl7c3fOsVfVrImYDqXVioh4fIacuNozVs8ls=",
+      "first_name": "Test",
+      "last_name": "Test",
+      "email": "cocdwemyd@laste.ml",
+      "mobile": null,
+      "profile_image": "",
+      "date_joined": "2024-05-29T21:26:51.165Z",
+      "last_login": "2024-05-29T21:27:45.934Z",
+      "is_active": true,
+      "is_vendor": false,
+      "is_customer": true,
+      "is_staff": false,
+      "is_admin": false,
+      "is_superadmin": false
+    }
+  },
+  { "model": "accounts.customer", "pk": 3, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 4, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 7, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 8, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 9, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 10, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 11, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 12, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 13, "fields": { "approved": true } },
+  { "model": "accounts.customer", "pk": 14, "fields": { "approved": true } },
+  { "model": "accounts.vendor", "pk": 2, "fields": { "approved": true } },
+  { "model": "accounts.vendor", "pk": 5, "fields": { "approved": true } },
+  { "model": "accounts.vendor", "pk": 6, "fields": { "approved": false } },
+  {
+    "model": "muladmin.coupon",
+    "pk": 3,
+    "fields": {
+      "code": "ADD100",
+      "discount": 100,
+      "quantity": 0,
+      "minimum_purchase": 500,
+      "is_active": true,
+      "created_at": "2024-05-07T13:04:03.388Z",
+      "updated_at": "2024-05-14T11:01:20.487Z"
+    }
+  },
+  {
+    "model": "muladmin.coupon",
+    "pk": 5,
+    "fields": {
+      "code": "MELVIN111",
+      "discount": 111,
+      "quantity": 9,
+      "minimum_purchase": 1111,
+      "is_active": true,
+      "created_at": "2024-05-15T03:02:37.574Z",
+      "updated_at": "2024-05-23T09:31:40.585Z"
+    }
+  },
+  {
+    "model": "muladmin.coupon",
+    "pk": 6,
+    "fields": {
+      "code": "GET200",
+      "discount": 100,
+      "quantity": 12,
+      "minimum_purchase": 500,
+      "is_active": true,
+      "created_at": "2024-05-15T07:36:38.000Z",
+      "updated_at": "2024-05-23T09:31:36.062Z"
+    }
+  },
+  {
+    "model": "muladmin.coupon",
+    "pk": 7,
+    "fields": {
+      "code": "MEL22",
+      "discount": 100,
+      "quantity": 22,
+      "minimum_purchase": 50,
+      "is_active": true,
+      "created_at": "2024-05-23T11:48:21.516Z",
+      "updated_at": "2024-05-23T11:48:21.516Z"
+    }
+  },
+  {
+    "model": "muladmin.categoryoffer",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "discount": 15,
+      "is_active": true,
+      "created_at": "2024-05-23T07:22:16.680Z",
+      "updated_at": "2024-05-23T07:29:02.083Z"
+    }
+  },
+  {
+    "model": "muladmin.categoryoffer",
+    "pk": 2,
+    "fields": {
+      "category": 3,
+      "discount": 20,
+      "is_active": true,
+      "created_at": "2024-05-23T07:26:57.032Z",
+      "updated_at": "2024-05-23T07:29:08.078Z"
+    }
+  },
+  {
+    "model": "muladmin.categoryoffer",
+    "pk": 3,
+    "fields": {
+      "category": 4,
+      "discount": 10,
+      "is_active": true,
+      "created_at": "2024-05-23T07:30:44.816Z",
+      "updated_at": "2024-05-23T07:30:51.488Z"
+    }
+  }
+]

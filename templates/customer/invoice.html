@@ -1,0 +1,158 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-20">
+    <h1 class="widget-title">Order Invoice</h1>
+    <button class="btn btn-main btn-small mb-3" id="download-invoice-{{order.id}}">Download Invoice</button>
+    <hr>
+    <div class="product-checkout-details" id="order-invoice-{{order.id}}">
+        <div class="block">
+            <h1 class="text-center">Invoice</h1>
+            <h2>Order ID: {{ order.id }}</h2>
+            <hr>
+            <h2>Products</h2>
+            {% for order_item in order.order_items %}
+                <div class="media product-card">
+                    <a class="pull-left" href="{% url "product_page" order_item.product.slug %}">
+                        <img class="media-object" src="{{ order_item.product.primary_image.image.url }}" alt="Image" />
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a href="{% url "product_page" order_item.product.slug %}">{{ order_item.product.brand_name }}</a>
+                        </h4>
+                        <h6 class="media-heading"><a href="{% url "product_page" order_item.product.slug %}">{{ order_item.product.name }}</a></h6>
+                        <p class="price">{{ order_item.quantity }} x ₹ {{ order_item.inventory.price }}</p>
+                        <p class="price">Size: {{ order_item.inventory.size }}</p>
+                        <p class="price">Order status:
+                            {% if order_item.status == "pending" %}
+                                <span class="label label-warning">Pending</span>
+                            {% elif order_item.status == "cancelled" %}
+                                <span class="label label-danger">Cancelled</span>
+                            {% elif order_item.status == "confirmed" %}
+                                <span class="label label-info">Confirmed</span>
+                            {% elif order_item.status == "shipped" %}
+                                <span class="label label-primary">Shipped</span>
+                            {% elif order_item.status == "delivered" %}
+                                <span class="label label-success">Delivered</span>
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="modal fade" id="cancel-order-item-modal-{{ order_item.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h3 class="modal-title">Do you want to remove this address?</h3>
+                                    <br>
+                                    <p>If you are currently using this address for any active orders, removing it may result in potential delivery delays or errors. Are you sure you want to proceed with removing this address?</p>
+                                    <div class="modal-footer">
+                                        <a href="{% url "cancel_order_item" order_item.id %}" type="button" class="btn btn-main">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <hr>
+            <ul class="summary-prices">
+                <li>
+                    <span class="d-flex justify-content-between">
+                        <span>Subtotal:</span>
+                        <span>₹ {{ order.sub_total }}</span>
+                    </span>
+                </li>
+                {% if order.offer > 0 %}
+                    <li>
+                        <span class="d-flex justify-content-between text-success">
+                            <span>Offers:</span>
+                            <span>{{ order.offer }}</span>
+                        </span>
+                    </li>
+                {% endif %}
+                {% if order.discount > 0 %}
+                    <li>
+                        <span class="d-flex justify-content-between">
+                            <span>Discount:</span>
+                            <span>{{ order.discount }}</span>
+                        </span>
+                    </li>
+                {% endif %}
+                <li>
+                    <span class="d-flex justify-content-between">
+                        <span>Shipping:</span>
+                        <span>Free</span>
+                    </span>
+                </li>
+            </ul>
+            <div class="summary-total">
+                <span>Total</span>
+                <span>₹ {{ order.total_amount }}</span>
+            </div>
+            <hr>
+            <div>
+                <div class="delivery-address">
+                    <p class="h4">Delivery Address:</p>
+                    <p>{{order.address|linebreaksbr}}</p>
+                </div>
+                <div class="delivery-address mt-3">
+                    <p class="h4">Payment Method:</p>
+                    <p>{{ order.payment_method }}</p>
+                </div>
+                <div class="delivery-address mt-3">
+                    <p class="h4">Order Date:</p>
+                    <p>{{ order.created_at|date:"Y-m-d" }}</p>
+                </div>
+            </div><br><hr><br>
+            <h3 class="text-right">Invoice Genrated by mulberry Fashion</h3>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}
+
+{% block extra_styles %}
+
+{% endblock extra_styles %}
+
+<script>
+    $(document).ready(function(){
+        $('.btn').click(function(){
+            var modalId = $(this).data('target');
+            $(modalId).modal('show');
+        });
+    });
+</script>
+
+
+{% block extra_scripts %}
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const downloadButtons = document.querySelectorAll("[id^='download-invoice-']");
+        downloadButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const orderId = button.id.replace("download-invoice-", "");
+                const order_invoice = document.getElementById("order-invoice-" + orderId);
+                const filename = 'order_invoice_' + orderId + '.pdf';
+
+                var opt = {
+                    margin: 0.5,
+                    filename: filename,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
+                html2pdf().from(order_invoice).set(opt).save();
+            });
+        });
+    });
+</script>
+
+{% endblock extra_scripts %}

@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include "home/includes/navigation.html" %}
+
+
+<!-- Page Wrapper -->
+<section class="page-wrapper success-msg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="block text-center">
+        	<i class="tf-ion-android-checkmark-circle"></i>
+          <h2 class="text-center">Order placed successfully. Thank you!</h2>
+          <br>
+          <a href="{% url "shop" %}" class="btn btn-main mt-20">Continue Shopping</a>
+          <a href="{% url "customer_orders" %}" class="btn btn-main mt-20">View Orders</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- /.page-warpper -->
+
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}

@@ -1,0 +1,117 @@
+{% extends "aadmin/admin-base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-7">Categories</h1>
+        <form class="form-inline" method="post">
+            {% csrf_token %}
+            <div class="form-group mr-2">
+                <label for="filter_option" class="mr-2">Filter by:</label>
+                <select class="form-control input-sm" name="filter_option" id="filter_option">
+                    <option {% if request.session.selection == "listed_categories" %}selected{% endif %} value="listed_products">Listed Categories</option>
+                    <option {% if request.session.selection == "deleted_categories" %}selected{% endif %} value="deleted_categories">Deleted Categories</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary">Apply Filter</button>
+        </form>
+    </div>
+</div>
+
+<div class="hoverable-data-table">
+    <table id="hoverable-data-table" class="table table-hover nowrap" style="width:100%">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th class="text-center">No. of products</th>
+                {% if request.session.selection == "deleted_categories" %}<th class="text-center">Deleted at</th>{% endif %}
+                <th class="text-center">{% if not request.session.selection == "deleted_categories" %}Edit/Delete{% else %}Restore{% endif %}</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <td class="text-primary">{{ category.name }}</td>
+                <td class="text-center">{{ category.count }}</td>
+                {% if request.session.selection == "deleted_categories" %}<td class="text-center">{{ category.deleted_at }}</td>{% endif %}
+                <td class="text-center">
+                    {% if not request.session.selection == "deleted_categories" %}
+                        <a href="{% url "edit_category" category.slug %}" class="btn-sm btn-outline-warning"><i class="mdi mdi-pencil-box" ></i>Edit</a>
+                        <a type="button" href="" class="btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteModal{{ category.id }}"><i class="mdi mdi-delete"></i>Delete</a>
+                    {% else %}
+                        <a type="button" href="" class="btn-sm btn-outline-primary" data-toggle="modal" data-target="#restoreModel{{ category.id }}"><i class="mdi mdi-delete"></i>Restore</a>
+                    {% endif %}
+                </td>
+            </tr>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="deleteModal{{ category.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Delete Category - {{ category.name }}</h5>
+                            <a type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </a>
+                        </div>
+    
+                        <div class="modal-body">
+                            <p>There are {{ category.count }} products in this category. Are you sure you want to delete this category?</p>
+                        </div>
+    
+                        <div class="modal-footer">
+                            <a type="button" class="btn btn-primary btn-pill" data-dismiss="modal">Close</a>
+                            <a href="{% url "delete_category" category.slug %}" type="button" class="btn btn-danger btn-pill">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="restoreModel{{ category.id }}" tabindex="-1" role="dialog" aria-labelledby="restoreModelLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="restoreModelLabel">Restore Category - {{ category.name }}</h5>
+                            <a type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </a>
+                        </div>
+    
+                        <div class="modal-body">
+                            <p>There are {{ category.count }} products in this category. Are you sure you want to restore this category?</p>
+                        </div>
+    
+                        <div class="modal-footer">
+                            <a type="button" class="btn btn-outline-primary btn-pill" data-dismiss="modal">Close</a>
+                            <a href="{% url "restore_category" category.slug %}" type="button" class="btn btn-primary btn-pill">Restore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock content %}
+
+
+{% block extra_scripts %}
+
+<script src='{% static "aadmin/plugins/data-tables/jquery.datatables.min.js" %}'></script>
+<script src='{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.js" %}'></script> 
+
+{% endblock extra_scripts %}
+
+{% block extra_styles %}
+
+
+<link href="{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.css" %}" rel="stylesheet">
+<link href="https://unpkg.com/sleek-dashboard/dist/assets/css/sleek.min.css">
+
+{% endblock extra_styles %}
