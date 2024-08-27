@@ -1,0 +1,161 @@
+{% extends "aadmin/admin-base.html" %}
+
+{% block content %}
+
+<style>
+    .image-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .image-preview img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 2px;
+    }
+</style>
+
+<div class="card card-default col-lg-8 mx-auto">
+    <div class="card-header card-header-border-bottom">
+        <h2>Edit Product</h2>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data" action="{% url 'edit_product' product.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Product Name:</label>
+                <input name="name" type="text" maxlength="100" class="form-control" placeholder="Product Name" value="{{ product.name }}" required>
+            </div>
+            <div class="form-group">
+                <label>Product Description:</label>
+                <textarea name="description" class="form-control" maxlength="255" placeholder="Enter Description" rows="4" required>{{ product.description }}</textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Category:</label>
+                    <select name="category" class="form-control" required>
+                        {% for cat in categories %}
+                            <option value="{{ cat.id }}" {% if cat.id == product.main_category.id %}selected{% endif %}>{{ cat.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>MRP:</label>
+                    <input name="mrp" type="number" min="0" step="1" class="form-control" placeholder="MRP" value="{{ product.mrp }}" required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Is Available:</label>
+                    <input name="is_available" type="checkbox" class="form-control" {% if product.is_available %}checked{% endif %}>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Approved:</label>
+                    <input name="approved" type="checkbox" class="form-control" {% if product.approved %}checked{% endif %}>
+                </div>
+            </div>
+
+            <div id="inventory-section">
+                <h5>Inventory Details</h5>
+                {% for inventory in product.inventory_set.all %}
+                    <div class="form-row">
+                        <div class="col">
+                            <select class="form-control" name="size" required>
+                                <option value="">Select Size</option>
+                                {% for value, label in size_choices %}
+                                    <option value="{{ value }}" {% if value == inventory.size %}selected{% endif %}>{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="price" placeholder="Price" min="1" value="{{ inventory.price }}" required>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="stock" placeholder="Stock" min="1" value="{{ inventory.stock }}" required>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Existing Images Section -->
+            <div class="form-group">
+                <label for="images">Product Images</label>
+                <div class="image-preview">
+                    {% for image in product.productimage_set.all %}
+                        <div>
+                            <img src="{{ image.image.url }}" alt="Product Image">
+                            <input type="checkbox" name="delete_image_{{ image.id }}"> Remove
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- New Images Upload -->
+            <div class="form-group">
+                <label for="images">Add New Images (Optional)</label>
+                <input type="file" id="images" name="images" accept="image/*" multiple>
+                <div class="image-preview" id="imagePreview"></div>
+            </div>
+
+            <div class="form-footer pt-3 border-top">
+                {% for message in messages %}
+                    <div class="alert alert-danger text-center" role="alert">{{ message }}</div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block extra_scripts %}
+<script>
+    document.getElementById('images').addEventListener('change', function() {
+        const previewContainer = document.getElementById('imagePreview');
+        previewContainer.innerHTML = ''; // Clear existing previews
+
+        Array.from(this.files).forEach(file => {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    previewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
+
+<script>
+    function addInventoryRow() {
+        const inventorySection = document.getElementById('inventory-section');
+        const newRow = `
+            <div class="form-row mt-2">
+                <div class="col">
+                    <select class="form-control" name="size" required>
+                        <option value="">Select Size</option>
+                        {% for value, label in size_choices %}
+                            <option value="{{ value }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" name="price" placeholder="Price" min="1" required>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" name="stock" placeholder="Stock" min="1" required>
+                </div>
+            </div>`;
+        inventorySection.insertAdjacentHTML('beforeend', newRow);
+    }
+</script>
+{% endblock extra_scripts %}

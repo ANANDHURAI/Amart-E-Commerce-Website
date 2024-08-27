@@ -324,6 +324,10 @@ def add_product(request):
         images = request.FILES.getlist("images")
         is_available = request.POST.get("is_available")
         approved = request.POST.get("approved")
+        # S = request.POST.get("S")
+        # M = request.POST.get("M")
+        # XL = request.POST.get("XL")
+        # L = request.POST.get("L")
         print("aveolsnnj:" , is_available)
         print("apporverd:",approved)
 
@@ -354,8 +358,9 @@ def add_product(request):
             main_category=main_category,
             mrp=mrp,
             slug=slug,
-            is_available=is_available,
-            approved=approved
+            is_available=is_available== 'on',
+            approved=approved == 'on',
+           
         )
 
     
@@ -364,7 +369,11 @@ def add_product(request):
                 product=product,
                 size=size,
                 price=price,
-                stock=stock
+                stock=stock,
+                # S=S,
+                # M=M,
+                # XL=XL,
+                # L=L
             )
 
         # Add images
@@ -384,6 +393,97 @@ def add_product(request):
     context = {"categories": categories,
                'size_choices':size_choices}
     return render(request, "aadmin/product-form.html", context)
+
+
+
+
+
+
+@admin_login_required
+def edit_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    if request.method == "POST":
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        main_category_id = request.POST.get("category")
+        mrp = request.POST.get("mrp")
+        sizes = request.POST.getlist("size")
+        prices = request.POST.getlist("price")
+        stocks = request.POST.getlist("stock")
+        images = request.FILES.getlist("images")
+        is_available = request.POST.get("is_available")
+        approved = request.POST.get("approved")
+
+        # Validate mandatory fields
+        if not name or not main_category_id or not mrp:
+            messages.error(request, "Name, Main Category, and MRP are mandatory.")
+            return redirect("edit_product", product_id=product.id)
+
+        # Validate sizes, prices, and stocks
+        if len(sizes) != len(prices) or len(prices) != len(stocks):
+            messages.error(request, "Mismatch in sizes, prices, and stock quantities.")
+            return redirect("edit_product", product_id=product.id)
+
+        # Validate file types for images
+        allowed_image_types = ['image/jpeg', 'image/png', 'image/gif']
+        
+        for image in images:
+            if image.content_type not in allowed_image_types:
+                messages.error(request, "Only JPEG, PNG, and GIF formats are supported.")
+                return redirect("edit_product", product_id=product.id)
+
+        # Update product details
+        product.name = name
+        product.description = description
+        product.main_category = Category.objects.get(id=main_category_id)
+        product.mrp = mrp
+        product.slug = slugify(name)
+        product.is_available = is_available == 'on'
+        product.approved = approved == 'on'
+        product.save()
+
+        # Clear and update inventory
+        product.inventory_sizes.all().delete()  # Use 'inventory_sizes' as the related_name
+
+        for size, price, stock in zip(sizes, prices, stocks):
+            Inventory.objects.create(
+                product=product,
+                size=size,
+                price=price,
+                stock=stock
+            )
+
+        # Clear and update images
+        product.product_images.all().delete()
+        for i, image in enumerate(images):
+            ProductImage.objects.create(
+                product=product,
+                image=image,
+                priority=i + 1
+            )
+
+        messages.success(request, "Product edited successfully.")
+        return redirect("product_list")
+    
+    # Fetch necessary data for form
+    size_choices = Inventory.SIZE_CHOICES
+    categories = Category.objects.all()
+    context = {
+        "product": product,
+        "categories": categories,
+        "size_choices": size_choices
+    }
+    
+    return render(request, "aadmin/product-edit-form.html", context)
+
+
+
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    product.delete()
+    messages.success(request, "Product deleted successfully.")
+    return redirect("product_list")
 
 
 
@@ -440,7 +540,8 @@ def add_account(request):
 def order_list(request):
     title = "Orders"
     current_page = "order_list"
-    order_items = OrderItem.objects.all().order_by("-id")
+    order_items = Order.objects.all()
+    print("order details: ------>", order_items)
     request.session["selection"] = "all"
 
     context = {"order_items": order_items, "current_page": current_page, "title": title}

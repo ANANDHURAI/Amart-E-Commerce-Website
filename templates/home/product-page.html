@@ -87,6 +87,47 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        {% for inven in inventory %}
+                        <!-- <div class="product-size">
+                            <span>Size:</span>
+                            
+                            {% if inven.S != "0" %}
+                                <label style="margin-right: 20px;">
+                                    <input type="radio" name="S" value="S"> S
+                                </label>
+                            {% else %}
+                                <span style="margin-right: 20px; color: gray;">S (Out of stock)</span>
+                            {% endif %}
+                        
+                            {% if inven.M != "0" %}
+                                <label style="margin-right: 20px;">
+                                    <input type="radio" name="M" value="M"> M
+                                </label>
+                            {% else %}
+                                <span style="margin-right: 20px; color: gray;">M (Out of stock)</span>
+                            {% endif %}
+                            
+                            {% if inven.L != "0" %}
+                                <label style="margin-right: 20px;">
+                                    <input type="radio" name="L" value="L"> L
+                                </label>
+                            {% else %}
+                                <span style="margin-right: 20px; color: gray;">L (Out of stock)</span>
+                            {% endif %}
+                            
+                            {% if inven.XL != "0" %}
+                                <label style="margin-right: 20px;">
+                                    <input type="radio" name="XL" value="XL"> XL
+                                </label>
+                            {% else %}
+                                <span style="margin-right: 20px; color: gray;">XL (Out of stock)</span>
+                            {% endif %}
+                        </div> -->
+                        
+                        
+                        {% endfor %}
+                        
+                        
                         <div class="product-quantity">
                             <span>Quantity:</span>
                             <div class="product-quantity-slider">

@@ -10,7 +10,7 @@ from aadmin.models import CategoryOffer
 # Create your views here.
 def home(request):
     title = "Home"
-    products = Product.objects.all(is_available=True)[:9]
+    products = Product.approved_objects.filter(is_available=True)[:9]
     for product in products:
         primary_image = product.product_images.filter(priority=1).first()
         product.primary_image = primary_image
@@ -42,14 +42,12 @@ def shop(request):
             Product.approved_objects.filter(
                 Q(name__icontains=search_term)
             )
-            .filter(inventory_sizes__size="S")
-            .annotate(price=F("inventory_sizes__price"))
+            
         )
     else:
         products = (
             Product.approved_objects.all()
-            .filter(inventory_sizes__size="S")
-            .annotate(price=F("inventory_sizes__price"))
+            
         )
 
     if request.method == "POST":
@@ -62,8 +60,7 @@ def shop(request):
             category = Category.objects.get(name=selected_category)
             products = (
                 Product.approved_objects.filter(main_category=category)
-                .filter(inventory_sizes__size="S")
-                .annotate(price=F("inventory_sizes__price"))
+                
             )
 
 
@@ -73,11 +70,11 @@ def shop(request):
             products = products.order_by("-price")
         elif sort_by == "New Arrivals":
             products = products.order_by("-created_at")
-        # elif sort_by == "aA - zZ":
-        #     products = products.order_by("brand_name")
-        # elif sort_by == "zZ - aA":
-        #     products = products.order_by("-brand_name")
-        # elif sort_by == "Popularity":
+        elif sort_by == "aA - zZ":
+            products = products.order_by("name")
+        elif sort_by == "zZ - aA":
+            products = products.order_by("-name")
+        elif sort_by == "Popularity":
             products = products.annotate(
                 total_quantity_ordered=Sum("orderitem__quantity")
             )

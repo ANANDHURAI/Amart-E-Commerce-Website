@@ -37,7 +37,7 @@
         <tbody>
             {% for order_item in order_items %}
             <tr>
-                <td>{{ order_item.product.brand_name }}{{ order_item.product.name }}</td>
+                <td>{{ order_item.product.name }}</td>
                 <td><a href="">{{ order_item.order.customer }}</a></td>
                 <td class="text-center">{{ order_item.quantity }}</td>
                 <td class="text-center">{{ order_item.inventory.price }}</td>

@@ -18,7 +18,7 @@ def send_otp(request):
     email = request.session.get("email")
     account = Account.objects.get(email=email)
     name = account.first_name + " " + account.last_name
-    subject = "OTP Verification - mulberry Fashions"
+    subject = "OTP Verification - Amart Fashions"
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [email]
     message = f"""

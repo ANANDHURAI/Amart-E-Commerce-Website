@@ -4,6 +4,25 @@
 
 {% block content %}
 {% include 'home/includes/navigation.html' %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<style>
+    .cancel-btn {
+      background-color: #f8d7da; /* Light red background */
+      color: #721c24;           /* Darker red text */
+      border: 1px solid #f5c6cb; /* Light red border */
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .cancel-btn:hover {
+  background-color: #d9534f; /* Dark red background on hover */
+  border-color: #d43f3a;     /* Dark red border on hover */
+  color: #ffffff;            /* White text on hover */
+}
+    </style>
+    
 <section class="page-header">
     <div class="container">
         <div class="row">
@@ -44,7 +63,8 @@
                                         <th>Total Price</th>
                                         <th>Payment Method</th>
                                         <th class="text-center">Payment</th>
-                                        <th></th>
+                                        <th style="padding-left: 90px;">Details</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,7 +76,7 @@
                                             <td> {{ order.payment_method }}</td>
                                             <td class="text-center">
                                                 {% if order.is_paid %}
-                                                Paid
+                                                    Paid
                                                 {% else %}
                                                 <a href="{% url "pay_now" order.id %}" class="btn  btn-small btn-round-full">Pay Now</a>
                                                 {% endif %}
@@ -64,6 +84,9 @@
                                             <td><center>
                                                 <a href="#" data-toggle="modal" data-target="#order-view-modal-{{ order.id }}" class="btn  btn-small btn-round-full">Order Summary</a>
                                             </center></td>
+                                            <td>
+                                                <button class="cancel-btn" data-order-id="{{ order.id }}">Cancel</button>
+                                            </td>
                                         </tr>
 
                                         <!--order view Modal -->
@@ -291,5 +314,61 @@
         });
     });
 </script>
+<script>
+    document.querySelectorAll('.cancel-btn').forEach(function(button) {
+      button.addEventListener('click', function() {
+        Swal.fire({
+          title: "Are you sure you want to cancel this order?",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, cancel it!',
+          cancelButtonText: 'No, keep it'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Action to perform if the user confirms
+            Swal.fire(
+              'Cancelled!',
+              'Your order has been cancelled.',
+              'success'
+            )
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            // Action to perform if the user cancels
+            Swal.fire(
+              'Not Cancelled',
+              'Your order is safe :)',
+              'info'
+            )
+          }
+        });
+      });
+    });
+    </script>
+   
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cancelButtons = document.querySelectorAll('.cancel-btn');
 
+        cancelButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const orderId = this.getAttribute('data-order-id');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you really want to cancel this order?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, cancel it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirect to the cancel order view
+                        window.location.href = `/cancel_order/${orderId}/`;
+                    }
+                });
+            });
+        });
+    });
+</script>
 {% endblock extra_scripts %}

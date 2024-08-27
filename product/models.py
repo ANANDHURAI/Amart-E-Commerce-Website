@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-from ecom.models import SoftDeleteModel
+from ecom.models import SoftDeleteModel,ApprovedProductManager
 from PIL import Image
 
 
@@ -37,7 +37,7 @@ class Product(SoftDeleteModel):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified_at = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=True)
-    #approved_objects = ApprovedProductManager()
+    approved_objects = ApprovedProductManager()
 
     def __str__(self):
         return f"is {self.name}"
@@ -65,6 +65,10 @@ class Inventory(models.Model):
     size = models.CharField(max_length=2, choices=SIZE_CHOICES, default="S")
     price = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     stock = models.PositiveIntegerField()
+    S=models.CharField(max_length=1 , validators=[MinValueValidator(0)] ,default=0)
+    XL=models.CharField(max_length=2 , validators=[MinValueValidator(0)],default=0)
+    L=models.CharField(max_length=1 , validators=[MinValueValidator(0)],default=0)
+    M=models.CharField(max_length=1 , validators=[MinValueValidator(0)],default=0)
 
     def __str__(self):
         return f"{self.product.name} - {self.size} size"
@@ -83,24 +87,20 @@ class ProductImage(models.Model):
     def __str__(self):
         return f"Image of {self.product.name}"
     
-    # def save(self, *args, **kwargs):
-    #     image = Image.open(self.image)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        
+        img = Image.open(self.image.path)
+        min_dim = min(img.size)
+        crop_box = (
+            (img.width - min_dim) // 2,
+            (img.height - min_dim) // 2,
+            (img.width + min_dim) // 2,
+            (img.height + min_dim) // 2
+        )
+        img = img.crop(crop_box)
+        
+        img = img.resize((300, 300), Image.LANCZOS)
+        
+        img.save(self.image.path)
 
-    #     if image.mode == 'RGBA':
-    #         image = image.convert('RGB')
-
-    #     width, height = image.size
-    #     print("before:", width, height)
-
-    #     if width / height != 3 / 4:
-    #         new_height = int(width * (4 / 3))
-
-    #         resized_image = image.resize((width, new_height))
-    
-    #         image_path = self.image.path
-    #         resized_image.save(image_path, 'JPEG')
-
-    #         width, height = resized_image.size
-    #         print("after:", width, height)
-
-    #     super().save(*args, **kwargs)

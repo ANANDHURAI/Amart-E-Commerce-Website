@@ -27,7 +27,7 @@ class CategoryOffer(models.Model):
         Category, related_name="category", on_delete=models.CASCADE
     )
     discount = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(100)]
+        validators=[MinValueValidator(1), MaxValueValidator(99)]
     )
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
