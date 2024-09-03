@@ -15,6 +15,7 @@ def home(request):
     for product in products:
         primary_image = product.product_images.filter(priority=1).first()
         product.primary_image = primary_image
+        product.shop_price = Inventory.objects.filter(product=product)[0].price
     
     # for product in products:
         # small_size = product.inventory_sizes.get(size="S")
@@ -87,9 +88,9 @@ def shop(request):
 
     for product in products:
         product.primary_image = product.product_images.filter(priority=1).first()
-        product.shop_price = Inventory.objects.filter(product=product)
-        print(product.shop_price)
-        print(product.name)
+        product.shop_price = Inventory.objects.filter(product=product)[0].price
+
+       
         if FavouriteItem.objects.filter(
             customer__id=request.user.id, product=product
         ).exists():
@@ -97,7 +98,7 @@ def shop(request):
         else:
             product.is_favourite = False
 
-    products = [product for product in products for _ in range(1)]
+    #products = [product for product in products for _ in range(1)]
     paginator = Paginator(products, 6)
     page = request.GET.get("page")
     paged_products = paginator.get_page(page)

@@ -32,7 +32,7 @@
         <a href="{% url "product_page" product.slug %}" target="_blank">
             
             <p class="truncate">{{ product.name }}</p>
-            <p class="price"><strong class="h4">&#8377; {{ product.price }} </strong>
+            <p class="price"><strong class="h4">&#8377; {{ product.shop_price }} </strong>
 				{% if product.price < product.mrp %}
 					<del class="h6"> MRP: {{ product.mrp }}</del>
 				{% endif %}
@@ -61,7 +61,7 @@
 							<br>
 							
 							<h2 class="product-title">{{ product.name }}</h2>
-							<p class="product-price">₹ {{ product.inventory_sizes.0.price }}</p>
+							<p class="product-price">₹ {{ product.shop_price }}</p>
 						
 							<a href="{% url "product_page" product.slug %}" class="btn btn-transparent">View Product Details</a>
 							<br>

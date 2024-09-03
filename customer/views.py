@@ -625,6 +625,7 @@ def create_order(request):
 
         return True
     except Exception as e:
+        print(e)
         return False
 
 
