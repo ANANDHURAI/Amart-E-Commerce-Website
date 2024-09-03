@@ -11,9 +11,11 @@ from aadmin.models import CategoryOffer
 def home(request):
     title = "Home"
     products = Product.approved_objects.filter(is_available=True)[:9]
+    inventery=Inventory.objects.filter(product__in=products)
     for product in products:
         primary_image = product.product_images.filter(priority=1).first()
         product.primary_image = primary_image
+    
     # for product in products:
         # small_size = product.inventory_sizes.get(size="S")
         # small_size_price = small_size.price
@@ -26,7 +28,10 @@ def home(request):
             product.is_favourite = False
 
     categories = Category.objects.all()[:4]
-    context = {"products": products, "categories": categories, "title": title}
+    context = {"products": products,
+                "categories": categories,
+                  "title": title,
+                  'inventery':inventery}
     return render(request, "home/home.html", context)
 
 
@@ -82,6 +87,9 @@ def shop(request):
 
     for product in products:
         product.primary_image = product.product_images.filter(priority=1).first()
+        product.shop_price = Inventory.objects.filter(product=product)
+        print(product.shop_price)
+        print(product.name)
         if FavouriteItem.objects.filter(
             customer__id=request.user.id, product=product
         ).exists():

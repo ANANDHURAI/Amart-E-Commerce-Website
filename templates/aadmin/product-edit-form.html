@@ -17,7 +17,40 @@
         border-radius: 5px;
         padding: 2px;
     }
+    
+    .image-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .image-container {
+        position: relative;
+        width: 70px; /* Increase size if needed */
+        height: 70px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 2px;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .image-container label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 0 0 0 5px;
+        padding: 2px 5px;
+        font-size: 12px;
+        cursor: pointer;
+    }
 </style>
+
+
 
 <div class="card card-default col-lg-8 mx-auto">
     <div class="card-header card-header-border-bottom">
@@ -85,22 +118,26 @@
 
             <!-- Existing Images Section -->
             <div class="form-group">
-                <label for="images">Product Images</label>
+                <label>Existing Product Images</label>
                 <div class="image-preview">
-                    {% for image in product.productimage_set.all %}
-                        <div>
+                    {% for image in product.product_images.all %}
+                        <div class="image-container">
                             <img src="{{ image.image.url }}" alt="Product Image">
-                            <input type="checkbox" name="delete_image_{{ image.id }}"> Remove
+                            <label>
+                                <input type="checkbox" name="delete_image_{{ image.id }}"> Remove
+                            </label>
                         </div>
+                    {% empty %}
+                        <p>No existing images for this product.</p>
                     {% endfor %}
                 </div>
             </div>
 
-            <!-- New Images Upload -->
+
             <div class="form-group">
                 <label for="images">Add New Images (Optional)</label>
                 <input type="file" id="images" name="images" accept="image/*" multiple>
-                <div class="image-preview" id="imagePreview"></div>
+                <div class="image-preview" id="newImagePreview"></div>
             </div>
 
             <div class="form-footer pt-3 border-top">
@@ -134,7 +171,29 @@
         });
     });
 </script>
+<script>
+    document.getElementById('images').addEventListener('change', function() {
+        const previewContainer = document.getElementById('newImagePreview');
+        previewContainer.innerHTML = ''; // Clear existing previews
 
+        Array.from(this.files).forEach(file => {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'image-container';
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    
+                    imgContainer.appendChild(img);
+                    previewContainer.appendChild(imgContainer);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
 <script>
     function addInventoryRow() {
         const inventorySection = document.getElementById('inventory-section');

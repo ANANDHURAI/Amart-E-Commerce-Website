@@ -30,7 +30,7 @@
     </div>
     <div class="product-content">    
         <a href="{% url "product_page" product.slug %}" target="_blank">
-            <h4><strong>{{ product.brand_name }}</strong></h4>
+            
             <p class="truncate">{{ product.name }}</p>
             <p class="price"><strong class="h4">&#8377; {{ product.price }} </strong>
 				{% if product.price < product.mrp %}
@@ -59,9 +59,9 @@
 					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="product-short-details">
 							<br>
-							<h2 class="product-title"><strong>{{ product.brand_name }}</strong></h2>
+							
 							<h2 class="product-title">{{ product.name }}</h2>
-							<p class="product-price">₹ {{ product.price }}</p>
+							<p class="product-price">₹ {{ product.inventory_sizes.0.price }}</p>
 						
 							<a href="{% url "product_page" product.slug %}" class="btn btn-transparent">View Product Details</a>
 							<br>
@@ -89,7 +89,7 @@
 					<div class="col-md-8 col-sm-6 col-xs-12">
 						<div class="product-short-details">
 							<br>
-							<h2 class="product-title"><strong>{{ product.brand_name }}</strong></h2>
+							
 							<h2 class="product-title">{{ product.name }}</h2>
 							<hr>
 							<p>Select size and quantity</p>

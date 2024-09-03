@@ -11,6 +11,7 @@ from django.db.models import F, Sum
 from django.db.models.functions import Coalesce
 from django.db import transaction
 
+
 def admin_login_required(func):
     """
     Custom login required decorator to check if the user is authenticated and a superadmin.
@@ -58,7 +59,6 @@ def admin_dashboard(request):
         category = Category.objects.get(id=category_info["main_category__id"])
         category.total_quantity = category_info["total_quantity"]
         top_categories.append(category)
-
 
     # Line chart for revenue for last year
 
@@ -160,9 +160,6 @@ def customer_approval(request, pk):
     customer.save()
 
     return redirect("customer_list")
-
-
-
 
 
 @admin_login_required
@@ -308,9 +305,6 @@ def product_list(request):
     return render(request, "aadmin/product-list.html", context=context)
 
 
-
-
-
 @admin_login_required
 def add_product(request):
     if request.method == "POST":
@@ -328,8 +322,8 @@ def add_product(request):
         # M = request.POST.get("M")
         # XL = request.POST.get("XL")
         # L = request.POST.get("L")
-        print("aveolsnnj:" , is_available)
-        print("apporverd:",approved)
+        print("aveolsnnj:", is_available)
+        print("apporverd:", approved)
 
         # Validate mandatory fields
         if not name or not main_category_id or not mrp:
@@ -342,28 +336,28 @@ def add_product(request):
             return redirect("add_product")
 
         # Validate file types for images
-        allowed_image_types = ['image/jpeg', 'image/png', 'image/gif']
+        allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
         for image in images:
             if image.content_type not in allowed_image_types:
-                messages.error(request, "Only JPEG, PNG, and GIF formats are supported.")
+                messages.error(
+                    request, "Only JPEG, PNG, and GIF formats are supported."
+                )
                 return redirect("add_product")
 
         # Create product
         main_category = Category.objects.get(id=main_category_id)
         slug = slugify(name)
-        
+
         product = Product.objects.create(
             name=name,
             description=description,
             main_category=main_category,
             mrp=mrp,
             slug=slug,
-            is_available=is_available== 'on',
-            approved=approved == 'on',
-           
+            is_available=is_available == "on",
+            approved=approved == "on",
         )
 
-    
         for size, price, stock in zip(sizes, prices, stocks):
             Inventory.objects.create(
                 product=product,
@@ -378,31 +372,21 @@ def add_product(request):
 
         # Add images
         for i, image in enumerate(images):
-            ProductImage.objects.create(
-                product=product,
-                image=image,
-                priority=i + 1
-            )
+            ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
         messages.success(request, "Product added successfully.")
         return redirect("product_list")
     size_choices = Inventory.SIZE_CHOICES
-    
 
     categories = Category.objects.all()
-    context = {"categories": categories,
-               'size_choices':size_choices}
+    context = {"categories": categories, "size_choices": size_choices}
     return render(request, "aadmin/product-form.html", context)
-
-
-
-
 
 
 @admin_login_required
 def edit_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    
+
     if request.method == "POST":
         name = request.POST.get("name")
         description = request.POST.get("description")
@@ -426,11 +410,13 @@ def edit_product(request, product_id):
             return redirect("edit_product", product_id=product.id)
 
         # Validate file types for images
-        allowed_image_types = ['image/jpeg', 'image/png', 'image/gif']
-        
+        allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
+
         for image in images:
             if image.content_type not in allowed_image_types:
-                messages.error(request, "Only JPEG, PNG, and GIF formats are supported.")
+                messages.error(
+                    request, "Only JPEG, PNG, and GIF formats are supported."
+                )
                 return redirect("edit_product", product_id=product.id)
 
         # Update product details
@@ -439,44 +425,40 @@ def edit_product(request, product_id):
         product.main_category = Category.objects.get(id=main_category_id)
         product.mrp = mrp
         product.slug = slugify(name)
-        product.is_available = is_available == 'on'
-        product.approved = approved == 'on'
-        product.save()
+        product.is_available = is_available == "on"
+        product.approved = approved == "on"
 
         # Clear and update inventory
         product.inventory_sizes.all().delete()  # Use 'inventory_sizes' as the related_name
 
         for size, price, stock in zip(sizes, prices, stocks):
             Inventory.objects.create(
-                product=product,
-                size=size,
-                price=price,
-                stock=stock
+                product=product, size=size, price=price, stock=stock
             )
 
         # Clear and update images
-        product.product_images.all().delete()
+
+        for image in product.productimage_set.all():
+            if request.POST.get(f"delete_image_{image.id}"):
+                image.delete()
+
+        # Process new images if uploaded
         for i, image in enumerate(images):
-            ProductImage.objects.create(
-                product=product,
-                image=image,
-                priority=i + 1
-            )
+            ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
         messages.success(request, "Product edited successfully.")
         return redirect("product_list")
-    
+
     # Fetch necessary data for form
     size_choices = Inventory.SIZE_CHOICES
     categories = Category.objects.all()
     context = {
         "product": product,
         "categories": categories,
-        "size_choices": size_choices
+        "size_choices": size_choices,
     }
-    
-    return render(request, "aadmin/product-edit-form.html", context)
 
+    return render(request, "aadmin/product-edit-form.html", context)
 
 
 def delete_product(request, product_id):
@@ -486,14 +468,12 @@ def delete_product(request, product_id):
     return redirect("product_list")
 
 
-
 @admin_login_required
 def product_approval(request, pk):
     product = Product.objects.get(pk=pk)
     product.approved = not product.approved
     product.save()
     return redirect("product_list")
-
 
 
 @admin_login_required
@@ -514,7 +494,6 @@ def add_account(request):
                 "Email already registered. Please log in or use a different email."
             )
             messages.error(request, error_message)
-
 
         elif account_type == "customer":
             try:
@@ -732,7 +711,7 @@ def delete_coupon(request, id):
 def offer_list(request):
     title = "Offers"
     current_page = "offer_list"
-    
+
     offers = CategoryOffer.objects.all().order_by("discount")
     request.session["selection"] = "all_offers"
 
@@ -759,13 +738,10 @@ def add_offer(request):
         category_id = request.POST.get("category_id")
         discount = int(request.POST.get("discount"))
         active = request.POST.get("active")
-        category = Category.objects.get(id = category_id)
-
+        category = Category.objects.get(id=category_id)
 
         if discount > 100 or discount < 1:
-            error_message = (
-                "Invalid Discount Percentage"
-            )
+            error_message = "Invalid Discount Percentage"
             messages.error(request, error_message)
             return redirect("add_offer")
 
@@ -782,7 +758,7 @@ def add_offer(request):
         )
 
         return redirect("offer_list")
-    
+
     context = {"title": title, "current_page": current_page, "categories": categories}
     return render(request, "aadmin/offer-form.html", context)
 
@@ -798,16 +774,18 @@ def edit_offer(request, id):
         category_id = request.POST.get("category_id")
         discount = int(request.POST.get("discount"))
         active = request.POST.get("active")
-        category = Category.objects.get(id = category_id)
+        category = Category.objects.get(id=category_id)
 
         if discount > 100 or discount < 1:
-            error_message = (
-                "Invalid Discount Percentage"
-            )
+            error_message = "Invalid Discount Percentage"
             messages.error(request, error_message)
             return redirect("edit_offer", id=offer.id)
 
-        if CategoryOffer.objects.filter(category=category).exclude(id=offer.id).exists():
+        if (
+            CategoryOffer.objects.filter(category=category)
+            .exclude(id=offer.id)
+            .exists()
+        ):
             error_message = "An offer already exists for this category"
             messages.error(request, error_message)
             return redirect("edit_offer", id=offer.id)
@@ -820,7 +798,12 @@ def edit_offer(request, id):
 
         return redirect("offer_list")
 
-    context = {"title": title, "current_page": current_page, "offer": offer, "categories": categories}
+    context = {
+        "title": title,
+        "current_page": current_page,
+        "offer": offer,
+        "categories": categories,
+    }
     return render(request, "aadmin/offer-form.html", context)
 
 
@@ -829,5 +812,3 @@ def delete_offer(request, id):
     offer = CategoryOffer.objects.get(id=id)
     offer.delete()
     return HttpResponse("Delete Offer")
-
-
