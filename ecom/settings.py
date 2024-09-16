@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+from easy_thumbnails.conf import Settings as thumbnail_settings
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'easy_thumbnails',
+    'image_cropping',
 
     "home",
     "customer",
@@ -45,6 +47,11 @@ INSTALLED_APPS = [
     "aadmin",
     "payment",
 ]
+
+
+# THUMBNAIL_PROCESSORS = (
+#     'image_cropping.thumbnail_processors.crop_corners',
+# ) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -162,3 +169,7 @@ RAZOR_KEY_SECRET = "AgyQbM4WqWQj1hvpHZ9GtT5C"
 
 # To allow RazorPay Pop-up to restrict comment the below line.
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
+
+
+IMAGE_CROPPING_BACKEND = 'image_cropping.backends.easy_thumbs.EasyThumbnailsBackend'
+IMAGE_CROPPING_BACKEND_PARAMS = {}

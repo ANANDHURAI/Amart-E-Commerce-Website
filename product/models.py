@@ -65,11 +65,7 @@ class Inventory(models.Model):
     size = models.CharField(max_length=2, choices=SIZE_CHOICES, default="S")
     price = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     stock = models.PositiveIntegerField()
-    # S=models.CharField(max_length=1 , validators=[MinValueValidator(0)] ,default=0)
-    # XL=models.CharField(max_length=2 , validators=[MinValueValidator(0)],default=0)
-    # L=models.CharField(max_length=1 , validators=[MinValueValidator(0)],default=0)
-    # M=models.CharField(max_length=1 , validators=[MinValueValidator(0)],default=0)
-
+  
     def __str__(self):
         return f"{self.product.name} - {self.size} size"
 
@@ -100,7 +96,7 @@ class ProductImage(models.Model):
         )
         img = img.crop(crop_box)
         
-        img = img.resize((300, 300), Image.LANCZOS)
+        img = img.resize((400, 400), Image.LANCZOS)
         
         img.save(self.image.path)
 

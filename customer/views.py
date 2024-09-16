@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from ecom.views import get_next_url
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, DetailView ,View
 
 # def@login_required(func):
 #     """

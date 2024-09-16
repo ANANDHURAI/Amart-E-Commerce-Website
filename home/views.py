@@ -15,7 +15,11 @@ def home(request):
     for product in products:
         primary_image = product.product_images.filter(priority=1).first()
         product.primary_image = primary_image
-        product.shop_price = Inventory.objects.filter(product=product)[0].price
+        inventory_item = inventery.filter(product=product).first()
+        if inventory_item:
+            product.shop_price = inventory_item.price
+        else:
+            product.shop_price = None
     
     # for product in products:
         # small_size = product.inventory_sizes.get(size="S")
@@ -57,6 +61,7 @@ def shop(request):
         )
 
     if request.method == "POST":
+
         selected_category = request.POST.get("selected_category")
         request.session[selected_category] = selected_category
         sort_by = request.POST.get("sort_by")
@@ -68,8 +73,6 @@ def shop(request):
                 Product.approved_objects.filter(main_category=category)
                 
             )
-
-
         if sort_by == "Price Low to High":
             products = products.order_by("price")
         elif sort_by == "Price High to Low":
@@ -88,9 +91,11 @@ def shop(request):
 
     for product in products:
         product.primary_image = product.product_images.filter(priority=1).first()
-        product.shop_price = Inventory.objects.filter(product=product)[0].price
+        try:
+            product.shop_price = Inventory.objects.filter(product=product)[0].price
+        except IndexError:
+            product.shop_price = 0 
 
-       
         if FavouriteItem.objects.filter(
             customer__id=request.user.id, product=product
         ).exists():
@@ -145,3 +150,7 @@ def product_page(request, slug):
 
 def test_modal_view(request):
     return render(request, "home/test_modal.html")
+
+
+
+

@@ -438,9 +438,9 @@ def edit_product(request, product_id):
 
         # Clear and update images
 
-        for image in product.productimage_set.all():
-            if request.POST.get(f"delete_image_{image.id}"):
-                image.delete()
+        # for image in product.productimage_set.all():
+        #     if request.POST.get(f"delete_image_{image.id}"):
+        #         image.delete()
 
         # Process new images if uploaded
         for i, image in enumerate(images):
