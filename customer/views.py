@@ -11,6 +11,19 @@ from django.contrib.auth import logout
 from ecom.views import get_next_url
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView ,View
+from django.db import transaction
+
+from django.db import transaction
+from django.db.models import F
+import logging
+from django.urls import reverse
+
+from django.db.models import Sum, Prefetch
+from django.http import HttpResponseRedirect
+from django.conf import settings
+import razorpay
+
+
 
 # def@login_required(func):
 #     """
@@ -29,26 +42,23 @@ from django.views.generic import ListView, DetailView ,View
 
 # Customer Profile Session
 
-@login_required(login_url='customer_login')
+
 def dashboard(request):
     try:
         customer = Customer.objects.get(id=request.user.id)
     except Customer.DoesNotExist:
-        customer=None
-    orders = (
-        Order.objects.filter(
-            customer=customer,
-        )
-        .annotate(total_quantity=Sum("items__quantity"))
-        .order_by("-created_at")
-    )[:5]
+        customer = None
 
-    for order in orders:
-        order.order_items = OrderItem.objects.filter(order=order)
+    orders = Order.objects.filter(customer=customer)\
+        .prefetch_related(
+            Prefetch('items', queryset=OrderItem.objects.select_related('product'))
+        )\
+        .annotate(total_quantity=Sum("items__quantity"))\
+        .order_by("-created_at")[:5]
 
     try:
         customer.address = Address.objects.get(customer=customer, is_default=True)
-    except:
+    except Address.DoesNotExist:
         pass
 
     context = {"customer": customer, "orders": orders}
@@ -215,7 +225,6 @@ def edit_address(request, address_id):
 def remove_address(request, address_id):
     address = Address.objects.get(id=address_id)
     address.delete()
-
     return redirect("customer_address")
 
 
@@ -272,6 +281,7 @@ def cancel_order(request, order_id):
             order_item.inventory.save()
             
     order.status = "cancelled"
+    order.save()
     
     return redirect("customer_orders")
 
@@ -293,6 +303,33 @@ def cancel_order_item(request, order_item_id):
 
     return redirect("customer_orders")
 
+
+
+
+
+@login_required
+def return_order(request, order_id):
+    order = Order.objects.get(id=order_id)
+    order_items = OrderItem.objects.filter(order=order)
+    wallet, created = Wallet.objects.get_or_create(customer__id=request.user.id)
+
+    if order.status == 'delivered':
+        for order_item in order_items:
+            if order_item.status != "returned":
+                order_item.status = "returned"
+                order_item.inventory.stock += order_item.quantity
+                order_item.inventory.save()
+                
+                # If the order is paid, add refund to the wallet
+                if order.is_paid:
+                    wallet.balance += order_item.quantity * order_item.inventory.price
+                    wallet.save()
+
+        # Update order status
+        order.status = 'returned'
+        order.save()
+
+    return redirect('customer_orders')
 
 # Customer Favourite Session
 
@@ -441,36 +478,30 @@ def remove_cart_item(request, cart_item_id):
 @login_required
 def checkout(request):
     customer = Customer.objects.get(id=request.user.id)
-    cart, cart_created = Cart.objects.get_or_create(customer=customer)
+    cart, _ = Cart.objects.get_or_create(customer=customer)
     cart_items = CartItem.objects.filter(cart=cart)
-    total_amount = 0
-    total_offer = 0
-    selected_address_id = False
-    selected_payment_method = False
-    if "address_id" in request.session:
-        selected_address_id = int(request.session.get("address_id"))
-    if "payment_method" in request.session:
-        selected_payment_method = request.session.get("payment_method")
-
-    if not cart_items:
+    
+    if not cart_items.exists():
         return redirect("cart")
 
+    total_amount = 0
+    total_offer = 0
+    selected_address_id = request.session.get("address_id")
+    selected_payment_method = request.session.get("payment_method")
+    
     for cart_item in cart_items:
-        cart_item.product.primary_image = cart_item.product.product_images.filter(
-            priority=1
-        ).first()
-        offer = 0
-        if CategoryOffer.objects.filter(category=cart_item.product.main_category).exists():
-            category_offer = CategoryOffer.objects.get(category=cart_item.product.main_category)
-            offer = category_offer.discount
+        cart_item.product.primary_image = cart_item.product.product_images.filter(priority=1).first()
+        offer = CategoryOffer.objects.filter(category=cart_item.product.main_category).first()
+        offer_discount = offer.discount if offer else 0
 
         amount = cart_item.quantity * cart_item.inventory.price
         total_amount += amount
-        total_offer += round(amount * offer / 100)
+        total_offer += round(amount * offer_discount / 100)
 
     cart.total_amount = total_amount
     cart.total_offer = total_offer
     cart.remaining_amount = total_amount - total_offer
+    cart.save()
 
     addresses = Address.objects.filter(customer=customer)
 
@@ -480,8 +511,8 @@ def checkout(request):
         "cart": cart,
         "addresses": addresses,
         "states": list_of_states_in_india,
-        "selected_address_id":selected_address_id,
-        "selected_payment_method":selected_payment_method,
+        "selected_address_id": selected_address_id,
+        "selected_payment_method": selected_payment_method,
     }
     return render(request, "customer/checkout.html", context)
 
@@ -491,156 +522,236 @@ def checkout(request):
 
 @login_required
 def place_order(request):
-    if request.method == "POST":
-        address_id = request.POST.get("address_id")
-        payment_method = request.POST.get("payment_method")
-        request.session["address_id"] = address_id
-        request.session["payment_method"] = payment_method
-        coupon_code = request.POST.get("coupon_code").upper()
+    if request.method != "POST":
+        return redirect("checkout")
 
-        cart = Cart.objects.get(customer=request.user)
-        cart_items = CartItem.objects.filter(cart=cart)
-        total_amount = 0
-        total_offer = 0
+    address_id = request.POST.get("address_id")
+    payment_method = request.POST.get("payment_method")
+    request.session["address_id"] = address_id
+    request.session["payment_method"] = payment_method
+    coupon_code = request.POST.get("coupon_code", "").upper()
 
-        for cart_item in cart_items:
-            offer = 0
-            if CategoryOffer.objects.filter(category=cart_item.product.main_category).exists():
-                category_offer = CategoryOffer.objects.get(category=cart_item.product.main_category)
-                offer = category_offer.discount
+    cart = Cart.objects.filter(customer=request.user).first()
+    cart_items = CartItem.objects.filter(cart=cart)
 
-            amount = cart_item.quantity * cart_item.inventory.price
-            total_amount += amount
-            total_offer += round(amount * offer / 100)
+    if not cart_items.exists():
+        messages.error(request, "Your cart is empty!")
+        return redirect("checkout")
+
+    total_amount = sum(cart_item.quantity * cart_item.inventory.price for cart_item in cart_items)
+
+    total_offer = sum(
+        round(cart_item.quantity * cart_item.inventory.price * 
+            (CategoryOffer.objects.filter(category=cart_item.product.main_category).first().discount / 100) 
+            if CategoryOffer.objects.filter(category=cart_item.product.main_category).exists() 
+            else 0) 
+        for cart_item in cart_items
+    )
+
+    total_amount -= total_offer
+
+
+    if coupon_code:
+        coupon = Coupon.objects.filter(code=coupon_code, is_active=True).first()
+        if not coupon:
+            messages.error(request, "Invalid Coupon")
+            return redirect("checkout")
         
+        if coupon.discount >= total_amount:
+            messages.error(request, "Coupon is not valid for this purchase.")
+            return redirect("checkout")
 
-        total_amount -= total_offer
+        if coupon.quantity < 1:
+            messages.error(request, "Coupon expired")
+            return redirect("checkout")
 
+        if coupon.minimum_purchase > total_amount:
+            messages.error(request, f"You should purchase for {coupon.minimum_purchase} to apply this coupon.")
+            return redirect("checkout")
 
-        if coupon_code != "":
-            if Coupon.objects.filter(code=coupon_code, is_active=True).exists():
-                coupon = Coupon.objects.get(code=coupon_code, is_active=True)
-                if coupon.discount >= total_amount:
-                    error_message = "Coupon is not valid for this purchase."
-                    messages.error(request, error_message)
-                    return redirect("checkout")
+        total_amount -= coupon.discount
+        request.session["discount"] = coupon.discount
+        request.session["coupon_code"] = coupon.code
 
-                if coupon.quantity < 1:
-                    error_message = "Coupon expired"
-                    messages.error(request, error_message)
-                    return redirect("checkout")
-
-                if coupon.minimum_purchase > total_amount:
-                    error_message = f"You should purchase for {coupon.minimum_purchase} to appply this coupon."
-                    messages.error(request, error_message)
-                    return redirect("checkout")
-
-                total_amount -= coupon.discount
-                request.session["discount"] = coupon.discount
-                request.session["coupon_code"] = coupon.code
-            else:
-                error_message = "Invalid Coupon"
-                messages.error(request, error_message)
-                return redirect("checkout")
-
-        if payment_method == "cod":
-            if total_amount > 1000:
-                error_message = "COD is not available for orders above 1000 Rs."
-                messages.error(request, error_message)
-                return redirect("checkout")
-            return redirect("cash_on_delivery")
-        elif payment_method == "razorpay":
-            return redirect("razorpay_order_creation", amount=total_amount)
-        else:
-            return HttpResponse("PASS")
+    if payment_method == "cod":
+        if total_amount > 1000:
+            messages.error(request, "COD is not available for orders above 1000 Rs.")
+            return redirect("checkout")
+        request.session['payment_successful'] = True
+        return redirect("finalize_order")
+    elif payment_method == "razorpay":
+        return redirect("razorpay_order_creation", amount=total_amount)
+    else:
+        return HttpResponse("Invalid payment method")
 
 
+
+logger = logging.getLogger(__name__)
+
+@login_required
+@transaction.atomic
 def create_order(request):
-    try:
-        address_id = request.session.get("address_id")
-        coupon_code = request.session.get("coupon_code")
-        discount = request.session.get("discount")
-        customer = Customer.objects.get(id=request.user.id)
-        address = Address.objects.get(id=address_id)
-        cart = Cart.objects.get(customer=customer)
-        cart_items = CartItem.objects.filter(cart=cart)
-        total_amount = 0
-        total_offer = 0
+    address_id = request.session.get("address_id")
+    payment_method = request.session.get("payment_method")
+    coupon_code = request.session.get("coupon_code")
+    discount = request.session.get("discount", 0)
 
-        for cart_item in cart_items:
-            offer = 0
-            if CategoryOffer.objects.filter(category=cart_item.product.main_category).exists():
-                category_offer = CategoryOffer.objects.get(category=cart_item.product.main_category)
-                offer = category_offer.discount
+    if not address_id or not payment_method:
+        messages.error(request, "Invalid order data. Please try again.")
+        return None
 
-            amount = cart_item.quantity * cart_item.inventory.price
-            total_amount += amount
-            total_offer += round(amount * offer / 100)
+    # Modified: Retrieve the customer object using the logged-in user
+    customer = Customer.objects.filter(email=request.user.email).first()
+    if not customer:
+        messages.error(request, "Customer not found.")
+        return None
 
-        total_amount -= total_offer
-        cart.total_amount = total_amount
-        cart.total_offer = total_offer
+    address = Address.objects.filter(id=address_id, customer=customer).first()
+    if not address:
+        messages.error(request, "Invalid address selected.")
+        return None
 
-        order = Order.objects.create(
-            customer=customer,
-            address=address.address_text,
-            total_amount=cart.total_amount,
-            offer=cart.total_offer,
-        )
+    cart = Cart.objects.filter(customer=customer).first()
+    if not cart:
+        messages.error(request, "Cart not found.")
+        return None
 
-        if coupon_code:
-            coupon = Coupon.objects.get(code=coupon_code)
+    cart_items = CartItem.objects.filter(cart=cart)
+
+    if not cart_items.exists():
+        messages.error(request, "Your cart is empty!")
+        return None
+
+    total_amount = 0
+    total_offer = 0
+
+    for cart_item in cart_items:
+        offer = CategoryOffer.objects.filter(category=cart_item.product.main_category).first()
+        offer_discount = offer.discount if offer else 0
+
+        amount = cart_item.quantity * cart_item.inventory.price
+        total_amount += amount
+        total_offer += round(amount * offer_discount / 100)
+
+    total_amount -= total_offer
+    total_amount = max(total_amount - discount, 0)
+
+    order = Order.objects.create(
+        customer=customer,
+        address=address.address_text,
+        total_amount=total_amount,
+        offer=total_offer,
+        payment_method=payment_method,
+        is_paid=(payment_method == "razorpay")
+    )
+
+    if coupon_code:
+        coupon = Coupon.objects.filter(code=coupon_code).first()
+        if coupon:
             order.discount = discount
             order.coupon = coupon
-            order.total_amount -= coupon.discount
             order.save()
-            coupon.quantity -= 1
-            del request.session["discount"]
-            del request.session["coupon_code"]
-            coupon.save()
+            Coupon.objects.filter(id=coupon.id).update(quantity=F('quantity') - 1)
 
-        for cart_item in cart_items:
-            OrderItem.objects.create(
-                order=order,
-                product=cart_item.product,
-                inventory=cart_item.inventory,
-                quantity=cart_item.quantity,
-            )
+    for cart_item in cart_items:
+        OrderItem.objects.create(
+            order=order,
+            product=cart_item.product,
+            inventory=cart_item.inventory,
+            quantity=cart_item.quantity,
+            price=cart_item.inventory.price
+        )
+        cart_item.inventory.stock -= cart_item.quantity
+        cart_item.inventory.save()
 
-            cart_item.inventory.stock -= cart_item.quantity
-            cart_item.inventory.save()
-            cart_item.delete()
+    cart_items.delete()
 
-        payment_method = request.session["payment_method"]
-        if payment_method == "cod":
-            order.payment_method = payment_method
-            order.is_paid = False
-            order.save()
-
-        if payment_method == "razorpay":
-            order.payment_method = payment_method
-            order.is_paid = True
-            order.save()
-
-        del request.session["payment_method"]
-
-        return True
-    except Exception as e:
-        print(e)
-        return False
+    return order
 
 
-# Wallet management
+
+
 
 
 @login_required
+def finalize_order(request):
+    if not request.session.get('payment_successful'):
+        messages.error(request, "Invalid order attempt. Please try again.")
+        return redirect('checkout')
+
+    order = create_order(request)
+    if order:
+        request.session.pop("payment_method", None)
+        request.session.pop("address_id", None)
+        request.session.pop("coupon_code", None)
+        request.session.pop("discount", None)
+        request.session.pop('payment_successful', None)
+        
+        messages.success(request, "Order placed successfully!")
+        return redirect('order_confirmation', order_id=order.id)
+    else:
+        messages.error(request, "An error occurred while creating your order. Please try again.")
+        return redirect('checkout')
+
+        
+
+@login_required
+def order_confirmation(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    # Retrieve the customer object associated with the logged-in user
+    customer = Customer.objects.filter(account_ptr=request.user).first()
+    if not customer:
+        messages.error(request, "Customer not found.")
+        return redirect('home')
+    
+    # Retrieve the order for this customer
+    order = Order.objects.filter(id=order_id, customer=customer).first()
+    if not order:
+        messages.error(request, "Order not found.")
+        return redirect('customer_orders')
+    messages.success(request, f"Your order #{order.id} has been placed successfully!")
+    return HttpResponseRedirect(reverse('payment_success'))
+    
+    
+
+razorpay_client = razorpay.Client(
+    auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET)
+)
+
+@login_required
 def customer_wallet(request):
-    customer = Customer.objects.get(id=request.user.id)
-    wallet, is_wallet_created = Wallet.objects.get_or_create(customer=customer)
+    customer = request.user.customer
+    wallet, _ = Wallet.objects.get_or_create(customer=customer)
     order_items = OrderItem.objects.filter(order__customer=customer, status="cancelled").order_by("-id")
 
-    context = {"customer": customer, "wallet": wallet, "order_items": order_items}
-    return render(request, "customer/customer-wallet.html", context)
+    context = {
+        "customer": customer,
+        "wallet": wallet,
+        "order_items": order_items
+    }
+
+    if request.method == 'POST':
+        amount = int(request.POST.get('amount', 0))
+        if amount > 0:
+            currency = 'INR'
+            razorpay_order = razorpay_client.order.create(dict(
+                amount=amount * 100,
+                currency=currency,
+                payment_capture='0'
+            ))
+            razorpay_order_id = razorpay_order['id']
+            callback_url = request.build_absolute_uri(reverse('razorpay_callback'))
+            
+            context.update({
+                'razorpay_order_id': razorpay_order_id,
+                'razorpay_merchant_key': settings.RAZOR_KEY_ID,
+                'razorpay_amount': amount * 100,
+                'currency': currency,
+                'callback_url': callback_url
+            })
+
+    return render(request, 'customer/customer-wallet.html', context)
+
 
 
 @login_required
@@ -657,4 +768,6 @@ def invoice(request, order_id):
     
     context = {"order":order}
     return render(request, "customer/invoice.html", context)
+
+
 

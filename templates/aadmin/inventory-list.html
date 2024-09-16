@@ -1,0 +1,98 @@
+{% extends "aadmin/admin-base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-7">Inventory</h1>
+    </div>
+</div>
+
+<div class="hoverable-data-table">
+    <table id="hoverable-data-table" class="table table-hover nowrap" style="width:100%">
+        <thead class="thead-dark">
+            <tr>
+                <th>Product Name</th>
+                <th class="text-center">Size</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Stock</th>
+                <th class="text-center">Is Active</th>
+                <th class="text-center">Edit / List-Unlist / Delete</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for item in inventory %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td class="text-center">{{ item.get_size_display }}</td>
+                <td class="text-center">₹ {{ item.price }}</td>
+                <td class="text-center">{{ item.stock }}</td>
+                <td class="text-center">
+                    {% if item.is_active %}
+                        <span class="mdi mdi-check-circle text-success"></span>
+                    {% else %}
+                        <span class="mdi mdi-close-circle text-danger"></span>
+                    {% endif %}
+                </td>
+                <td class="text-center">
+                    <!-- Edit button -->
+                    <a href="{% url 'edit_inventory' item.id %}" class="btn-sm btn-outline-warning"><i class="mdi mdi-pencil-box"></i>Edit</a>
+                    
+                    <!-- List/Unlist button -->
+                    <a href="{% url 'inventory_status' item.id %}" class="btn-sm btn-outline-info">
+                        {% if item.is_active %}
+                            <i class="mdi mdi-eye-off"></i> Unlist
+                        {% else %}
+                            <i class="mdi mdi-eye"></i> List
+                        {% endif %}
+                    </a>
+                    
+                    <!-- Delete button with SweetAlert -->
+                    <button type="button" class="btn-sm btn-outline-danger" onclick="confirmDelete('{{ item.id }}', '{{ item.product.name }} - {{ item.get_size_display }}')"><i class="mdi mdi-delete"></i>Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
+
+{% block extra_scripts %}
+<script src='{% static "plugins/data-tables/jquery.datatables.min.js" %}'></script>
+<script src='{% static "plugins/data-tables/datatables.bootstrap4.min.js" %}'></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+    // SweetAlert confirmation for deleting inventory
+    function confirmDelete(id, itemName) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to delete " + itemName + ". This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Use template literal to correctly append the item id
+                window.location.href = `/aadmin/inventory/delete/${id}/`;
+            }
+        });
+    }
+    
+    $(document).ready(function() {
+        $('#hoverable-data-table').DataTable();
+    });
+    </script>
+    
+{% endblock extra_scripts %}
+
+{% block extra_styles %}
+<link href="{% static 'plugins/data-tables/datatables.bootstrap4.min.css' %}" rel="stylesheet">
+<link href="https://unpkg.com/sleek-dashboard/dist/assets/css/sleek.min.css">
+{% endblock extra_styles %}

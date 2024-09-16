@@ -227,6 +227,31 @@
                     <span class="nav-text">Add Product</span>
                   </a>
                 </li>
+
+                
+                <li class="has-sub {% if current_page == 'inventory_list' or current_page == 'add_inventory' %}active expand{% endif %}">
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#inventory"
+                    aria-expanded="false" aria-controls="inventory">
+                    <i class="mdi mdi-package-variant-closed"></i>
+                    <span class="nav-text">Inventory</span> <b class="caret"></b>
+                  </a>
+                
+                  <ul class="collapse {% if current_page == 'inventory_list' or current_page == 'add_inventory' %}show{% endif %}" id="inventory" data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      <li class="{% if current_page == 'inventory_list' %}active{% endif %}">
+                        <a class="sidenav-item-link" href="{% url "inventory_list" %}">
+                          <span class="nav-text">Inventory List</span>
+                        </a>
+                      </li>
+                
+                      <li class="{% if current_page == 'add_inventory' %}active{% endif %}">
+                        <a class="sidenav-item-link" href="{% url "add_inventory" %}">
+                          <span class="nav-text">Add Inventory</span>
+                        </a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
                 
 
                 <li class="{% if current_page == "order_list" %}active{% endif %}">

@@ -59,7 +59,6 @@ class Order(models.Model):
         ("confirmed", "confirmed"),
         ("shipped", "shipped"),
         ("delivered", "delivered"),
-        ("cancelled", "cancelled"),
     ]
 
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -117,3 +116,8 @@ class FavouriteItem(models.Model):
 class Wallet(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
     balance = models.PositiveIntegerField(validators=[MinValueValidator(1)], default=0)
+
+
+
+
+

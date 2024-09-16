@@ -27,13 +27,34 @@ def admin_login_required(func):
     return wrapper
 
 
+   # top_products = (
+    #     OrderItem.objects.values('product__name')
+    #     .annotate(total_quantity_sold=Sum('quantity'))
+    #     .order_by('-total_quantity_sold')[:10]
+    # )
+
+    # top_categories = (
+    #     OrderItem.objects.values('product__category__name')
+    #     .annotate(total_quantity_sold=Sum('quantity'))
+    #     .order_by('-total_quantity_sold')[:10]
+    # )
+
+    # ledger_data = (
+    #     Order.objects.values('customer__username', 'date_ordered')
+    #     .annotate(total_amount=Sum('total_amount'))
+    #     .order_by('-date_ordered')
+    # )
+
+
 @admin_login_required
 def admin_dashboard(request):
     title = "Dashboard"
     current_page = "admin_dashboard"
 
+ 
     top_products_info = (
-        OrderItem.objects.values("product__id", "product__name")
+        OrderItem.objects.filter(product__isnull=False)
+        .values("product__id", "product__name")
         .annotate(total_quantity=Coalesce(Sum("quantity"), 0))
         .order_by("-total_quantity")[:10]
     )
@@ -41,14 +62,20 @@ def admin_dashboard(request):
     top_products = []
 
     for product_info in top_products_info:
-        product = Product.objects.get(id=product_info["product__id"])
-        primary_image = product.product_images.filter(priority=1).first()
-        product.primary_image = primary_image
-        product.total_quantity = product_info["total_quantity"]
-        top_products.append(product)
+        try:
+            product = get_object_or_404(Product, id=product_info["product__id"])
+            primary_image = product.product_images.filter(priority=1).first()
+            product.primary_image = primary_image
+            product.total_quantity = product_info["total_quantity"]
+            top_products.append(product)
+        except :
+            # Log the error or handle it as needed
+            continue
+
 
     top_categories_info = (
-        Product.objects.values("main_category__id")
+        Product.objects.filter(main_category__isnull=False)
+        .values("main_category__id")
         .annotate(total_quantity=Coalesce(Sum("orderitem__quantity"), 0))
         .order_by("-total_quantity")[:10]
     )
@@ -56,11 +83,15 @@ def admin_dashboard(request):
     top_categories = []
 
     for category_info in top_categories_info:
-        category = Category.objects.get(id=category_info["main_category__id"])
-        category.total_quantity = category_info["total_quantity"]
-        top_categories.append(category)
+        try:
+            category = get_object_or_404(Category, id=category_info["main_category__id"])
+            category.total_quantity = category_info["total_quantity"]
+            top_categories.append(category)
+        except :
+            # Log the error or handle it as needed
+            continue
 
-    # Line chart for revenue for last year
+    #Line chart for revenue for last year
 
     end_date = date.today()
     start_date = end_date - timedelta(days=365)
@@ -311,29 +342,18 @@ def add_product(request):
         name = request.POST.get("name")
         description = request.POST.get("description")
         main_category_id = request.POST.get("category")
-        mrp = request.POST.get("mrp")
-        sizes = request.POST.getlist("size")
-        prices = request.POST.getlist("price")
-        stocks = request.POST.getlist("stock")
         images = request.FILES.getlist("images")
         is_available = request.POST.get("is_available")
         approved = request.POST.get("approved")
-        # S = request.POST.get("S")
-        # M = request.POST.get("M")
-        # XL = request.POST.get("XL")
-        # L = request.POST.get("L")
         print("aveolsnnj:", is_available)
         print("apporverd:", approved)
 
         # Validate mandatory fields
-        if not name or not main_category_id or not mrp:
-            messages.error(request, "Name, Main Category, and MRP are mandatory.")
+        if not name or not main_category_id :
+            messages.error(request, "Name, Main Category is mandatory.")
             return redirect("add_product")
 
-        # Validate sizes, prices, and stocks
-        if len(sizes) != len(prices) or len(prices) != len(stocks):
-            messages.error(request, "Mismatch in sizes, prices, and stock quantities.")
-            return redirect("add_product")
+        
 
         # Validate file types for images
         allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
@@ -352,34 +372,22 @@ def add_product(request):
             name=name,
             description=description,
             main_category=main_category,
-            mrp=mrp,
             slug=slug,
             is_available=is_available == "on",
             approved=approved == "on",
         )
 
-        for size, price, stock in zip(sizes, prices, stocks):
-            Inventory.objects.create(
-                product=product,
-                size=size,
-                price=price,
-                stock=stock,
-                # S=S,
-                # M=M,
-                # XL=XL,
-                # L=L
-            )
-
+        
         # Add images
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
         messages.success(request, "Product added successfully.")
         return redirect("product_list")
-    size_choices = Inventory.SIZE_CHOICES
+
 
     categories = Category.objects.all()
-    context = {"categories": categories, "size_choices": size_choices}
+    context = {"categories": categories}
     return render(request, "aadmin/product-form.html", context)
 
 
@@ -391,22 +399,13 @@ def edit_product(request, product_id):
         name = request.POST.get("name")
         description = request.POST.get("description")
         main_category_id = request.POST.get("category")
-        mrp = request.POST.get("mrp")
-        sizes = request.POST.getlist("size")
-        prices = request.POST.getlist("price")
-        stocks = request.POST.getlist("stock")
         images = request.FILES.getlist("images")
         is_available = request.POST.get("is_available")
         approved = request.POST.get("approved")
 
         # Validate mandatory fields
-        if not name or not main_category_id or not mrp:
-            messages.error(request, "Name, Main Category, and MRP are mandatory.")
-            return redirect("edit_product", product_id=product.id)
-
-        # Validate sizes, prices, and stocks
-        if len(sizes) != len(prices) or len(prices) != len(stocks):
-            messages.error(request, "Mismatch in sizes, prices, and stock quantities.")
+        if not name or not main_category_id :
+            messages.error(request, "Name, Main Category is mandatory.")
             return redirect("edit_product", product_id=product.id)
 
         # Validate file types for images
@@ -423,39 +422,24 @@ def edit_product(request, product_id):
         product.name = name
         product.description = description
         product.main_category = Category.objects.get(id=main_category_id)
-        product.mrp = mrp
         product.slug = slugify(name)
         product.is_available = is_available == "on"
         product.approved = approved == "on"
+        product.save()
 
-        # Clear and update inventory
-        product.inventory_sizes.all().delete()  # Use 'inventory_sizes' as the related_name
-
-        for size, price, stock in zip(sizes, prices, stocks):
-            Inventory.objects.create(
-                product=product, size=size, price=price, stock=stock
-            )
-
-        # Clear and update images
-
-        # for image in product.productimage_set.all():
-        #     if request.POST.get(f"delete_image_{image.id}"):
-        #         image.delete()
-
-        # Process new images if uploaded
+       
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
         messages.success(request, "Product edited successfully.")
         return redirect("product_list")
 
-    # Fetch necessary data for form
-    size_choices = Inventory.SIZE_CHOICES
+    
+    
     categories = Category.objects.all()
     context = {
         "product": product,
         "categories": categories,
-        "size_choices": size_choices,
     }
 
     return render(request, "aadmin/product-edit-form.html", context)
@@ -519,12 +503,25 @@ def add_account(request):
 def order_list(request):
     title = "Orders"
     current_page = "order_list"
-    order_items = Order.objects.all()
+    order_items = OrderItem.objects.all().select_related('order', 'product', 'inventory', 'order__customer')
     print("order details: ------>", order_items)
     request.session["selection"] = "all"
 
     context = {"order_items": order_items, "current_page": current_page, "title": title}
     return render(request, "aadmin/order-list.html", context=context)
+
+
+@admin_login_required
+def update_order_status(request, order_item_id):
+    if request.method == 'POST':
+        new_status = request.POST.get('new_status')
+        order_item = get_object_or_404(OrderItem, id=order_item_id)
+        order_item.status = new_status
+        order_item.save()
+        messages.success(request, f"Status for order item {order_item_id} updated to {new_status}")
+    return redirect('order_list')
+
+
 
 
 @admin_login_required
@@ -812,3 +809,84 @@ def delete_offer(request, id):
     offer = CategoryOffer.objects.get(id=id)
     offer.delete()
     return HttpResponse("Delete Offer")
+
+
+
+
+@admin_login_required
+def inventory_list(request):
+    inventory = Inventory.objects.select_related('product').all()
+    print('values:', inventory)
+    
+    context = {
+        'inventory': inventory,
+    }
+    return render(request, "aadmin/inventory-list.html", context)
+
+
+
+@admin_login_required
+def add_edit_inventory(request, inventory_id=None):
+    if inventory_id:
+        inventory = get_object_or_404(Inventory, pk=inventory_id)
+    else:
+        inventory = None
+
+    if request.method == "POST":
+        product_id = request.POST.get('product_id')
+        price = request.POST.get('price')
+        size = request.POST.get('size')
+        stock = request.POST.get('stock')
+
+        # Validate data
+        if not product_id or not price or not size or not stock:
+            messages.error(request, "All fields are required.")
+        elif int(price) < 1:
+            messages.error(request, "Price must be greater than 0.")
+        elif int(stock) < 0:
+            messages.error(request, "Stock cannot be negative.")
+        else:
+            # Save or update inventory item
+            product = get_object_or_404(Product, pk=product_id)
+            if inventory:
+                inventory.product = product
+                inventory.price = price
+                inventory.size = size
+                inventory.stock = stock
+                inventory.save()
+                messages.success(request, "Inventory item updated successfully.")
+            else:
+                Inventory.objects.create(
+                    product=product,
+                    price=price,
+                    size=size,
+                    stock=stock
+                )
+                messages.success(request, "New inventory item created successfully.")
+            return redirect('inventory_list')  
+    products = Product.objects.all()
+    sizes = Inventory.SIZE_CHOICES 
+
+    context = {
+        'inventory': inventory,
+        'products': products,
+        'sizes':sizes
+    }
+
+    return render(request, "aadmin/inventory-add.html", context)
+
+
+
+@admin_login_required
+def inventory_status(request, inventory_id):
+    inventory_item = get_object_or_404(Inventory, id=inventory_id)
+    inventory_item.is_active = not inventory_item.is_active
+    inventory_item.save()
+    return redirect('inventory_list')
+
+
+@admin_login_required
+def delete_inventory(request, inventory_id):
+    inventory_item = get_object_or_404(Inventory, id=inventory_id)
+    inventory_item.delete()
+    return redirect('inventory_list')

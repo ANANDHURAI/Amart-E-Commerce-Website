@@ -30,7 +30,8 @@
                 <th>Customer</th>
                 <th class="text-center">Quantity</th>
                 <th class="text-center">Price</th>
-                <th class="text-center">Status</th>
+                <th class="text-center">Current Status</th>
+                <th class="text-center">Update Status</th>
             </tr>
         </thead>
         
@@ -40,11 +41,47 @@
                 <td>{{ order_item.product.name }}</td>
                 <td><a href="">{{ order_item.order.customer }}</a></td>
                 <td class="text-center">{{ order_item.quantity }}</td>
-                <td class="text-center">{{ order_item.inventory.price }}</td>
-                <td class="text-center">{{ order_item.status }}</td>
+                <td class="text-center">{{ order_item.price }}</td>
+                <td class="text-center">
+                    <span class="badge badge-{% if order_item.status == 'pending' %}warning
+                                 {% elif order_item.status == 'confirmed' %}info
+                                 {% elif order_item.status == 'shipped' %}primary
+                                 {% elif order_item.status == 'delivered' %}success
+                                 {% elif order_item.status == 'cancelled' %}danger
+                                 {% else %}secondary{% endif %}">
+                        {{ order_item.get_status_display }}
+                    </span>
+                </td>
+                <td class="text-center">
+                    <form method="post" action="{% url 'update_order_status' order_item.id %}">
+                        {% csrf_token %}
+                        <select name="new_status" onchange="this.form.submit()" class="form-control form-control-sm">
+                            {% for status, label in order_item.STATUS_CHOICES %}
+                                <option value="{{ status }}" {% if status == order_item.status %}selected{% endif %}
+                                        class="{% if status == 'pending' %}text-warning
+                                               {% elif status == 'confirmed' %}text-info
+                                               {% elif status == 'shipped' %}text-primary
+                                               {% elif status == 'delivered' %}text-success
+                                               {% elif status == 'cancelled' %}text-danger
+                                               {% else %}text-secondary{% endif %}">
+                                    {{ label }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </table>
 
 </div>

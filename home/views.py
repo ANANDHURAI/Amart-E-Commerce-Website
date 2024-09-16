@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from product.models import Product, Category, ProductImage, Inventory
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.db.models import F, Sum, Q
+from django.db.models import F, Sum, Q , Min ,Max
 from customer.models import OrderItem, FavouriteItem
 from aadmin.models import CategoryOffer
 
@@ -74,9 +74,9 @@ def shop(request):
                 
             )
         if sort_by == "Price Low to High":
-            products = products.order_by("price")
+            products = products.annotate(min_price=Min('inventory_sizes__price')).order_by('min_price')
         elif sort_by == "Price High to Low":
-            products = products.order_by("-price")
+            products = products.annotate(max_price=Max('inventory_sizes__price')).order_by('-max_price')
         elif sort_by == "New Arrivals":
             products = products.order_by("-created_at")
         elif sort_by == "aA - zZ":
@@ -91,11 +91,8 @@ def shop(request):
 
     for product in products:
         product.primary_image = product.product_images.filter(priority=1).first()
-        try:
-            product.shop_price = Inventory.objects.filter(product=product)[0].price
-        except IndexError:
-            product.shop_price = 0 
-
+        product.shop_price = product.inventory_sizes.aggregate(Min('price'))['price__min'] or 0
+        
         if FavouriteItem.objects.filter(
             customer__id=request.user.id, product=product
         ).exists():

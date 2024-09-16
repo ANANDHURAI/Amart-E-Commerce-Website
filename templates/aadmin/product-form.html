@@ -44,14 +44,10 @@
                         {% endfor %}
                     </select>
                 </div>
-                
             </div>
 
             <div class="row">
-                <div class="form-group col-md-6">
-                    <label>MRP:</label>
-                    <input name="mrp" type="number" min="0" step="1" class="form-control" placeholder="MRP" value="" required>
-                </div>
+                
                 <div class="form-group col-md-3">
                     <label>Is Available:</label>
                     <input name="is_available" type="checkbox" class="form-control" checked>
@@ -62,36 +58,7 @@
                 </div>
             </div>
 
-            <div id="inventory-section">
-                <h5>Inventory Details</h5>
-                <div class="form-row">
-                    <div class="col">
-                        <select class="form-control" name="size" required>
-                            <option value="">Select Size</option>
-                            {% for value, label in size_choices %}
-                                <option value="{{ value }}">{{ label }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <br>
-                    
-                    <!-- <div class="col">
-                        <input type="number" class="form-control" name="M" placeholder="M" min="1" required>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" name="L" placeholder="L" min="1" required>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" name="XL" placeholder="XL" min="1" required>
-                    </div> -->
-                    <div class="col">
-                        <input type="number" class="form-control" name="price" placeholder="Price" min="1" required>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" name="stock" placeholder="Stock" min="1" required>
-                    </div>
-                </div>
-            </div>
+            
             <!-- Separate fields for each image -->
             <div class="form-group">
                 <label for="images">Product Images (Select at least 3 images)</label>

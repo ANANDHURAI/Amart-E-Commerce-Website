@@ -10,24 +10,17 @@
         margin-top: 10px;
     }
     .image-preview img {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         object-fit: cover;
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 2px;
     }
-    
-    .image-preview {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-    }
     .image-container {
         position: relative;
-        width: 70px; /* Increase size if needed */
-        height: 70px;
+        width: 100px; /* Increase size if needed */
+        height: 100px;
         border: 1px solid #ccc;
         border-radius: 5px;
         overflow: hidden;
@@ -49,8 +42,6 @@
         cursor: pointer;
     }
 </style>
-
-
 
 <div class="card card-default col-lg-8 mx-auto">
     <div class="card-header card-header-border-bottom">
@@ -80,10 +71,6 @@
             </div>
 
             <div class="row">
-                <div class="form-group col-md-6">
-                    <label>MRP:</label>
-                    <input name="mrp" type="number" min="0" step="1" class="form-control" placeholder="MRP" value="{{ product.mrp }}" required>
-                </div>
                 <div class="form-group col-md-3">
                     <label>Is Available:</label>
                     <input name="is_available" type="checkbox" class="form-control" {% if product.is_available %}checked{% endif %}>
@@ -94,50 +81,16 @@
                 </div>
             </div>
 
-            <div id="inventory-section">
-                <h5>Inventory Details</h5>
-                {% for inventory in product.inventory_set.all %}
-                    <div class="form-row">
-                        <div class="col">
-                            <select class="form-control" name="size" required>
-                                <option value="">Select Size</option>
-                                {% for value, label in size_choices %}
-                                    <option value="{{ value }}" {% if value == inventory.size %}selected{% endif %}>{{ label }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col">
-                            <input type="number" class="form-control" name="price" placeholder="Price" min="1" value="{{ inventory.price }}" required>
-                        </div>
-                        <div class="col">
-                            <input type="number" class="form-control" name="stock" placeholder="Stock" min="1" value="{{ inventory.stock }}" required>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
+           
 
-            <!-- Existing Images Section -->
-            <div class="form-group">
-                <label>Existing Product Images</label>
-                <div class="image-preview">
-                    {% for image in product.product_images.all %}
-                        <div class="image-container">
-                            <img src="{{ image.image.url }}" alt="Product Image">
-                            <label>
-                                <input type="checkbox" name="delete_image_{{ image.id }}"> Remove
-                            </label>
-                        </div>
-                    {% empty %}
-                        <p>No existing images for this product.</p>
-                    {% endfor %}
+            <div class="row">
+                <div class="form-group col-md-8">
+                    <label>product Image:</label>
+                    <input id="imageInput" name="name" type="file" accept="image/*" class="form-control-file" title="Choose image" {% if not product %} required {% endif %}>
                 </div>
-            </div>
-
-
-            <div class="form-group">
-                <label for="images">Add New Images (Optional)</label>
-                <input type="file" id="images" name="images" accept="image/*" multiple>
-                <div class="image-preview" id="newImagePreview"></div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img style="width: 100px; height: auto; object-fit: cover;" class="border border-light bg-light text-center mb-3" id="preview" src="{% if product %}{{ product.image.url }}{% endif %}" alt="Image Preview">
+                </div>
             </div>
 
             <div class="form-footer pt-3 border-top">
@@ -151,70 +104,3 @@
 </div>
 
 {% endblock content %}
-
-{% block extra_scripts %}
-<script>
-    document.getElementById('images').addEventListener('change', function() {
-        const previewContainer = document.getElementById('imagePreview');
-        previewContainer.innerHTML = ''; // Clear existing previews
-
-        Array.from(this.files).forEach(file => {
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    previewContainer.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-</script>
-<script>
-    document.getElementById('images').addEventListener('change', function() {
-        const previewContainer = document.getElementById('newImagePreview');
-        previewContainer.innerHTML = ''; // Clear existing previews
-
-        Array.from(this.files).forEach(file => {
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgContainer = document.createElement('div');
-                    imgContainer.className = 'image-container';
-                    
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    
-                    imgContainer.appendChild(img);
-                    previewContainer.appendChild(imgContainer);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-</script>
-<script>
-    function addInventoryRow() {
-        const inventorySection = document.getElementById('inventory-section');
-        const newRow = `
-            <div class="form-row mt-2">
-                <div class="col">
-                    <select class="form-control" name="size" required>
-                        <option value="">Select Size</option>
-                        {% for value, label in size_choices %}
-                            <option value="{{ value }}">{{ label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col">
-                    <input type="number" class="form-control" name="price" placeholder="Price" min="1" required>
-                </div>
-                <div class="col">
-                    <input type="number" class="form-control" name="stock" placeholder="Stock" min="1" required>
-                </div>
-            </div>`;
-        inventorySection.insertAdjacentHTML('beforeend', newRow);
-    }
-</script>
-{% endblock extra_scripts %}

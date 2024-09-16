@@ -1,0 +1,60 @@
+{% extends "aadmin/admin-base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="card card-default col-lg-6 mx-auto">
+    <div class="card-header card-header-border-bottom">
+        <h2>{% if inventory %}Edit {% else %}Add New {% endif %} Inventory Item</h2>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data" {% if inventory %}action="{% url 'edit_inventory' inventory.id %}"{% endif %}>
+            {% csrf_token %}
+            <div class="form-group col-md-12">
+                <label>Product Name:</label>
+                <select name="product_id" class="form-control" required>
+                    <option disabled selected>Select Product</option>
+                    {% for product in products %}
+                        <option value="{{ product.id }}" {% if inventory and inventory.product.id == product.id %}selected{% endif %}>{{ product.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Price:</label>
+                <input type="number" name="price" class="form-control" placeholder="Price" min="1" required value="{% if inventory %}{{ inventory.price }}{% endif %}">
+            </div>
+            <div class="form-group col-md-12">
+                <label>Size:</label>
+                <div class="form-group col-md-12">
+                <label for="size">Size:</label>
+                <select name="size" id="size" class="form-control" required>
+                    <option disabled selected>Select Size</option>
+                    {% for code, size in sizes %}
+                        <option value="{{ code }}">{{ size }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Stock:</label>
+                <input type="number" name="stock" class="form-control" placeholder="Stock Quantity" min="0" required value="{% if inventory %}{{ inventory.stock }}{% endif %}">
+            </div>
+            <br>
+            <div class="form-footer pt-3 border-top">
+                {% for message in messages %}
+                    <div class="alert alert-danger text-center" role="alert">{{ message }}</div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_styles %}
+{% endblock extra_styles %}
+
+{% block extra_scripts %}
+<script>
+    // Client-side validation can be added here if needed
+</script>
+{% endblock extra_scripts %}
