@@ -1713,3 +1713,10 @@ Watching for file changes with StatReloader
 C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Starting new HTTPS connection (2): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_OxjJNgBYkYTfcz HTTP/11" 200 None
