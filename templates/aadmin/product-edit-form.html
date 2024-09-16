@@ -19,7 +19,7 @@
     }
     .image-container {
         position: relative;
-        width: 100px; /* Increase size if needed */
+        width: 100px;
         height: 100px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -81,15 +81,31 @@
                 </div>
             </div>
 
-           
-
             <div class="row">
                 <div class="form-group col-md-8">
-                    <label>product Image:</label>
-                    <input id="imageInput" name="name" type="file" accept="image/*" class="form-control-file" title="Choose image" {% if not product %} required {% endif %}>
+                    <label>New Images:</label>
+                    <input id="imageInput" name="images" type="file" accept="image/*" class="form-control-file" multiple>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <img style="width: 100px; height: auto; object-fit: cover;" class="border border-light bg-light text-center mb-3" id="preview" src="{% if product %}{{ product.image.url }}{% endif %}" alt="Image Preview">
+                    <img style="width: 100px; height: auto; object-fit: cover;" class="border border-light bg-light text-center mb-3" id="preview" src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="Image Preview">
+                </div>
+            </div>
+
+            <!-- Existing Images -->
+            <div class="form-group">
+                <label>Existing Images:</label>
+                <div class="image-preview" id="existing-images">
+                    {% for image in product.images.all %}
+                        <div class="image-container">
+                            <img src="{{ image.image.url }}" alt="Product Image">
+                            <form action="{% url 'remove_product_image' image.id %}" method="post" style="position: absolute; top: 0; right: 0;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </div>
+                    {% empty %}
+                        <p>No images available.</p>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -102,5 +118,32 @@
         </form>
     </div>
 </div>
+
+<script>
+document.getElementById('imageInput').addEventListener('change', function(event) {
+    const existingImagesContainer = document.getElementById('existing-images');
+    const files = event.target.files;
+    
+    existingImagesContainer.innerHTML = ''; // Clear existing images
+
+    for (const file of files) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '100px';
+            img.style.height = '100px';
+            img.style.objectFit = 'cover';
+            img.style.border = '1px solid #ccc';
+            img.style.borderRadius = '5px';
+            img.style.padding = '2px';
+            existingImagesContainer.appendChild(img);
+        }
+
+        reader.readAsDataURL(file);
+    }
+});
+</script>
 
 {% endblock content %}

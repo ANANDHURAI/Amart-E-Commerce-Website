@@ -391,6 +391,8 @@ def add_product(request):
     return render(request, "aadmin/product-form.html", context)
 
 
+
+
 @admin_login_required
 def edit_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
@@ -399,23 +401,20 @@ def edit_product(request, product_id):
         name = request.POST.get("name")
         description = request.POST.get("description")
         main_category_id = request.POST.get("category")
-        images = request.FILES.getlist("images")
         is_available = request.POST.get("is_available")
         approved = request.POST.get("approved")
 
         # Validate mandatory fields
-        if not name or not main_category_id :
-            messages.error(request, "Name, Main Category is mandatory.")
+        if not name or not main_category_id:
+            messages.error(request, "Name and Main Category are mandatory.")
             return redirect("edit_product", product_id=product.id)
 
-        # Validate file types for images
+        # Validate file types for new images
         allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
-
+        images = request.FILES.getlist("images")
         for image in images:
             if image.content_type not in allowed_image_types:
-                messages.error(
-                    request, "Only JPEG, PNG, and GIF formats are supported."
-                )
+                messages.error(request, "Only JPEG, PNG, and GIF formats are supported for new images.")
                 return redirect("edit_product", product_id=product.id)
 
         # Update product details
@@ -427,23 +426,29 @@ def edit_product(request, product_id):
         product.approved = approved == "on"
         product.save()
 
-       
+        # Handle new images
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
         messages.success(request, "Product edited successfully.")
         return redirect("product_list")
 
-    
-    
-    categories = Category.objects.all()
-    context = {
-        "product": product,
-        "categories": categories,
-    }
+    elif request.method == "GET":
+        categories = Category.objects.all()
+        context = {
+            "product": product,
+            "categories": categories,
+        }
+        return render(request, "aadmin/product-edit-form.html", context)
 
-    return render(request, "aadmin/product-edit-form.html", context)
 
+
+def remove_product_image(request, image_id):
+    image = get_object_or_404(ProductImage, id=image_id)
+    if request.method == "POST":
+        image.delete()
+        messages.success(request, "Image removed successfully.")
+    return redirect("edit_product", product_id=image.product.id)
 
 def delete_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
@@ -827,11 +832,13 @@ def inventory_list(request):
 
 @admin_login_required
 def add_edit_inventory(request, inventory_id=None):
+    # Fetch the inventory item if an ID is provided
     if inventory_id:
         inventory = get_object_or_404(Inventory, pk=inventory_id)
     else:
         inventory = None
 
+    # Handle form submission
     if request.method == "POST":
         product_id = request.POST.get('product_id')
         price = request.POST.get('price')
@@ -846,9 +853,9 @@ def add_edit_inventory(request, inventory_id=None):
         elif int(stock) < 0:
             messages.error(request, "Stock cannot be negative.")
         else:
-            # Save or update inventory item
             product = get_object_or_404(Product, pk=product_id)
             if inventory:
+                # Update existing inventory item
                 inventory.product = product
                 inventory.price = price
                 inventory.size = size
@@ -856,6 +863,7 @@ def add_edit_inventory(request, inventory_id=None):
                 inventory.save()
                 messages.success(request, "Inventory item updated successfully.")
             else:
+                # Create a new inventory item
                 Inventory.objects.create(
                     product=product,
                     price=price,
@@ -863,17 +871,19 @@ def add_edit_inventory(request, inventory_id=None):
                     stock=stock
                 )
                 messages.success(request, "New inventory item created successfully.")
-            return redirect('inventory_list')  
+            return redirect('inventory_list')  # Ensure a redirect or HttpResponse is returned
+
+    # Handle GET request or if form submission fails
     products = Product.objects.all()
     sizes = Inventory.SIZE_CHOICES 
 
     context = {
         'inventory': inventory,
         'products': products,
-        'sizes':sizes
+        'sizes': sizes
     }
 
-    return render(request, "aadmin/inventory-add.html", context)
+    return render(request, "aadmin/inventory-add.html", context)  # Ensure HttpResponse is returned
 
 
 
