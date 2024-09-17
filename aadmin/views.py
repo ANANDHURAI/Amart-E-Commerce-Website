@@ -56,7 +56,7 @@ def admin_dashboard(request):
         OrderItem.objects.filter(product__isnull=False)
         .values("product__id", "product__name")
         .annotate(total_quantity=Coalesce(Sum("quantity"), 0))
-        .order_by("-total_quantity")[:10]
+        .order_by("-total_quantity")[:5]
     )
 
     top_products = []

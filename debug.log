@@ -1882,3 +1882,899 @@ Traceback (most recent call last):
 ValueError: The view aadmin.views.wrapper didn't return an HttpResponse object. It returned None instead.
 C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /customer/add-to-cart/6/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py", line 408, in add_to_cart
+    inventory = Inventory.objects.get(product=product, size=size)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+product.models.Inventory.MultipleObjectsReturned: get() returned more than one Inventory -- it returned 2!
+Internal Server Error: /customer/add-to-cart/6/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py", line 408, in add_to_cart
+    inventory = Inventory.objects.get(product=product, size=size)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+product.models.Inventory.MultipleObjectsReturned: get() returned more than one Inventory -- it returned 2!
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+Internal Server Error: /payment/razorpay-order-creation/4900/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 615, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001BB03618FB0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB03618FB0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 30, in razorpay_order_creation
+    razorpay_order = razorpay_client.order.create(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 120, in request
+    response = getattr(self.session, method)(url, auth=self.auth,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB03618FB0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+Starting new HTTPS connection (2): api.razorpay.com:443
+Internal Server Error: /payment/razorpay-order-creation/4900/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 615, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001BB037E39E0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB037E39E0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 30, in razorpay_order_creation
+    razorpay_order = razorpay_client.order.create(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 120, in request
+    response = getattr(self.session, method)(url, auth=self.auth,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB037E39E0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+Starting new HTTPS connection (3): api.razorpay.com:443
+Internal Server Error: /payment/razorpay-order-creation/4900/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 615, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001BB036C2090>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB036C2090>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 30, in razorpay_order_creation
+    razorpay_order = razorpay_client.order.create(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 120, in request
+    response = getattr(self.session, method)(url, auth=self.auth,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001BB036C2090>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+Starting new HTTPS connection (4): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Internal Server Error: /payment/razorpay-order-creation/4900/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 464, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 464, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 30, in razorpay_order_creation
+    razorpay_order = razorpay_client.order.create(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 120, in request
+    response = getattr(self.session, method)(url, auth=self.auth,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Starting new HTTPS connection (5): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Internal Server Error: /payment/razorpay-order-creation/4900/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 464, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\urllib3\connection.py", line 464, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 30, in razorpay_order_creation
+    razorpay_order = razorpay_client.order.create(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\razorpay\client.py", line 120, in request
+    response = getattr(self.session, method)(url, auth=self.auth,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Starting new HTTPS connection (6): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Razorpay verification error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+Razorpay payment handler error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Razorpay verification error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+Razorpay payment handler error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Razorpay verification error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+Razorpay payment handler error: Cannot resolve keyword 'razorpay_order_id' into field. Choices are: address, coupon, coupon_id, created_at, customer, customer_id, discount, id, is_paid, items, offer, payment_method, status, total_amount, updated_at
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Wallet payment error: 'Cart' object has no attribute 'remaining_amount'
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Wallet payment error: 'Cart' object has no attribute 'remaining_amount'
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+Starting new HTTPS connection (2): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Internal Server Error: /payment/razorpay-callback/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view payment.views.razorpay_callback didn't return an HttpResponse object. It returned None instead.
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /payment/razorpay-callback/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view payment.views.razorpay_callback didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /payment/razorpay-callback/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view payment.views.razorpay_callback didn't return an HttpResponse object. It returned None instead.
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /payment/razorpay-callback/
+Bad Request: /payment/razorpay-callback/
+Bad Request: /payment/razorpay-callback/
+Bad Request: /payment/razorpay-callback/
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+Received non-POST request: GET
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Internal Server Error: /payment/razorpay-callback/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view payment.views.razorpay_callback didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /payment/razorpay-callback/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view payment.views.razorpay_callback didn't return an HttpResponse object. It returned None instead.
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Bad Request: /payment/razorpay-callback/
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_OxwZiRpJAr5O3x HTTP/11" 200 None
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+https://api.razorpay.com:443 "GET /v1/orders/order_Oy3TAkBHXdeKD3 HTTP/11" 200 None
+Resetting dropped connection: api.razorpay.com
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Resetting dropped connection: api.razorpay.com
+https://api.razorpay.com:443 "GET /v1/orders/order_Oy4Th6B4M9YRKx HTTP/11" 200 None
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+https://api.razorpay.com:443 "GET /v1/orders/order_Oy4e2CHXy0MpIJ HTTP/11" 200 None
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader

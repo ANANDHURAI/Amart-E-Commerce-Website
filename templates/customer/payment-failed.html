@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include "home/includes/navigation.html" %}
+
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Payment Failed</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active">Payment Failed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="user-dashboard page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dashboard-wrapper user-dashboard">
+                    <div class="text-center">
+                        <h2>Your payment has failed</h2>
+                        {% if order %}
+                            <p>Order ID: {{ order.id }}</p>
+                            <p>Amount: ₹{{ order.total_amount }}</p>
+                        {% endif %}
+                        <p>Please try again or choose a different payment method.</p>
+                        <a href="{% url 'checkout' %}" class="btn btn-main mt-20">Return to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/includes/footer.html' %}
+{% endblock content %}

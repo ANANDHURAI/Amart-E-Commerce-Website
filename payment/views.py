@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 import razorpay
 from django.conf import settings
-from customer.models import Order, Cart, CartItem ,Wallet
+from customer.models import Order, Cart, CartItem ,Wallet , OrderItem
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.views.decorators.csrf import csrf_exempt
@@ -10,6 +10,7 @@ from django.contrib import messages
 from customer.views import create_order
 from django.contrib.auth.decorators import login_required
 import logging
+from django.db import transaction
 
 # Customer Payment Session
 
@@ -41,7 +42,6 @@ def razorpay_order_creation(request, amount):
     }
 
     return render(request, "customer/customer-payment.html", context=context)
-
 
 
 
@@ -94,6 +94,49 @@ def cash_on_delivery(request):
 def payment_success(request):
     return render(request, "customer/customer-payment-success.html")
 
+
+@login_required
+def payment_failed(request):
+    order_id = request.session.get('order_id')
+    payment_method = request.session.get('payment_method')
+    
+    if not order_id:
+        messages.error(request, "No pending order found.")
+        return redirect('checkout')
+    
+    order = Order.objects.get(id=order_id)
+    
+    context = {
+        'order': order,
+        'payment_method': payment_method
+    }
+    
+    if request.method == 'POST':
+        retry_method = request.POST.get('retry_method')
+        
+        if retry_method == 'razorpay':
+            return redirect('razorpay_order_creation', amount=order.total_amount)
+        elif retry_method == 'wallet':
+            wallet = Wallet.objects.get(customer=request.user)
+            if wallet.balance >= order.total_amount:
+                with transaction.atomic():
+                    wallet.balance -= order.total_amount
+                    wallet.save()
+                    order.is_paid = True
+                    order.payment_method = 'wallet'
+                    order.save()
+                messages.success(request, "Payment successful using wallet.")
+                return redirect('order_confirmation', order_id=order.id)
+            else:
+                messages.error(request, "Insufficient wallet balance.")
+        else:
+            messages.error(request, "Invalid payment method selected.")
+    
+    return render(request, 'customer/payment_failed.html', context)
+
+
+
+
 @login_required
 def pay_now(request, order_id):
     order = Order.objects.get(id=order_id)
@@ -116,7 +159,10 @@ def pay_now_update(request):
     except Exception as e:
         logger.error(f"Error in pay_now_update: {str(e)}")
         return False
-    
+
+
+
+
 @login_required
 def wallet_recharge_complete(request):
     if request.session.get('payment_successful') and request.session.get('payment_method') == 'razorpay':
@@ -139,6 +185,39 @@ def wallet_recharge_complete(request):
     return redirect('customer_wallet')
 
 
+
+
+@login_required
+def wallet_payment_complete(request):
+    try:
+        if request.session.get('payment_method') != 'wallet':
+            messages.error(request, "Wallet payment was not initiated. Please select a payment method.")
+            return redirect("checkout")
+
+        total_amount = request.session.get('total_amount')
+        if not total_amount:
+            raise ValueError("Total amount not found in session")
+
+        customer = request.user
+        wallet = Wallet.objects.get(customer=customer)
+
+        if wallet.balance >= total_amount:
+            with transaction.atomic():
+                wallet.balance -= total_amount
+                wallet.save()
+                request.session['payment_successful'] = True
+            return redirect("finalize_order")
+        else:
+            messages.error(request, "Insufficient wallet balance.")
+            return redirect("checkout")
+    except Exception as e:
+        logger.error(f"Wallet payment error: {str(e)}")
+        messages.error(request, f"An error occurred during wallet payment: {str(e)}")
+        return redirect("checkout")
+
+
+
+
 @login_required
 def razorpay_callback(request):
     if request.method == "GET":
@@ -153,8 +232,7 @@ def razorpay_callback(request):
         try:
             razorpay_client.utility.verify_payment_signature(params_dict)
             order = razorpay_client.order.fetch(razorpay_order_id)
-            amount = order['amount'] / 100  # Convert back to rupees
-            
+            amount = order['amount'] / 100  
             customer = request.user.customer
             wallet = Wallet.objects.get(customer=customer)
             wallet.balance += amount
@@ -164,3 +242,4 @@ def razorpay_callback(request):
         except:
             messages.error(request, 'Payment verification failed. Please try again.')
     return redirect('customer_wallet')
+

@@ -102,6 +102,15 @@
                            </label>
                            {% if cart.total_amount > 1000 %} <p>Cash on delivery is not available for orders above 1000 Rs.</p> {% endif %}
                         </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="radio" name="payment_method" id="wallet" value="wallet" {% if wallet_balance >= cart.remaining_amount %}{% else %}disabled{% endif %}>
+                           <label class="form-check-label" for="wallet">
+                               Wallet (Balance: ₹{{ wallet_balance }})
+                               {% if wallet_balance < cart.remaining_amount %}
+                               <span class="text-danger">(Insufficient balance)</span>
+                               {% endif %}
+                           </label>
+                       </div>
                      </div>
                   <br>
                   <button type="submit" class="btn btn-main mt-20">Place Order</button>
