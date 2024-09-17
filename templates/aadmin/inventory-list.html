@@ -7,6 +7,15 @@
 <div class="container">
     <div class="row">
         <h1 class="col-md-7">Inventory</h1>
+        <!-- Search Form -->
+        <form method="get" class="col-md-5">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ search_query }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -24,7 +33,7 @@
         </thead>
         
         <tbody>
-            {% for item in inventory %}
+            {% for item in page_obj %}
             <tr>
                 <td>{{ item.product.name }}</td>
                 <td class="text-center">{{ item.get_size_display }}</td>
@@ -54,9 +63,56 @@
                     <button type="button" class="btn-sm btn-outline-danger" onclick="confirmDelete('{{ item.id }}', '{{ item.product.name }} - {{ item.get_size_display }}')"><i class="mdi mdi-delete"></i>Delete</button>
                 </td>
             </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No inventory items found.</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
+    
+    <!-- Pagination controls -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if num == page_obj.number %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ num }}<span class="sr-only">(current)</span></span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}">{{ num }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 </div>
 
 {% endblock content %}
@@ -86,10 +142,13 @@
     }
     
     $(document).ready(function() {
-        $('#hoverable-data-table').DataTable();
+        $('#hoverable-data-table').DataTable({
+            paging: false,  // Disable DataTables paging if using Django pagination
+            searching: false // Disable DataTables searching if using Django search
+        });
     });
-    </script>
-    
+</script>
+
 {% endblock extra_scripts %}
 
 {% block extra_styles %}

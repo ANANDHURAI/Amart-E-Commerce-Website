@@ -5,21 +5,29 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <h1 class="col-md-7">Categories</h1>
-        <form class="form-inline" method="post">
-            {% csrf_token %}
-            <div class="form-group mr-2">
-                <label for="filter_option" class="mr-2">Filter by:</label>
-                <select class="form-control input-sm" name="filter_option" id="filter_option">
-                    <option {% if request.session.selection == "listed_categories" %}selected{% endif %} value="listed_products">Listed Categories</option>
-                    <option {% if request.session.selection == "deleted_categories" %}selected{% endif %} value="deleted_categories">Deleted Categories</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-sm btn-primary">Apply Filter</button>
-        </form>
+    <div class="row align-items-center">
+        <h1 class="col-md-7 mb-4">Categories</h1>
+        <div class="col-md-5 text-right">
+            <form class="form-inline justify-content-end" method="get">
+                <div class="form-group mr-3">
+                    <label for="search" class="mr-2 mb-0">Search:</label>
+                    <input type="text" class="form-control form-control-sm" name="search" id="search" value="{{ search_query }}" placeholder="Search categories">
+                </div>
+                <br>
+                <br>
+                <div class="form-group mr-3">
+                    <label for="filter_option" class="mr-2 mb-0">Filter by:</label>
+                    <select class="form-control form-control-sm" name="filter_option" id="filter_option">
+                        <option {% if request.session.selection == "listed_categories" %}selected{% endif %} value="listed_categories">Listed Categories</option>
+                        <option {% if request.session.selection == "deleted_categories" %}selected{% endif %} value="deleted_categories">Deleted Categories</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-sm btn-primary">Apply</button>
+            </form>
+        </div>
     </div>
 </div>
+
 
 <div class="hoverable-data-table">
     <table id="hoverable-data-table" class="table table-hover nowrap" style="width:100%">
@@ -40,7 +48,7 @@
                 {% if request.session.selection == "deleted_categories" %}<td class="text-center">{{ category.deleted_at }}</td>{% endif %}
                 <td class="text-center">
                     {% if not request.session.selection == "deleted_categories" %}
-                        <a href="{% url "edit_category" category.slug %}" class="btn-sm btn-outline-warning"><i class="mdi mdi-pencil-box" ></i>Edit</a>
+                        <a href="{% url "edit_category" category.slug %}" class="btn-sm btn-outline-warning"><i class="mdi mdi-pencil-box"></i>Edit</a>
                         <a type="button" href="" class="btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteModal{{ category.id }}"><i class="mdi mdi-delete"></i>Delete</a>
                     {% else %}
                         <a type="button" href="" class="btn-sm btn-outline-primary" data-toggle="modal" data-target="#restoreModel{{ category.id }}"><i class="mdi mdi-delete"></i>Restore</a>
@@ -96,22 +104,54 @@
         </tbody>
     </table>
 
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if categories.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ categories.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+            
+            {% for num in categories.paginator.page_range %}
+                {% if categories.number == num %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
+                    </li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+            
+            {% if categories.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ categories.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ categories.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
 </div>
 
 {% endblock content %}
-
 
 {% block extra_scripts %}
 
 <script src='{% static "aadmin/plugins/data-tables/jquery.datatables.min.js" %}'></script>
 <script src='{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.js" %}'></script> 
 
-{% endblock extra_scripts %}
-
-{% block extra_styles %}
-
-
-<link href="{% static "aadmin/plugins/data-tables/datatables.bootstrap4.min.css" %}" rel="stylesheet">
-<link href="https://unpkg.com/sleek-dashboard/dist/assets/css/sleek.min.css">
-
-{% endblock extra_styles %}
+{% endblock %}

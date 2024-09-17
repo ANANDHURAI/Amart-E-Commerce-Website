@@ -354,13 +354,29 @@ def favourites(request):
 
 
 @login_required
+
 def add_to_favourite(request, product_id):
     next_url = get_next_url(request)
-    customer = Customer.objects.get(id=request.user.id)
-    product = Product.objects.get(id=product_id)
+    try:
+        customer = Customer.objects.get(id=request.user.id)
+    except Customer.DoesNotExist:
+        messages.error(request, "Customer not found.")
+        return redirect('home')
+    try:
+        product = Product.objects.get(id=product_id)
+    except Product.DoesNotExist:
+      
+        messages.error(request, "Product not found.")
+        return redirect(next_url) 
     favourite_item, created = FavouriteItem.objects.get_or_create(
         customer=customer, product=product
     )
+    
+    if created:
+        messages.success(request, "Product added to favourites!")
+    else:
+        messages.info(request, "Product is already in favourites.")
+
     return redirect(next_url)
 
 
@@ -507,7 +523,7 @@ def checkout(request):
         "states": list_of_states_in_india,
         "selected_address_id": selected_address_id,
         "selected_payment_method": selected_payment_method,
-         "wallet_balance": wallet.balance,
+        "wallet_balance": wallet.balance,
     }
     return render(request, "customer/checkout.html", context)
 
@@ -577,14 +593,20 @@ def place_order(request):
             else:
                 messages.error(request, "Insufficient wallet balance.")
                 return redirect("checkout")
+            
+
         elif payment_method == "cod":
             if total_amount > 1000:
                 messages.error(request, "COD is not available for orders above 1000 Rs.")
                 return redirect("checkout")
             request.session['payment_successful'] = True
             return redirect("finalize_order")
+        
+
         elif payment_method == "razorpay":
             return redirect("razorpay_order_creation", amount=total_amount)
+        
+
         else:
             messages.error(request, "Invalid payment method selected.")
             return redirect("checkout")

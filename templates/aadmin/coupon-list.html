@@ -80,10 +80,49 @@
         </tbody>
     </table>
 
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if coupons.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{% if request.POST.filter_option %}&filter_option={{ request.POST.filter_option }}{% endif %}" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ coupons.previous_page_number }}{% if request.POST.filter_option %}&filter_option={{ request.POST.filter_option }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for num in coupons.paginator.page_range %}
+                {% if coupons.number == num %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
+                    </li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.POST.filter_option %}&filter_option={{ request.POST.filter_option }}{% endif %}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if coupons.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ coupons.next_page_number }}{% if request.POST.filter_option %}&filter_option={{ request.POST.filter_option }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ coupons.paginator.num_pages }}{% if request.POST.filter_option %}&filter_option={{ request.POST.filter_option }}{% endif %}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 </div>
 
 {% endblock content %}
-
 
 {% block extra_scripts %}
 
