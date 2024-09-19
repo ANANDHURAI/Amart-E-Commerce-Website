@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 
-# Customer Login, Signup and logout views
+
 
 
 def customer_signup(request):
@@ -66,7 +66,6 @@ def customer_signup(request):
     return render(request, "accounts/customer-signup.html", context)
 
 
-
 def customer_login(request):
 
     if request.method == "POST":
@@ -106,8 +105,6 @@ def customer_login(request):
 def customer_logout(request):
     logout(request)
     return redirect("home")
-
-
 
 
 # Custom admin Login and logout views
@@ -199,6 +196,5 @@ def customer_activation(request):
     context = {"time_left": time_left}
     account_type = request.session.get("account_type")
 
-   
     if account_type == "customer":
         return render(request, "accounts/customer-activation.html", context)

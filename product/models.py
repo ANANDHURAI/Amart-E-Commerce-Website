@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-from ecom.models import SoftDeleteModel,ApprovedProductManager
+from ecom.models import SoftDeleteModel, ApprovedProductManager
 from PIL import Image
 
 
@@ -41,10 +41,10 @@ class Product(SoftDeleteModel):
 
     def __str__(self):
         return f"is {self.name}"
-    
+
     def __unicode__(self):
         return self.name
-    
+
     # def total_stock(self):
     #     return Inventory.objects.filter(product=self).aggregate(Sum('stock'))['stock__sum'] or 0
 
@@ -65,8 +65,8 @@ class Inventory(models.Model):
     size = models.CharField(max_length=2, choices=SIZE_CHOICES, default="S")
     price = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     stock = models.PositiveIntegerField()
-    is_active=models.BooleanField(default=True)
-  
+    is_active = models.BooleanField(default=True)
+
     def __str__(self):
         return f"{self.product.name} - {self.size} size"
 
@@ -83,21 +83,20 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"Image of {self.product.name}"
-    
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        
+
         img = Image.open(self.image.path)
         min_dim = min(img.size)
         crop_box = (
             (img.width - min_dim) // 2,
             (img.height - min_dim) // 2,
             (img.width + min_dim) // 2,
-            (img.height + min_dim) // 2
+            (img.height + min_dim) // 2,
         )
         img = img.crop(crop_box)
-        
-        img = img.resize((400, 400), Image.LANCZOS)
-        
-        img.save(self.image.path)
 
+        img = img.resize((400, 400), Image.LANCZOS)
+
+        img.save(self.image.path)

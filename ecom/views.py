@@ -6,7 +6,5 @@ def get_next_url(request):
     return next_url
 
 
-
 def custom_404(request, exception):
     return render(request, "home/404.html", {})
-

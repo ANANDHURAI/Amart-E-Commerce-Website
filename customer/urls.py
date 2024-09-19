@@ -46,9 +46,12 @@ urlpatterns = [
         name="cancel_order_item",
     ),
     path("wallet", views.customer_wallet, name="customer_wallet"),
-    path('orders/return/<int:order_id>/', views.return_order, name='return_order'),
+    path("orders/return/<int:order_id>/", views.return_order, name="return_order"),
     path("invoice/<order_id>/", views.invoice, name="invoice"),
-
-    path('order-confirmation/<int:order_id>/', views.order_confirmation, name='order_confirmation'),
-    path('finalize-order/', views.finalize_order, name='finalize_order'),
+    path(
+        "order-confirmation/<int:order_id>/",
+        views.order_confirmation,
+        name="order_confirmation",
+    ),
+    path("finalize-order/", views.finalize_order, name="finalize_order"),
 ]

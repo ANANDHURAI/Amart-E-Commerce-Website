@@ -28,10 +28,11 @@ class Address(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     name = models.CharField(
         max_length=255,
-        validators=[RegexValidator(
-            regex=r"^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$",
-            message="Enter a valid name."
-        )]
+        validators=[
+            RegexValidator(
+                regex=r"^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", message="Enter a valid name."
+            )
+        ],
     )
     mobile = models.PositiveIntegerField(
         validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)]
@@ -72,7 +73,6 @@ class Order(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
 
     class Meta:
         ordering = ["-created_at"]
@@ -116,8 +116,3 @@ class FavouriteItem(models.Model):
 class Wallet(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
     balance = models.PositiveIntegerField(validators=[MinValueValidator(1)], default=0)
-
-
-
-
-

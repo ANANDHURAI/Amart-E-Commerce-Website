@@ -10,8 +10,10 @@ from datetime import datetime, timedelta, date
 from django.db.models import F, Sum
 from django.db.models.functions import Coalesce
 from django.db import transaction
-from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+
+
 def admin_login_required(func):
     """
     Custom login required decorator to check if the user is authenticated and a superadmin.
@@ -27,15 +29,11 @@ def admin_login_required(func):
     return wrapper
 
 
-   
-
-
 @admin_login_required
 def admin_dashboard(request):
     title = "Dashboard"
     current_page = "admin_dashboard"
 
- 
     top_products_info = (
         OrderItem.objects.filter(product__isnull=False)
         .values("product__id", "product__name")
@@ -52,10 +50,9 @@ def admin_dashboard(request):
             product.primary_image = primary_image
             product.total_quantity = product_info["total_quantity"]
             top_products.append(product)
-        except :
+        except:
             # Log the error or handle it as needed
             continue
-
 
     top_categories_info = (
         Product.objects.filter(main_category__isnull=False)
@@ -68,14 +65,16 @@ def admin_dashboard(request):
 
     for category_info in top_categories_info:
         try:
-            category = get_object_or_404(Category, id=category_info["main_category__id"])
+            category = get_object_or_404(
+                Category, id=category_info["main_category__id"]
+            )
             category.total_quantity = category_info["total_quantity"]
             top_categories.append(category)
-        except :
+        except:
             # Log the error or handle it as needed
             continue
 
-    #Line chart for revenue for last year
+    # Line chart for revenue for last year
 
     end_date = date.today()
     start_date = end_date - timedelta(days=365)
@@ -181,22 +180,20 @@ def customer_approval(request, pk):
 def category_list(request):
     title = "Categories"
     current_page = "category_list"
-    
-    search_query = request.GET.get('search', '')
-    
+
+    search_query = request.GET.get("search", "")
+
     if search_query:
-        categories = Category.objects.filter(
-            Q(name__icontains=search_query)
-        ).order_by("name")
+        categories = Category.objects.filter(Q(name__icontains=search_query)).order_by(
+            "name"
+        )
     else:
         categories = Category.objects.all().order_by("name")
-    
+
     request.session["selection"] = "listed_categories"
 
- 
     for category in categories:
         category.count = category.main_category_products.count()
-
 
     if request.method == "POST":
         filter_option = request.POST.get("filter_option")
@@ -208,15 +205,15 @@ def category_list(request):
                     main_category=category
                 ).count()
 
-    paginator = Paginator(categories, 5)  
-    page_number = request.GET.get('page')
+    paginator = Paginator(categories, 5)
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
     context = {
         "categories": page_obj,
         "title": title,
         "current_page": current_page,
-        "search_query": search_query
+        "search_query": search_query,
     }
     return render(request, "aadmin/category-list.html", context)
 
@@ -312,7 +309,6 @@ def restore_category(request, slug):
     return redirect("category_list")
 
 
-
 @admin_login_required
 def product_list(request):
     title = "Products"
@@ -331,19 +327,16 @@ def product_list(request):
             request.session["selection"] = "listed_products"
 
     # Handle search
-    search_query = request.GET.get('search', '')
+    search_query = request.GET.get("search", "")
     if search_query:
         products = products.filter(
-            Q(name__icontains=search_query) |
-            Q(mrp__icontains=search_query)
+            Q(name__icontains=search_query) | Q(mrp__icontains=search_query)
         )
 
-    
-    paginator = Paginator(products, 5)  
-    page_number = request.GET.get('page')
+    paginator = Paginator(products, 5)
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-   
     for product in page_obj:
         inventory = Inventory.objects.filter(product=product)
         total_stock = sum(inv.stock for inv in inventory)
@@ -353,7 +346,7 @@ def product_list(request):
         "products": page_obj,
         "current_page": current_page,
         "title": title,
-        "search_query": search_query
+        "search_query": search_query,
     }
     return render(request, "aadmin/product-list.html", context=context)
 
@@ -371,11 +364,9 @@ def add_product(request):
         print("apporverd:", approved)
 
         # Validate mandatory fields
-        if not name or not main_category_id :
+        if not name or not main_category_id:
             messages.error(request, "Name, Main Category is mandatory.")
             return redirect("add_product")
-
-        
 
         # Validate file types for images
         allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
@@ -399,7 +390,6 @@ def add_product(request):
             approved=approved == "on",
         )
 
-        
         # Add images
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
@@ -407,12 +397,9 @@ def add_product(request):
         messages.success(request, "Product added successfully.")
         return redirect("product_list")
 
-
     categories = Category.objects.all()
     context = {"categories": categories}
     return render(request, "aadmin/product-form.html", context)
-
-
 
 
 @admin_login_required
@@ -436,7 +423,10 @@ def edit_product(request, product_id):
         images = request.FILES.getlist("images")
         for image in images:
             if image.content_type not in allowed_image_types:
-                messages.error(request, "Only JPEG, PNG, and GIF formats are supported for new images.")
+                messages.error(
+                    request,
+                    "Only JPEG, PNG, and GIF formats are supported for new images.",
+                )
                 return redirect("edit_product", product_id=product.id)
 
         # Update product details
@@ -464,13 +454,13 @@ def edit_product(request, product_id):
         return render(request, "aadmin/product-edit-form.html", context)
 
 
-
 def remove_product_image(request, image_id):
     image = get_object_or_404(ProductImage, id=image_id)
     if request.method == "POST":
         image.delete()
         messages.success(request, "Image removed successfully.")
     return redirect("edit_product", product_id=image.product.id)
+
 
 def delete_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
@@ -526,113 +516,117 @@ def add_account(request):
     return render(request, "aadmin/add-account.html", context)
 
 
-
-
 @admin_login_required
 def order_list(request):
     title = "Orders"
     current_page = "order_list"
-    
 
-    filter_option = request.GET.get('filter_option', 'all')
-    search_query = request.GET.get('search', '')
-    
+    filter_option = request.GET.get("filter_option", "all")
+    search_query = request.GET.get("search", "")
+
     # Filter orders based on search query
-    order_items = OrderItem.objects.all().select_related('order', 'product', 'inventory', 'order__customer')
+    order_items = OrderItem.objects.all().select_related(
+        "order", "product", "inventory", "order__customer"
+    )
 
     if search_query:
         order_items = order_items.filter(product__name__icontains=search_query)
-    
+
     # Filter orders based on status
-    if filter_option != 'all':
+    if filter_option != "all":
         order_items = order_items.filter(status=filter_option)
-    
-  
-    paginator = Paginator(order_items, 5) 
-    page = request.GET.get('page')
-    
+
+    paginator = Paginator(order_items, 5)
+    page = request.GET.get("page")
+
     try:
         order_items = paginator.page(page)
     except PageNotAnInteger:
         order_items = paginator.page(1)
     except EmptyPage:
         order_items = paginator.page(paginator.num_pages)
-    
+
     context = {
         "order_items": order_items,
         "current_page": current_page,
         "title": title,
         "search_query": search_query,
-        "filter_option": filter_option
+        "filter_option": filter_option,
     }
     return render(request, "aadmin/order-list.html", context=context)
 
 
-
 @admin_login_required
 def update_order_status(request, order_item_id):
-    if request.method == 'POST':
-        new_status = request.POST.get('new_status')
+    if request.method == "POST":
+        new_status = request.POST.get("new_status")
         order_item = get_object_or_404(OrderItem, id=order_item_id)
         order_item.status = new_status
         order_item.save()
-        messages.success(request, f"Status for order item {order_item_id} updated to {new_status}")
-    return redirect('order_list')
-
-
-
+        messages.success(
+            request, f"Status for order item {order_item_id} updated to {new_status}"
+        )
+    return redirect("order_list")
 
 
 @admin_login_required
 def sales_report(request):
     title = "Sales Report"
     current_page = "sales_report"
-    request.session["selection"] = "1_month"
+
     start_date = datetime.now() - timedelta(days=30)
     end_date = datetime.now()
+    request.session["selection"] = "1_month"
 
     if request.method == "POST":
         filter_option = request.POST.get("filter_option")
+
         if filter_option == "today":
             start_date = datetime.now() - timedelta(days=1)
-            end_date = datetime.now()
             request.session["selection"] = "today"
         elif filter_option == "1_week":
             start_date = datetime.now() - timedelta(days=7)
-            end_date = datetime.now()
             request.session["selection"] = "1_week"
         elif filter_option == "1_month":
             start_date = datetime.now() - timedelta(days=30)
-            end_date = datetime.now()
             request.session["selection"] = "1_month"
         elif filter_option == "6_months":
             start_date = datetime.now() - timedelta(days=180)
-            end_date = datetime.now()
             request.session["selection"] = "6_months"
         elif filter_option == "1_year":
             start_date = datetime.now() - timedelta(days=360)
-            end_date = datetime.now()
             request.session["selection"] = "1_year"
         elif "custom_date" in request.POST:
+
             start_date_str = request.POST.get("start_date")
             end_date_str = request.POST.get("end_date")
-            start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
-            end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+
+            try:
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+            except ValueError:
+                messages.error(request, "Invalid date format.")
+                return redirect("sales_report")
+
             if start_date > end_date:
-                messages.error(request, "Select a valid date range!")
+                messages.error(request, "Start date cannot be after end date!")
                 return redirect("sales_report")
             if end_date > datetime.now():
                 messages.error(request, "End date cannot be in the future!")
                 return redirect("sales_report")
+
             request.session["selection"] = "custom"
 
-    orders = Order.objects.filter(created_at__range=[start_date, end_date]).order_by("-created_at")
-    order_items = OrderItem.objects.filter(order__in=orders).annotate(order_created_at=F("order__created_at"))
+    orders = Order.objects.filter(created_at__range=[start_date, end_date]).order_by(
+        "-created_at"
+    )
+    order_items = OrderItem.objects.filter(order__in=orders).annotate(
+        order_created_at=F("order__created_at")
+    )
     order_items = order_items.order_by("-order_created_at")
 
-    # Pagination
-    paginator = Paginator(order_items, 10)  # Show 10 order items per page
-    page = request.GET.get('page')
+    paginator = Paginator(order_items, 10)
+    page = request.GET.get("page")
     try:
         order_items_paginated = paginator.page(page)
     except PageNotAnInteger:
@@ -640,12 +634,12 @@ def sales_report(request):
     except EmptyPage:
         order_items_paginated = paginator.page(paginator.num_pages)
 
-    overall_amount = sum(item.inventory.price * item.quantity for item in order_items_paginated)
+    overall_amount = sum(item.inventory.price * item.quantity for item in order_items)
     overall_count = order_items.count()
 
     start_date_str = start_date.strftime("%d-%m-%Y")
     end_date_str = end_date.strftime("%d-%m-%Y")
-    pdf_name = f"sales-report-{start_date_str}-{end_date_str} by Amart"
+    pdf_name = f"sales-report-{start_date_str}-{end_date_str}"
 
     context = {
         "order_items": order_items_paginated,
@@ -684,7 +678,7 @@ def coupon_list(request):
 
     # Pagination
     paginator = Paginator(coupons, 2)  # Show 10 coupons per page
-    page = request.GET.get('page')
+    page = request.GET.get("page")
 
     try:
         coupons_page = paginator.page(page)
@@ -794,10 +788,8 @@ def offer_list(request):
     title = "Offers"
     current_page = "offer_list"
 
-    
     offers = CategoryOffer.objects.all().order_by("discount")
 
-    
     if request.method == "POST":
         filter_option = request.POST.get("filter_option")
         if filter_option == "active_offers":
@@ -805,27 +797,24 @@ def offer_list(request):
         elif filter_option == "inactive_offers":
             offers = offers.filter(is_active=False)
 
-    
-    search_query = request.GET.get('search', '')
+    search_query = request.GET.get("search", "")
     if search_query:
         offers = offers.filter(
-            Q(category__name__icontains=search_query) | 
-            Q(discount__icontains=search_query)
+            Q(category__name__icontains=search_query)
+            | Q(discount__icontains=search_query)
         )
 
-    
-    paginator = Paginator(offers, 2)  
-    page_number = request.GET.get('page')
+    paginator = Paginator(offers, 2)
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-    
     request.session["selection"] = "all_offers"
 
     context = {
         "title": title,
         "current_page": current_page,
         "offers": page_obj,
-        "search_query": search_query
+        "search_query": search_query,
     }
     return render(request, "aadmin/offer-list.html", context)
 
@@ -916,34 +905,31 @@ def delete_offer(request, id):
     return HttpResponse("Delete Offer")
 
 
-
 @admin_login_required
 def inventory_list(request):
     # Search functionality
-    search_query = request.GET.get('search', '')
-    
+    search_query = request.GET.get("search", "")
+
     # Filter based on search query
-    inventory = Inventory.objects.select_related('product').filter(
-        Q(product__name__icontains=search_query) |
-        Q(size__icontains=search_query)
+    inventory = Inventory.objects.select_related("product").filter(
+        Q(product__name__icontains=search_query) | Q(size__icontains=search_query)
     )
-    
+
     # Pagination
     paginator = Paginator(inventory, 5)  # Show 10 items per page
-    page_number = request.GET.get('page')
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
-    
+
     context = {
-        'page_obj': page_obj,
-        'search_query': search_query,
+        "page_obj": page_obj,
+        "search_query": search_query,
     }
     return render(request, "aadmin/inventory-list.html", context)
 
 
-
 @admin_login_required
 def add_edit_inventory(request, inventory_id=None):
-    
+
     if inventory_id:
         inventory = get_object_or_404(Inventory, pk=inventory_id)
     else:
@@ -951,10 +937,10 @@ def add_edit_inventory(request, inventory_id=None):
 
     # Handle form submission
     if request.method == "POST":
-        product_id = request.POST.get('product_id')
-        price = request.POST.get('price')
-        size = request.POST.get('size')
-        stock = request.POST.get('stock')
+        product_id = request.POST.get("product_id")
+        price = request.POST.get("price")
+        size = request.POST.get("size")
+        stock = request.POST.get("stock")
 
         # Validate data
         if not product_id or not price or not size or not stock:
@@ -967,11 +953,18 @@ def add_edit_inventory(request, inventory_id=None):
             product = get_object_or_404(Product, pk=product_id)
 
             # Check if an inventory with the same product and size already exists (for adding or editing)
-            existing_inventory = Inventory.objects.filter(product=product, size=size).exclude(pk=inventory_id).first()
+            existing_inventory = (
+                Inventory.objects.filter(product=product, size=size)
+                .exclude(pk=inventory_id)
+                .first()
+            )
 
             if existing_inventory:
                 # Error if a duplicate product-size combination exists
-                messages.error(request, f"An inventory item with size '{size}' already exists for the selected product.")
+                messages.error(
+                    request,
+                    f"An inventory item with size '{size}' already exists for the selected product.",
+                )
             else:
                 if inventory:
                     # Update existing inventory item
@@ -984,28 +977,23 @@ def add_edit_inventory(request, inventory_id=None):
                 else:
                     # Create a new inventory item
                     Inventory.objects.create(
-                        product=product,
-                        price=price,
-                        size=size,
-                        stock=stock
+                        product=product, price=price, size=size, stock=stock
                     )
-                    messages.success(request, "New inventory item created successfully.")
-                
-                return redirect('inventory_list')  # Ensure a redirect or HttpResponse is returned
+                    messages.success(
+                        request, "New inventory item created successfully."
+                    )
+
+                return redirect(
+                    "inventory_list"
+                )  # Ensure a redirect or HttpResponse is returned
 
     # Handle GET request or if form submission fails
     products = Product.objects.all()
-    sizes = Inventory.SIZE_CHOICES 
+    sizes = Inventory.SIZE_CHOICES
 
-    context = {
-        'inventory': inventory,
-        'products': products,
-        'sizes': sizes
-    }
+    context = {"inventory": inventory, "products": products, "sizes": sizes}
 
     return render(request, "aadmin/inventory-add.html", context)
-
-
 
 
 @admin_login_required
@@ -1013,11 +1001,11 @@ def inventory_status(request, inventory_id):
     inventory_item = get_object_or_404(Inventory, id=inventory_id)
     inventory_item.is_active = not inventory_item.is_active
     inventory_item.save()
-    return redirect('inventory_list')
+    return redirect("inventory_list")
 
 
 @admin_login_required
 def delete_inventory(request, inventory_id):
     inventory_item = get_object_or_404(Inventory, id=inventory_id)
     inventory_item.delete()
-    return redirect('inventory_list')
+    return redirect("inventory_list")

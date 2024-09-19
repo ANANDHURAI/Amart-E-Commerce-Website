@@ -3354,3 +3354,259 @@ C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\urls.py changed, reloading.
 C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\urls.py changed, reloading.
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 214
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+https://api.razorpay.com:443 "GET /v1/orders/order_OySbVzHBgH5zj4 HTTP/11" 200 None
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /aadmin/sales-report/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: muladmin/admin-base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 25, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 663, in sales_report
+    return render(request, "aadmin/sales-report.html", context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: muladmin/admin-base.html
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_OyfOQZGnQbMCVO HTTP/11" 200 None
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /customer/add-to-cart/11/
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+Internal Server Error: /payment/payment-success/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 91, in payment_success
+    return render(request, "customer/customer-payment-success.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'invoice' with arguments '('',)' not found. 1 pattern(s) tried: ['customer/invoice/(?P<order_id>[^/]+)/\\Z']
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /payment/payment-success/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py", line 96, in payment_success
+    order = Order.objects.get(id=order_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+customer.models.Order.DoesNotExist: Order matching query does not exist.
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_Oyt3E7t5yGsSGN HTTP/11" 200 None
+Forbidden (CSRF token from POST incorrect.): /shop/
+Resetting dropped connection: api.razorpay.com
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\product\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
+Watching for file changes with StatReloader
