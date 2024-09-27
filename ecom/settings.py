@@ -25,9 +25,20 @@ SECRET_KEY = 'django-insecure-f3#-izfmdm253-4l4d%@1f#&ej1^9e0xlhzzwba@&17^62w314
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '0.0.0.0',
+    'localhost',
+    'amart.fun',
+    
+]
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://amart.fun",
+    "https://amart.fun",
+    
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -193,3 +204,6 @@ LOGGING = {
         },
     },
 }
+
+LOGIN_URL = 'customer_login' 
+LOGOUT_REDIRECT_URL = 'customer_dashboard'

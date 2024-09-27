@@ -63,7 +63,7 @@
         <thead class="thead-dark">
             <tr>
                 <th>Product Name</th>
-                <th>Price</th>
+                
                 <th class="text-center">Total Stock</th>
                 <th class="text-center">Is Available</th>
                 <th class="text-center">List</th>
@@ -74,7 +74,7 @@
             {% for product in products %}
             <tr>
                 <td><a href="">{{ product.name }}</a></td>
-                <td>₹ {{ product.mrp }}</td>
+             
                 <td class="text-center">{{ product.total_stock }}</td>
                 <td class="text-center">
                     {% if product.is_available %}

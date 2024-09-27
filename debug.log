@@ -3610,3 +3610,324 @@ C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
 Watching for file changes with StatReloader
 C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\urls.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /aadmin/inventory/list/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 916, in inventory_list
+    ).order_by('-created_at')
+     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\sql\query.py", line 2249, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_at' into field. Choices are: cartitem, id, is_active, orderitem, price, product, product_id, size, stock
+Internal Server Error: /aadmin/inventory/list/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 27, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py", line 916, in inventory_list
+    ).order_by('-created_at')
+     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\sql\query.py", line 2249, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_at' into field. Choices are: cartitem, id, is_active, orderitem, price, product, product_id, size, stock
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /accounts/login/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /customer/add-to-cart/2/
+Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\home\views.py", line 117, in shop
+    return render(request, "home/shop.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_page' with arguments '('',)' not found. 1 pattern(s) tried: ['product/(?P<slug>[^/]+)/\\Z']
+Internal Server Error: /shop/
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\home\views.py", line 117, in shop
+    return render(request, "home/shop.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_page' with arguments '('',)' not found. 1 pattern(s) tried: ['product/(?P<slug>[^/]+)/\\Z']
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /customer/add-to-cart/3/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_OzfqIoQliA9OtI HTTP/11" 200 None
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_P0APJdrqjWrTMD HTTP/11" 200 None
+Watching for file changes with StatReloader
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 215
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_P1OVH7XRYYhRPl HTTP/11" 200 None
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 213
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "GET /v1/orders/order_P22xQfg6rS6jYo HTTP/11" 200 None
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\aadmin\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /customer/cart
+Traceback (most recent call last):
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\ecom\customer\views.py", line 393, in cart
+    customer = Customer.objects.get(id=request.user.id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anand\Desktop\Anand\Amart\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+accounts.models.Customer.DoesNotExist: Customer matching query does not exist.
+Starting new HTTPS connection (1): api.razorpay.com:443
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
+https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210

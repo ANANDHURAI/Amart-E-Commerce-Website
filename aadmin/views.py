@@ -313,7 +313,7 @@ def restore_category(request, slug):
 def product_list(request):
     title = "Products"
     current_page = "product_list"
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('-created_at')
     request.session["selection"] = "all"
 
     # Handle filtering
@@ -363,12 +363,19 @@ def add_product(request):
         print("aveolsnnj:", is_available)
         print("apporverd:", approved)
 
-        # Validate mandatory fields
+       
         if not name or not main_category_id:
             messages.error(request, "Name, Main Category is mandatory.")
             return redirect("add_product")
+        
+        if description and not description.strip():
+            messages.error(request, "Description cannot contain only spaces.")
+            return redirect("add_product")
 
-        # Validate file types for images
+        if not name.strip():
+            messages.error(request, "Product name cannot contain only spaces.")
+            return redirect("add_product")
+    
         allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
         for image in images:
             if image.content_type not in allowed_image_types:
@@ -377,7 +384,7 @@ def add_product(request):
                 )
                 return redirect("add_product")
 
-        # Create product
+       
         main_category = Category.objects.get(id=main_category_id)
         slug = slugify(name)
 
@@ -390,7 +397,7 @@ def add_product(request):
             approved=approved == "on",
         )
 
-        # Add images
+        
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
@@ -418,7 +425,7 @@ def edit_product(request, product_id):
             messages.error(request, "Name and Main Category are mandatory.")
             return redirect("edit_product", product_id=product.id)
 
-        # Validate file types for new images
+        
         allowed_image_types = ["image/jpeg", "image/png", "image/gif"]
         images = request.FILES.getlist("images")
         for image in images:
@@ -438,7 +445,7 @@ def edit_product(request, product_id):
         product.approved = approved == "on"
         product.save()
 
-        # Handle new images
+        
         for i, image in enumerate(images):
             ProductImage.objects.create(product=product, image=image, priority=i + 1)
 
@@ -527,7 +534,7 @@ def order_list(request):
     # Filter orders based on search query
     order_items = OrderItem.objects.all().select_related(
         "order", "product", "inventory", "order__customer"
-    )
+    ).order_by('-id') 
 
     if search_query:
         order_items = order_items.filter(product__name__icontains=search_query)
@@ -913,7 +920,7 @@ def inventory_list(request):
     # Filter based on search query
     inventory = Inventory.objects.select_related("product").filter(
         Q(product__name__icontains=search_query) | Q(size__icontains=search_query)
-    )
+    ).order_by('-id')
 
     # Pagination
     paginator = Paginator(inventory, 5)  # Show 10 items per page
