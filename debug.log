@@ -3931,3 +3931,15 @@ accounts.models.Customer.DoesNotExist: Customer matching query does not exist.
 Starting new HTTPS connection (1): api.razorpay.com:443
 https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 212
 https://api.razorpay.com:443 "POST /v1/orders HTTP/11" 200 210
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\Anand\Desktop\Anand\Amart\ecom\ecom\settings.py changed, reloading.
+Watching for file changes with StatReloader
