@@ -146,8 +146,6 @@ def admin_logout(request):
 
 
 # Account activation views
-
-
 def otp_view(request):
     send_otp(request)
     return redirect("customer_activation")

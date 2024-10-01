@@ -1,0 +1,29 @@
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*.so
+
+# Django specific files
+*.log
+db.sqlite3
+*.sqlite3
+
+# Environment variables
+.env
+
+# Static and media files
+
+/media/
+
+# Virtual environment
+venv/
+env/
+
+# IDE and editor specific files
+.vscode/
+*.swp
+.idea/
+
+# Migrations (optional: include if you want to ignore auto-generated migration files)
+**/migrations/*
+

@@ -51,7 +51,6 @@ def admin_dashboard(request):
             product.total_quantity = product_info["total_quantity"]
             top_products.append(product)
         except:
-            # Log the error or handle it as needed
             continue
 
     top_categories_info = (
@@ -156,7 +155,7 @@ def customer_list(request):
     customers = Customer.objects.all()
     request.session["selection"] = "all"
 
-    # Filter function
+    
     if request.method == "POST":
         filter_option = request.POST.get("filter_option")
         if filter_option == "banned":
@@ -289,8 +288,6 @@ def delete_category(request, slug):
     # Soft deleting products related to the category
     for product in category.main_category_products.all():
         product.delete()
-
-    # Soft deleting category
     category.delete()
 
     return redirect("category_list")
@@ -646,7 +643,7 @@ def sales_report(request):
 
     start_date_str = start_date.strftime("%d-%m-%Y")
     end_date_str = end_date.strftime("%d-%m-%Y")
-    pdf_name = f"sales-report-{start_date_str}-{end_date_str}"
+    pdf_name = f"amart-sales-report-{start_date_str}-{end_date_str}"
 
     context = {
         "order_items": order_items_paginated,

@@ -10,9 +10,6 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from ecom.views import get_next_url
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, DetailView, View
-from django.db import transaction
-
 from django.db import transaction
 from django.db.models import F
 import logging
@@ -21,7 +18,7 @@ from django.urls import reverse
 from django.db.models import Sum, Prefetch
 from django.http import HttpResponseRedirect
 from django.conf import settings
-import razorpay
+import razorpay 
 
 
 # def@login_required(func):
@@ -386,8 +383,6 @@ def remove_favourite_item(request, favourite_item_id):
 
 
 # Customer Cart Session
-
-
 @login_required
 def cart(request):
     customer = Customer.objects.get(id=request.user.id)
