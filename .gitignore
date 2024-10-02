@@ -25,5 +25,5 @@ env/
 .idea/
 
 # Migrations (optional: include if you want to ignore auto-generated migration files)
-**/migrations/*
+# **/migrations/*
 
