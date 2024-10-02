@@ -267,20 +267,28 @@ def orders(request):
 
 
 @login_required
+@transaction.atomic
 def cancel_order(request, order_id):
     order = Order.objects.get(id=order_id)
     order_items = OrderItem.objects.filter(order=order)
-    wallet, created = Wallet.objects.get_or_create(customer__id=request.user.id)
+    wallet, created = Wallet.objects.get_or_create(customer=request.user)
 
+    refund_amount = 0
     for order_item in order_items:
         if order_item.status != "cancelled":
             order_item.status = "cancelled"
             order_item.inventory.stock += order_item.quantity
             order_item.inventory.save()
+            refund_amount += order_item.quantity * order_item.inventory.price
 
     order.status = "cancelled"
     order.save()
 
+    if order.is_paid:
+        wallet.balance += refund_amount
+        wallet.save()
+
+    messages.success(request, f"Order cancelled. Refund of ₹{refund_amount} added to your wallet.")
     return redirect("customer_orders")
 
 
@@ -302,26 +310,31 @@ def cancel_order_item(request, order_item_id):
 
 
 @login_required
+@transaction.atomic
 def return_order(request, order_id):
     order = Order.objects.get(id=order_id)
     order_items = OrderItem.objects.filter(order=order)
-    wallet, created = Wallet.objects.get_or_create(customer__id=request.user.id)
+    wallet, created = Wallet.objects.get_or_create(customer=request.user)
 
     if order.status == "delivered":
+        refund_amount = 0
         for order_item in order_items:
             if order_item.status != "returned":
                 order_item.status = "returned"
                 order_item.inventory.stock += order_item.quantity
                 order_item.inventory.save()
+                refund_amount += order_item.quantity * order_item.inventory.price
 
-                # If the order is paid, add refund to the wallet
-                if order.is_paid:
-                    wallet.balance += order_item.quantity * order_item.inventory.price
-                    wallet.save()
-
-        # Update order status
         order.status = "returned"
         order.save()
+
+        if order.is_paid:
+            wallet.balance += refund_amount
+            wallet.save()
+
+        messages.success(request, f"Order returned. Refund of ₹{refund_amount} added to your wallet.")
+    else:
+        messages.error(request, "This order cannot be returned.")
 
     return redirect("customer_orders")
 

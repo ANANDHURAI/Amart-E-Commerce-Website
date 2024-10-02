@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-f3#-izfmdm253-4l4d%@1f#&ej1^9e0xlhzzwba@&17^62w314
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    '0.0.0.0',
-    'localhost',
-    'amart.fun',
-    
+    # # '127.0.0.1',
+    # '0.0.0.0',
+    # 'localhost',
+    # 'amart.fun',
+    "*"
 ]
 
 
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'easy_thumbnails',
     'image_cropping',
 
     "home",
@@ -97,6 +96,8 @@ WSGI_APPLICATION = 'ecom.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+# settings.py
 
 DATABASES = {
     'default': {
@@ -180,8 +181,7 @@ RAZOR_KEY_SECRET = "AgyQbM4WqWQj1hvpHZ9GtT5C"
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
 
 
-IMAGE_CROPPING_BACKEND = 'image_cropping.backends.easy_thumbs.EasyThumbnailsBackend'
-IMAGE_CROPPING_BACKEND_PARAMS = {}
+
 
 
 LOGGING = {
