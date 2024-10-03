@@ -26,11 +26,9 @@ SECRET_KEY = 'django-insecure-f3#-izfmdm253-4l4d%@1f#&ej1^9e0xlhzzwba@&17^62w314
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # # '127.0.0.1',
-    # '0.0.0.0',
-    # 'localhost',
-    # 'amart.fun',
-    "*"
+    '13.239.85.198',
+    'amart.fun',
+    'localhost'
 ]
 
 
